@@ -1,0 +1,228 @@
+{
+    "id": "https://style.tools/json-schemas/js-loader-config.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for 📐 Style.Tools Javascript Loader Configuration Definitions.",
+    "definitions": {
+        "load": {
+            "description": "Javascript Loader configuration.",
+            "oneOf": [{
+                "description": "A script URL.",
+                "type": "string",
+                "minLength": 1
+            }, {
+                "$ref": "#/definitions/load_config",
+                "required": ["src"]
+            }, {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                    "oneOf": [{
+                        "description": "A script URL.",
+                        "type": "string",
+                        "minLength": 1
+                    }, {
+                        "$ref": "#/definitions/load_config",
+                        "required": ["src"]
+                    }]
+                },
+                "uniqueItems": true
+            }]
+        },
+        "load_config": {
+            "description": "Script load config object.",
+            "type": "object",
+            "properties": {
+                "ref": {
+                    "description": "A reference name for the script. Can be used for onload event and dependency matching.",
+                    "type": "string"
+                },
+                "src": {
+                    "description": "A script URL.",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "defer": {
+                    "description": "Use defer instead of async (load script on domready).",
+                    "type": "boolean"
+                },
+                "attributes": {
+                    "description": "HTML element attributes to add to the script element.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "base": {
+                    "description": "Relative URL rebasing / URL compression.",
+                    "$ref": "#/definitions/base"
+                },
+                "target": {
+                    "description": "CSS selector for a target DOM element to insert scripts.",
+                    "$ref": "#/definitions/target"
+                },
+                "load_timing": {
+                    "description": "Download timing configuration.",
+                    "$ref": "timing.json#/definitions/timing_config"
+                },
+                "exec_timing": {
+                    "description": "Script execution timing configuration.",
+                    "$ref": "timing.json#/definitions/timing_config"
+                },
+                "cache": {
+                    "description": "Cache configuration.",
+                    "$ref": "cache.json#/definitions/cache_config"
+                },
+                "dependencies": {
+                    "$ref": "dependency.json#/definitions/dependencies"
+                },
+                "inline": {
+                    "description": "Inline script to execute after the script is executed.",
+                    "$ref": "#/definitions/inline"
+                },
+                "notes": {
+                    "description": "Space for writing notes.",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "load_options": {
+            "description": "Javascript Loader global options configuration.",
+            "type": "object",
+            "properties": {
+                "attributes": {
+                    "description": "HTML element attributes to add to the script element.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "defer": {
+                    "description": "Use defer by default instead of async (load script on domready).",
+                    "type": "boolean"
+                },
+                "base": {
+                    "description": "Relative URL rebasing / URL compression.",
+                    "$ref": "#/definitions/base"
+                },
+                "target": {
+                    "description": "CSS selector for a target DOM element to insert scripts.",
+                    "$ref": "#/definitions/target"
+                },
+                "load_timing": {
+                    "description": "Download timing configuration.",
+                    "$ref": "timing.json#/definitions/timing_config"
+                },
+                "exec_timing": {
+                    "description": "Script execution timing configuration.",
+                    "$ref": "timing.json#/definitions/timing_config"
+                },
+                "cache": {
+                    "description": "Cache configuration.",
+                    "$ref": "cache.json#/definitions/cache_config"
+                },
+                "inline": {
+                    "description": "Inline script to execute after all scripts are executed.",
+                    "$ref": "#/definitions/inline"
+                },
+                "notes": {
+                    "description": "Space for writing notes.",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "target": {
+            "description": "CSS selector for a target DOM element to insert scripts.",
+            "oneOf": [{
+                "type": "boolean",
+                "enum": [false]
+            }, {
+                "type": "string",
+                "minLength": 1
+            }, {
+                "description": "Insert before target DOM element.",
+                "type": "object",
+                "properties": {
+                    "before": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": ["before"],
+                "additionalProperties": false
+            }, {
+                "description": "Insert after target DOM element.",
+                "type": "object",
+                "properties": {
+                    "after": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": ["after"],
+                "additionalProperties": false
+            }]
+        },
+        "base": {
+            "description": "Relative URL rebasing / URL compression.",
+            "oneOf": [{
+                "type": "boolean",
+                "enum": [false]
+            }, {
+                "type": "string",
+                "minLength": 1
+            }]
+        },
+        "inline": {
+            "description": "Inline script to execute after the script(s) are executed.",
+            "oneOf": [{
+                "type": "string",
+                "minLength": 1
+            }, {
+                "description": "Inline script configuration.",
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "description": "Script text source type (text, .innerHTML or .value).",
+                        "type": "string",
+                        "enum": ["text", "container", "input"],
+                        "default": "text"
+                    },
+                    "script": {
+                        "description": "Script text or selector to execute.",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "ref": {
+                        "description": "A reference name for the script. Can be used for onload event or dependency matching.",
+                        "type": "string"
+                    },
+                    "attributes": {
+                        "description": "HTML element attributes to add to the script element.",
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    },
+                    "exec_timing": {
+                        "description": "Script execution timing configuration.",
+                        "$ref": "timing.json#/definitions/timing_config"
+                    },
+                    "dependencies": {
+                        "description": "Dependencies to wait for before executing script.",
+                        "$ref": "dependency.json#/definitions/dependencies"
+                    },
+                    "exec_after": {
+                        "description": "Execute inline script after each individual script or after all scripts are loaded.",
+                        "type": "string",
+                        "enum": ["all", "any"],
+                        "default": "all"
+                    }
+                },
+                "required": ["script"],
+                "additionalProperties": false
+            }]
+        }
+    }
+}

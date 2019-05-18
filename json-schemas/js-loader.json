@@ -1,0 +1,21 @@
+{
+    "id": "https://style.tools/json-schemas/js-loader.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for 📐 Style.Tools Javascript Loader Configuration.",
+    "type": "object",
+    "properties": {
+        "load": {
+            "$ref": "js-loader-config.json#/definitions/load"
+        },
+        "load_options": {
+            "$ref": "js-loader-config.json#/definitions/load_options"
+        },
+        "capture": {
+            "$ref": "capture.json#/definitions/capture"
+        },
+        "capture_options": {
+            "$ref": "capture.json#/definitions/capture_options"
+        },
+        "additionalProperties": false
+    }
+}

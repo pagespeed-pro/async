@@ -1,0 +1,33 @@
+{
+  "name": "mocha-browserstack",
+  "version": "0.0.1",
+  "description": " Selenium examples for Mocha and BrowserStack Automate",
+  "scripts": {
+    "test": "npm run single && npm run local && npm run parallel",
+    "single": "./node_modules/.bin/mocha specs/single_test.js conf/single.conf.js",
+    "local": "./node_modules/.bin/mocha specs/local_test.js conf/local.conf.js",
+    "parallel": "./node_modules/.bin/mocha specs/parallel_test.js conf/parallel.conf.js --timeout=60000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/browserstack/mocha-browserstack.git"
+  },
+  "keywords": [
+    "mocha",
+    "browserstack",
+    "selenium",
+    "automate",
+    "examples"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/browserstack/mocha-browserstack/issues"
+  },
+  "homepage": "https://github.com/browserstack/mocha-browserstack#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "mocha": "^3.0.2",
+    "mocha.parallel": "^0.12.0",
+    "selenium-webdriver": "^3.0.0-beta-3"
+  }
+}

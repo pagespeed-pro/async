@@ -1,0 +1,1 @@
+n("on,once,off,error",75);H=1;p([[10],[75,Da],[76,Ba],[77,Ca]],function(a){var b=q(a[0]),c=a[1];a=10===a[0];J&&(O[b]=a?O:function(){c.apply(null,arguments);return O});K&&(P[b]=a?P:function(){c.apply(null,arguments);return P})});L=function(a,b){M(78,a,b)};

@@ -1,0 +1,1 @@
+var Z,Wb,Xb=q(19),Yb=A.currentScript||ua("script["+Xb+"]",ta());if(Yb){Z=Yb.getAttribute(q(Xb));try{Z=JSON.parse(Z)}catch(a){"string"===typeof Z&&(Z=Z.split(","))}Z&&!x(Z)&&(Z=[Z]);K&&Z&&4<Z.length&&(Wb=Z.splice(4),1===Wb[1]&&Z[1]&&(Wb[1]=Z[1]))}J&&Z&&J.apply(null,Z);K&&Wb&&K.apply(null,Wb);

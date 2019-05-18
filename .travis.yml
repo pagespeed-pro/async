@@ -1,0 +1,40 @@
+language: node_js
+
+node_js:
+  - "8"
+
+sudo: required 
+env: DISPLAY=':99.0'
+
+# Use container-based Travis infrastructure.
+sudo: false
+
+branches:
+  only:
+    - master
+
+addons:
+  chrome: stable
+  browserstack:
+    username: "styletools1"
+    access_key:
+      secure: "tf+s1yoWFlcSQqNWghS3nSGsJZgX9t8RHw2xuOR3llBW2huUSL9hWaBsra3cML8k33qwRcdmAsuFap5JPt16JEZe6ELh5cB3MY12GYPgcMxIsS/0HdF67D+FTIMT6h/MpbRyJYAMWP3kogwrW9Ec0Uwd04YChhpU/SOH8FZbz9rQBLsVcbWpaZY6CadZYIQ/NRNMq/08wWRhfb/a83zbajba/hvAHU9Yi51VJe3K7JSCXFYIK8hvcInlEUBb8ms9SSdfWajdtUEAmciTrOOi9/2W4r0YFhZncBMYThfIU2PmyYcDdBLPiKbfJrR9XC0rrvaA89BKM5h8WTQitYEd9Uqo3HA4KnjuxGvuMcBBJQnzYG8T/qsBUVb+y0H1KjLuAQlOERBnk7ScXXWRjR9rDb1rZlXZHLsS9RANFWFHeXieVHokUq/KzLPW+Wh2ksdlzegTaD1TdKy7MPLy+jRal4KawCr8tqmpNrSMmMfFH+F8nV2bY4IR9EfeZPygupZ7UhtzsjguINrs0KeE7lkOMmeRbinGLImoP5XiizLahGEoXB6u7VyXCGc+wPY+h3eHI8bkkTUmWf2kFL1Ib6VxmytTN5KzCFX7cwc4YFFdPLMIJwfcz/TIs6NVpzI1kehYzDOPb84PnUIMeYZIyaSwblTnyWaJx6dg5t0TTirXFzo="
+
+install: # Install ChromeDriver (64bits; replace 64 with 32 for 32bits).
+  - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/
+  - unzip ~/chromedriver_linux64.zip -d ~/
+  - rm ~/chromedriver_linux64.zip
+  - sudo mv -f ~/chromedriver /usr/local/share/
+  - sudo chmod +x /usr/local/share/chromedriver
+  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+
+before_script:
+  - |
+    if [ "$TRAVIS_OS_NAME" = "linux" ]; then
+      sh -e /etc/init.d/xvfb start
+    fi
+  - npm install
+
+script:
+  - node test/server.js &
+  - npm test

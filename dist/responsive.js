@@ -1,0 +1,1 @@
+var qb=N("matchMedia",0),rb={};ha=function(a){if(!qb||!a||a.toLowerCase()===q(7))return!0;a in rb||(rb[a]=qb(a));return rb[a]};ia=function(a,b){function c(a){!d&&a.matches&&(e.removeListener(c),d=!0,b())}var d,e=a?ha(a):!1;!0===e||e&&e.matches?b():e.addListener(c)};

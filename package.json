@@ -1,0 +1,169 @@
+{
+    "name": "@style.tools/async",
+    "version": "1.0.0",
+    "description": "A lightweight asynchronous CSS and script loader with dependency, responsive and timed loading, localStorage and async injected stylesheet/script capture.",
+    "author": {
+        "name": "info@style.tools",
+        "email": "info@style.tools",
+        "web": "style.tools"
+    },
+    "keywords": [
+        "async",
+        "css",
+        "script-loader",
+        "css-loader",
+        "stylesheet",
+        "asynchronous",
+        "localstorage",
+        "cache-api",
+        "responsive",
+        "responsive-css",
+        "optimization",
+        "dependency"
+    ],
+    "_modules": [
+        [
+            "async-core",
+            "Core async loading functionality. (required)"
+        ],
+        [
+            "event-emitter",
+            "Event emitter (required for some modules)"
+        ],
+        [
+            "debug",
+            "Debug / Performance timing. (used for dist/debug/ sources)"
+        ],
+        [
+            "css-loader",
+            "Async CSS loader."
+        ],
+        [
+            "js-loader",
+            "Async script loader."
+        ],
+        [
+            "inline-js",
+            "Inline script via script-text or DOM selector (input or HTML container) to execute after scripts are loaded."
+        ],
+        [
+            "regex",
+            "Regex functionality (required for some modules)"
+        ],
+        [
+            "vendor",
+            "Vendor prefixes functionality (required for some modules)"
+        ],
+        [
+            "rebase",
+            "Relative URL rebasing / URL compression."
+        ],
+        [
+            "dependency",
+            "Dependency based loading."
+        ],
+        [
+            "cache",
+            "Core cache functionality."
+        ],
+        [
+            "cache-css",
+            "CSS related cache functionality."
+        ],
+        [
+            "cache-js",
+            "Javascript related cache functionality."
+        ],
+        [
+            "localstorage",
+            "localStorage cache."
+        ],
+        [
+            "cache-api",
+            "Cache-API cache."
+        ],
+        [
+            "xhr",
+            "XHR request module and CORS proxy."
+        ],
+        [
+            "cache-update",
+            "Background cache update (HEAD request via XHR)."
+        ],
+        [
+            "capture",
+            "Core capture functionality."
+        ],
+        [
+            "capture-css",
+            "CSS related capture functionality."
+        ],
+        [
+            "capture-js",
+            "Javascript related capture functionality."
+        ],
+        [
+            "capture-observer",
+            "MutationObserver based capture."
+        ],
+        [
+            "capture-insert",
+            "DOM insert method rewrite based capture."
+        ],
+        [
+            "timing",
+            "Timed loading including DomReady, setTimeout, requestAnimationFrame and requestIdleCallback."
+        ],
+        [
+            "responsive",
+            "Responsive loading based on a Media Query."
+        ],
+        [
+            "inview",
+            "Timing based on element viewport visibility."
+        ],
+        [
+            "api",
+            "Public API and events."
+        ],
+        [
+            "attr-config",
+            "data-c HTML attribute based config via <script> element."
+        ]
+    ],
+    "homepage": "https://style.tools/",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/style-tools/async-css.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/style-tools/async-css/issues"
+    },
+    "engines": {
+        "node": "~8"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@style.tools/async-iife": "^1.0.0",
+        "browserstack-local": "^1.3.7",
+        "chromedriver": "^2.45.0",
+        "express": "^4.16.4",
+        "grunt": "latest",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-iife": "latest",
+        "js-combinatorics": "^0.5.4",
+        "matchdep": "^2.0.0",
+        "merge": "^1.2.1",
+        "mocha": "^3.0.2",
+        "selenium-webdriver": "^3.0.0-beta-3"
+    },
+    "scripts": {
+        "test": "npm run chrome-headless",
+        "chrome": "npm run chrome-headless",
+        "cross-browser": "./node_modules/.bin/mocha test/specs/browserstack-tests.js",
+        "chrome-headless": "./node_modules/.bin/mocha test/specs/chrome-headless-tests.js",
+        "iife": "node ./node_modules/@style.tools/async-css-iife/iife-cli.js"
+    }
+}

@@ -1,0 +1,432 @@
+
+#pencil-top8 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 7);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top8:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--orangered) 0%, var(--orangered) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top9 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 8);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top9:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--red) 0%, var(--red) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top10 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 9);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top10:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--darkred) 0%, var(--darkred) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top11 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 10);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top11:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--lightpink) 0%, var(--lightpink) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top12 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 11);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top12:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--pink) 0%, var(--pink) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top13 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 12);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top13:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--hotpink) 0%, var(--hotpink) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top14 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 13);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top14:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--darkpink) 0%, var(--darkpink) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top15 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 14);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top15:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--redpurple) 0%, var(--redpurple) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top16 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 15);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top16:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--burgundy) 0%, var(--burgundy) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top17 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 16);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top17:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--lightpurple) 0%, var(--lightpurple) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top18 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 17);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top18:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--neonpurple) 0%, var(--neonpurple) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top19 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 18);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top19:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--darkpurple) 0%, var(--darkpurple) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top20 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 19);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top20:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--darkblue) 0%, var(--darkblue) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top21 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 20);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top21:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--neonblue) 0%, var(--neonblue) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top22 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 21);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top22:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--blue) 0%, var(--blue) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top23 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 22);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top23:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--lightblue) 0%, var(--lightblue) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top24 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 23);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top24:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--blueaqua) 0%, var(--blueaqua) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top25 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 24);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top25:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--darkaqua) 0%, var(--darkaqua) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top26 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 25);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top26:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--darkgreen) 0%, var(--darkgreen) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top27 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 26);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top27:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--green) 0%, var(--green) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top28 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 27);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top28:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--mossgreen) 0%, var(--mossgreen) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top29 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 28);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top29:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--brown) 0%, var(--brown) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top30 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 29);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top30:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--grey) 0%, var(--grey) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top31 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 30);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top31:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--black) 0%, var(--black) 30%, transparent 30%, transparent 100%);
+}

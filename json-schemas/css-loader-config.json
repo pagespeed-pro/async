@@ -1,0 +1,172 @@
+{
+    "id": "https://style.tools/json-schemas/css-loader-config.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for 📐 Style.Tools CSS Loader Configuration Definitions.",
+    "definitions": {
+        "load": {
+            "description": "CSS Loader configuration.",
+            "oneOf": [{
+                "description": "A stylesheet URL.",
+                "type": "string",
+                "minLength": 1
+            }, {
+                "$ref": "#/definitions/load_config",
+                "required": ["href"]
+            }, {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                    "oneOf": [{
+                        "description": "A stylesheet URL.",
+                        "type": "string",
+                        "minLength": 1
+                    }, {
+                        "$ref": "#/definitions/load_config",
+                        "required": ["href"]
+                    }]
+                },
+                "uniqueItems": true
+            }]
+        },
+        "load_config": {
+            "description": "CSS Loader configuration object.",
+            "type": "object",
+            "properties": {
+                "ref": {
+                    "description": "A reference name for the stylesheet. Can be used for dependency matching and is added as DOM-element reference.",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "A stylesheet URL.",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "media": {
+                    "description": "A media query to apply to the stylesheets.",
+                    "type": "string",
+                    "default": "all"
+                },
+                "attributes": {
+                    "description": "HTML element attributes to add to the stylesheet element.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "base": {
+                    "description": "Relative URL rebasing / URL compression.",
+                    "$ref": "#/definitions/base"
+                },
+                "target": {
+                    "description": "CSS selector for a target DOM element to insert stylesheets.",
+                    "$ref": "#/definitions/target"
+                },
+                "load_timing": {
+                    "description": "Download timing configuration.",
+                    "$ref": "timing.json#/definitions/timing_config"
+                },
+                "render_timing": {
+                    "description": "Render timing configuration.",
+                    "$ref": "timing.json#/definitions/timing_config"
+                },
+                "cache": {
+                    "description": "Cache configuration.",
+                    "$ref": "cache.json#/definitions/cache_config"
+                },
+                "dependencies": {
+                    "$ref": "dependency.json#/definitions/dependencies"
+                },
+                "notes": {
+                    "description": "Space for writing notes.",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "load_options": {
+            "description": "CSS Loader global options configuration.",
+            "type": "object",
+            "properties": {
+                "media": {
+                    "description": "A media query to apply to the stylesheets.",
+                    "type": "string",
+                    "default": "all"
+                },
+                "attributes": {
+                    "description": "HTML element attributes to add to the stylesheet element.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "base": {
+                    "description": "Relative URL rebasing / URL compression.",
+                    "$ref": "#/definitions/base"
+                },
+                "target": {
+                    "description": "CSS selector for a target DOM element to insert stylesheets.",
+                    "$ref": "#/definitions/target"
+                },
+                "load_timing": {
+                    "description": "Download timing configuration.",
+                    "$ref": "timing.json#/definitions/timing_config"
+                },
+                "render_timing": {
+                    "description": "Render timing configuration.",
+                    "$ref": "timing.json#/definitions/timing_config"
+                },
+                "cache": {
+                    "description": "Cache configuration.",
+                    "$ref": "cache.json#/definitions/cache_config"
+                },
+                "notes": {
+                    "description": "Space for writing notes.",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "target": {
+            "description": "CSS selector for a target DOM element to insert stylesheets.",
+            "oneOf": [{
+                "type": "boolean",
+                "enum": [false]
+            }, {
+                "type": "string",
+                "minLength": 1
+            }, {
+                "description": "Insert before target DOM element.",
+                "type": "object",
+                "properties": {
+                    "before": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": ["before"],
+                "additionalProperties": false
+            }, {
+                "description": "Insert after target DOM element.",
+                "type": "object",
+                "properties": {
+                    "after": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": ["after"],
+                "additionalProperties": false
+            }]
+        },
+        "base": {
+            "description": "Relative URL rebasing / URL compression.",
+            "oneOf": [{
+                "type": "boolean",
+                "enum": [false]
+            }, {
+                "type": "string",
+                "minLength": 1
+            }]
+        }
+    }
+}

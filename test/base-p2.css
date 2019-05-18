@@ -1,0 +1,36 @@
+
+#pencil-top2 {
+  position: absolute;
+  top: 0;
+  left: var(--topplacement);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top2:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--lightyellow) 0%, var(--lightyellow) 30%, transparent 30%, transparent 100%);
+}
+
+#pencil-top3 {
+  position: absolute;
+  top: 0;
+  left: calc(var(--topplacement) * 2);
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top3:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--neonyellow) 0%, var(--neonyellow) 30%, transparent 30%, transparent 100%);
+}
