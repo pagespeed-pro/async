@@ -60,7 +60,7 @@ module_combinations.forEach(function(combination) {
 COMBINATION_TESTS = [COMBINATION_TESTS[0]];
 COMBINATION_TESTS = [COMBINATION_TESTS[0]];
 
-const iife = require('@style.tools/async-css-iife'),
+const iife = require('@style.tools/async-iife'),
     assert = require('assert'),
     webdriver = require('selenium-webdriver'),
     chrome = require("selenium-webdriver/chrome"),

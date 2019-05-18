@@ -22,7 +22,7 @@ const TESTS = [
     }*/
 ];
 
-const iife = require('@style.tools/async-css-iife'), // IIFE generator
+const iife = require('@style.tools/async-iife'), // IIFE generator
     fs = require('fs'),
     assert = require('assert'),
     path = require('path'),
