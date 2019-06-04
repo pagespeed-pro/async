@@ -1,7 +1,7 @@
 {
     "id": "https://style.tools/json-schemas/js-loader-config.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "description": "Schema for 📐 Style.Tools Javascript Loader Configuration Definitions.",
+    "description": "Schema for 🔬 Style.Tools Javascript Loader Configuration Definitions.",
     "definitions": {
         "load": {
             "description": "Javascript Loader configuration.",

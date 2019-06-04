@@ -1,7 +1,7 @@
 {
     "id": "https://style.tools/json-schemas/css-loader.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "description": "Schema for 📐 Style.Tools CSS Loader Configuration.",
+    "description": "Schema for 🔬 Style.Tools CSS Loader Configuration.",
     "type": "object",
     "properties": {
         "load": {

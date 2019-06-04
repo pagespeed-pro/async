@@ -46,7 +46,7 @@ var CONSOLE_PRINT = function(type, args, color, icon) {
         args.unshift("color:#555;font-size:8px;line-height:14px;");
     }
     args.unshift("color:" + color + ";margin-right:2px;");
-    args.unshift('%c📐' + ((path) ? '%c' + path : ''));
+    args.unshift('%c🔬st' + ((path) ? '%c' + path : ''));
 
     switch (type) {
         case "ok":

@@ -1,10 +1,11 @@
 {
     "name": "styletools/async",
+    "version": "1.0.0",
     "description": "A lightweight asynchronous CSS and script loader with dependency, responsive and timed loading, localStorage and async injected stylesheet/script capture.",
     "keywords": ["async-css", "async-js", "script-loader", "css-loader", "css", "optimization", "asynchronous", "localStorage", "cache-api"],
     "license": "MIT",
     "authors": [{
-        "name": "📐 Style.Tools",
+        "name": "🔬 Style.Tools",
         "email": "info@style.tools"
     }],
     "type": "project",

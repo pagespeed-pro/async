@@ -203,7 +203,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         meta: {
-            banner: '/*! 📐 Style.Tools */'
+            banner: '/*! 🔬 Style.Tools */'
         },
 
         // closure compiler
@@ -256,6 +256,14 @@ module.exports = function(grunt) {
             dist_debug: {
                 src: 'dist/debug/*.js',
                 dest: '../dev/wp/wp-content/plugins/style-tools-wordpress/vendor/styletools/cms-connector/vendor/styletools/async-css/'
+            },
+            dist_test: {
+                src: 'dist/*.js',
+                dest: '/home/optimization/dev/slideheroes.com/httpdocs/wp-content/plugins/style-tools-wordpress/vendor/styletools/cms-connector/vendor/styletools/async-css/'
+            },
+            dist_test_debug: {
+                src: 'dist/debug/*.js',
+                dest: '/home/optimization/dev/slideheroes.com/httpdocs/wp-content/plugins/style-tools-wordpress/vendor/styletools/cms-connector/vendor/styletools/async-css/'
             }
         }
     });

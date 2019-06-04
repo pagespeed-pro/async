@@ -1,12 +1,12 @@
 {
     "id": "https://style.tools/json-schemas/timing.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "description": "Schema for 📐 Style.Tools Timing Configuration.",
+    "description": "Schema for 🔬 Style.Tools Timing Configuration.",
 
     "definitions": {
         "timing_config": {
             "description": "Timing configuration.",
-            "oneOf": [{
+            "onOf": [{
                 "description": "Timing method as string with default config.",
                 "$ref": "#/definitions/timing_type"
             }, {
@@ -84,7 +84,7 @@
                     },
                     "offset": {
                         "description": "Offset in pixels from the edge of the element to determine viewport visibility.",
-                        "oneOf": [{
+                        "onOf": [{
                             "type": "number"
                         }, {
                             "type": "object",

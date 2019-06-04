@@ -134,11 +134,11 @@
     "homepage": "https://style.tools/",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/style-tools/async-css.git"
+        "url": "git+https://github.com/style-tools/async.git"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/style-tools/async-css/issues"
+        "url": "https://github.com/style-tools/async/issues"
     },
     "engines": {
         "node": "~8"
