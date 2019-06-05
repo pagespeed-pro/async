@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/style-tools/async.svg?branch=master)](https://travis-ci.com/style-tools/async) [![Version](https://img.shields.io/github/release/style-tools/async.svg)](https://github.com/style-tools/async/releases) [![npm version](https://badge.fury.io/js/%40style.tools%2Fasync.svg)](http://badge.fury.io/js/%40style.tools%2Fasync) [![Latest Stable Version](https://poser.pugx.org/styletools/async/v/stable.png)](https://packagist.org/packages/styletools/async) [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=b2ZvT0RMQnBYaFFDVU1GdDhxZUJqaUhmNFF6MDQrQXdxNGJVTTFnWmppcz0tLTdKRHlqREF3bFNmd3I4QUt2K3NBeVE9PQ==--9075fa5f8c9e95d7cc02b659d01ed31f588feb12)](https://www.browserstack.com/automate/public-build/b2ZvT0RMQnBYaFFDVU1GdDhxZUJqaUhmNFF6MDQrQXdxNGJVTTFnWmppcz0tLTdKRHlqREF3bFNmd3I4QUt2K3NBeVE9PQ==--9075fa5f8c9e95d7cc02b659d01ed31f588feb12)
+[![Build Status](https://travis-ci.com/style-tools/async.svg?branch=master)](https://travis-ci.com/style-tools/async) [![Version](https://img.shields.io/github/release/style-tools/async.svg)](https://github.com/style-tools/async/releases) [![npm version](https://badge.fury.io/js/%40style.tools%2Fasync.svg)](http://badge.fury.io/js/%40style.tools%2Fasync) [![Latest Stable Version](https://poser.pugx.org/styletools/async/v/stable.png)](https://packagist.org/packages/styletools/async)
 
 # Async CSS and Script Loader
 
@@ -75,14 +75,3 @@ capture-js.js Size: 0.07 kb (69 bytes) Gzip: 0.08 kb (87 bytes).
 attr-config.js Size: 0.29 kb (293 bytes) Gzip: 0.22 kb (229 bytes).
 ```
 </details>
-
----
-
-## Browser tests [<img align="right" src="https://style.tools/browserstack.png">](https://www.browserstack.com/)
-
-[<img align="right" src="https://www.browserstack.com/automate/badge.svg?badge_key=b2ZvT0RMQnBYaFFDVU1GdDhxZUJqaUhmNFF6MDQrQXdxNGJVTTFnWmppcz0tLTdKRHlqREF3bFNmd3I4QUt2K3NBeVE9PQ==--9075fa5f8c9e95d7cc02b659d01ed31f588feb12">](https://www.browserstack.com/automate/public-build/b2ZvT0RMQnBYaFFDVU1GdDhxZUJqaUhmNFF6MDQrQXdxNGJVTTFnWmppcz0tLTdKRHlqREF3bFNmd3I4QUt2K3NBeVE9PQ==--9075fa5f8c9e95d7cc02b659d01ed31f588feb12)
-
-Under construction...
-
-Browser tests provided by [BrowserStack](https://www.browserstack.com/).
-

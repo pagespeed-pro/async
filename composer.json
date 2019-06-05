@@ -5,11 +5,14 @@
     "keywords": ["async-css", "async-js", "script-loader", "css-loader", "css", "optimization", "asynchronous", "localStorage", "cache-api"],
     "license": "MIT",
     "authors": [{
-        "name": "🔬 Style.Tools",
+        "name": "Style.Tools",
         "email": "info@style.tools"
     }],
     "type": "project",
     "require": {},
     "require-dev": {},
-    "autoload": {}
+    "autoload": {},
+    "archive": {
+        "exclude": ["node_modules/"]
+    }
 }
