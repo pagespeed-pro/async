@@ -75,3 +75,11 @@ capture-js.js Size: 0.07 kb (69 bytes) Gzip: 0.08 kb (87 bytes).
 attr-config.js Size: 0.29 kb (293 bytes) Gzip: 0.22 kb (229 bytes).
 ```
 </details>
+
+
+### Demo
+
+See `$async` in action on https://style.tools (browser console).
+
+![$async demo](./async-debug-console.png)
+

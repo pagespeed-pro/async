@@ -78,6 +78,11 @@ INVIEW = function(selector, threshold, offset, callback) {
             // inview check
             var inview = function(element) {
 
+                // element visible
+                if (!( element.offsetWidth || element.offsetHeight || element.getClientRects().length )) {
+                    return false;
+                }
+
                 var rect = element.getBoundingClientRect(),
                     t = rect.bottom,
                     r = w.innerWidth - rect.left,
