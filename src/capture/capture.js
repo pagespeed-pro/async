@@ -202,10 +202,6 @@ function CAPTURE_NODE(node) {
                         }
                     }
                 }
-            } else {
-                if (DEBUG) {
-                    CONSOLE_LOG('capture', 'not captured', src);
-                }
             }
         }
     });
