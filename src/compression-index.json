@@ -72,7 +72,8 @@
         "timeout",
         "setTimeout",
         "DOMContentLoaded",
-        "exec_timing"
+        "exec_timing",
+        "method"
     ],
     "cache": [
         "cache",

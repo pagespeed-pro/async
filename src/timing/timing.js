@@ -92,6 +92,12 @@ TIMING = function(args, callback) {
     var type = (config) ? config[VAR_TYPE] : 0;
     var timer_set;
 
+    // custom trigger method
+    if (type === VAR_METHOD) {
+        w[config[VAR_METHOD]] = callback;
+        return;
+    }
+
     // requestAnimationFrame
     if (type === VAR_REQUESTANIMATIONFRAME && _requestAnimationFrame) {
 

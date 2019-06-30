@@ -132,6 +132,21 @@
                 },
                 "required": ["type", "media"],
                 "additionalProperties": false
+            }, {
+                "description": "Timing config object for custom method trigger.",
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": ["method"]
+                    },
+                    "method": {
+                        "description": "Method name for timing callback.",
+                        "type": "string"
+                    }
+                },
+                "required": ["type"],
+                "additionalProperties": false
             }]
         },
         "timing_type": {
@@ -142,7 +157,7 @@
                 "default": false
             }, {
                 "type": "string",
-                "enum": ["domReady", "setTimeout", "requestAnimationFrame", "requestIdleCallback", "inview", "media"]
+                "enum": ["domReady", "setTimeout", "requestAnimationFrame", "requestIdleCallback", "inview", "media", "method"]
             }]
         }
     }

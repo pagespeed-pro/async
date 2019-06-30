@@ -8,66 +8,66 @@
 
 // global key/value compression method
 /** @define {number} */
-var VAR_OBSERVER=88;
+var VAR_OBSERVER=89;
 
 /** @define {number} */
-var VAR_INSERT=89;
+var VAR_INSERT=90;
 
 /** @define {number} */
-var VAR_APPENDCHILD=90;
+var VAR_APPENDCHILD=91;
 
 /** @define {number} */
-var VAR_INSERTBEFORE=91;
+var VAR_INSERTBEFORE=92;
 
 /** @define {number} */
-var VAR_ROOTNODES=92;
+var VAR_ROOTNODES=93;
 
 /** @define {number} */
-var VAR_ELEMENT=93;
+var VAR_ELEMENT=94;
 
 /** @define {number} */
-var VAR_DOCUMENT=94;
+var VAR_DOCUMENT=95;
 
 /** @define {number} */
-var VAR_SUBTREE=95;
+var VAR_SUBTREE=96;
 
 /** @define {number} */
-var VAR_MODES=96;
+var VAR_MODES=97;
 
 /** @define {number} */
-var VAR_CONTENTS=97;
+var VAR_CONTENTS=98;
 
 /** @define {number} */
-var VAR_NODE=98;
+var VAR_NODE=99;
 
 /** @define {number} */
-var VAR_MATCH_TYPE=99;
+var VAR_MATCH_TYPE=100;
 
 /** @define {number} */
-var VAR_ACTION=100;
+var VAR_ACTION=101;
 
 /** @define {number} */
-var VAR_SEARCH=101;
+var VAR_SEARCH=102;
 
 /** @define {number} */
-var VAR_REPLACE=102;
+var VAR_REPLACE=103;
 
 /** @define {number} */
-var VAR_TIMING=103;
+var VAR_TIMING=104;
 
 /** @define {number} */
-var VAR_URL=104;
+var VAR_URL=105;
 
 /** @define {number} */
-var VAR_JS=105;
+var VAR_JS=106;
 
 /** @define {number} */
-var VAR_REMOVE=106;
+var VAR_REMOVE=107;
 
 /** @define {number} */
-var VAR_REWRITE=107;
+var VAR_REWRITE=108;
 
 /** @define {number} */
-var VAR_CAPTURE=108;
+var VAR_CAPTURE=109;
 
-LOAD_COMPRESSION_INDEX("observer,insert,appendChild,insertBefore,rootNodes,Element,Document,subtree,modes,contents,node,match_type,action,search,replace,timing,url,js,remove,rewrite,capture",88);
+LOAD_COMPRESSION_INDEX("observer,insert,appendChild,insertBefore,rootNodes,Element,Document,subtree,modes,contents,node,match_type,action,search,replace,timing,url,js,remove,rewrite,capture",89);
