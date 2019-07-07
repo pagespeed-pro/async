@@ -19,4 +19,7 @@ var VAR_OFF=78;
 /** @define {number} */
 var VAR_ERROR=79;
 
-LOAD_COMPRESSION_INDEX("on,once,off,error",76);
+/** @define {number} */
+var VAR_TIME=80;
+
+LOAD_COMPRESSION_INDEX("on,once,off,error,time",76);

@@ -28,6 +28,9 @@ SET_ATTRS(LINK_ELEMENT, attrs);
 // load stylesheets
 LOAD_CSS = function(sheets, options, capture, capture_options) {
 
+    // .then method
+    var then;
+
     if (sheets) {
 
         // convert to array
@@ -37,6 +40,33 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
         options = COMPRESS_OPTIONS(OBJECT(options));
 
         var loading = LENGTH(sheets);
+
+        if (API) {
+
+            // .then method
+            then = function(callback, off) {
+                if (callback) {
+
+                    // not loading anything
+                    if (!loading) {
+                        callback();
+                    } else {
+
+                        // watch load event
+                        off = ON(VAR_LOAD, function() {
+                            if (!loading) {
+                                callback();
+
+                                // unregister event
+                                off();
+                            }
+                        });
+                    }
+                }
+                return $async;
+            }
+
+        }
 
         // load sheets
         FOREACH(sheets, function(sheet) {
@@ -81,7 +111,9 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
             MODULE(RESPONSIVE, media, function() {
 
                 // timed download
-                MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(href)]] : sheet_or_options(VAR_LOAD_TIMING), function() {
+                MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(href)], then] : (
+                    (API) ? [sheet_or_options(VAR_LOAD_TIMING),then] : sheet_or_options(VAR_LOAD_TIMING)
+                ), function() {
 
                     // use insert target from options
                     if (insert_target) {
@@ -181,7 +213,9 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                                     }
 
                                     // timed render
-                                    MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_RENDER_TIMING), ['render.timing', LOCAL_URL(href)]] : sheet_or_options(VAR_RENDER_TIMING), renderStylesheet);
+                                    MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_RENDER_TIMING), ['render.timing', LOCAL_URL(href)], then] : (
+                                        (API) ? [sheet_or_options(VAR_RENDER_TIMING), then] : sheet_or_options(VAR_RENDER_TIMING)
+                                    ), renderStylesheet);
 
                                 });
 
@@ -257,31 +291,7 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
     // capture module
     MODULE(CAPTURE, [capture, capture_options]);
 
-    if (API && sheets) {
-
-        // .then method
-        return function(callback, off) {
-            if (callback) {
-
-                // not loading anything
-                if (!loading) {
-                    callback();
-                } else {
-
-                    // watch load event
-                    off = ON(VAR_LOAD, function() {
-                        if (!loading) {
-                            callback();
-
-                            // unregister event
-                            off();
-                        }
-                    });
-                }
-            }
-            return $async;
-        }
-
+    if (API) {
+        return then;
     }
-
 };

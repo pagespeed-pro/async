@@ -95,7 +95,8 @@
         "on",
         "once",
         "off",
-        "error"
+        "error",
+        "time"
     ],
     "timing_inview": [
         "selector",

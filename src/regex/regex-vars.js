@@ -8,9 +8,9 @@
 
 // global key/value compression method
 /** @define {number} */
-var VAR_MATCH=87;
+var VAR_MATCH=88;
 
 /** @define {number} */
-var VAR_REGEX=88;
+var VAR_REGEX=89;
 
-LOAD_COMPRESSION_INDEX("match,regex",87);
+LOAD_COMPRESSION_INDEX("match,regex",88);

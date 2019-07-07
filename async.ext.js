@@ -8,6 +8,7 @@ window.$async.load = function() {};
 window.$async.on = function() {};
 window.$async.once = function() {};
 window.$async.then = function() {};
+window.$async.time = function() {};
 window.perfMark = function() {};
 
 window.$async.js;
@@ -65,7 +66,8 @@ var debug_data = {
     unmet: '',
     dependencies: '',
     'rewritten': 1,
-    selector: ''
+    selector: '',
+    method: ''
 };
 document.createEvent = function() {
     return {

@@ -17,6 +17,14 @@ var _methods = [
     [VAR_OFF, OFF]
 ];
 
+if (TIMING) {
+    _methods.push([VAR_TIME, function(config, callback, debug) {
+        config = COMPRESS_OPTIONS(OBJECT(config));
+        TIMING((DEBUG) ? [config, (debug || [])] : config, callback);
+        return $async;
+    }]);
+}
+
 // assign public methods
 FOREACH(_methods, function(method) {
     var _method = VAR(method[0]),

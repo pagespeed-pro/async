@@ -6,11 +6,16 @@ A lightweight asynchronous CSS and Javascript loader.
 
 ```javascript
 $async(
-   [/*stylesheets or scripts*/],	// string, object or an array of strings or objects
+   [/*stylesheets*/],	// string, object or an array of strings or objects
    {/*options*/},			// object
    [/*capture*/],			// string, object or an array of strings or objects 
    {/*capture options*/}		// object
+
+   /* 5 to 8th = javascript loader, same config as CSS loader */
+   [],{},[],{}
 ).then(function() { /* ready */ });	
+
+$async.js([],{},[],{}) // direct access to javascript loader
 ```
 
 #### Documentation is available on [docs.style.tools/async](https://docs.style.tools/async).

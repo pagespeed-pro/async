@@ -316,6 +316,9 @@ function EXEC_SCRIPT(src, text, attrs, dom_insert_callback, onload, defer) {
 // load scripts
 LOAD_JS = function(scripts, options, capture, capture_options) {
 
+    // .then method
+    var then;
+
     if (scripts) {
 
         // convert to array
@@ -325,6 +328,31 @@ LOAD_JS = function(scripts, options, capture, capture_options) {
         options = COMPRESS_OPTIONS(OBJECT(options));
 
         var loading = LENGTH(scripts);
+
+        // set .then method
+        if (API) {
+            then = function(callback, off) {
+                if (callback) {
+
+                    // not loading anything
+                    if (!loading) {
+                        callback();
+                    } else {
+
+                        // watch exec event
+                        off = ON(VAR_EXEC, function() {
+                            if (!loading) {
+                                callback();
+
+                                // unregister event
+                                off();
+                            }
+                        });
+                    }
+                }
+                return $async_js;
+            }
+        }
 
         // load scripts
         FOREACH(scripts, function(script) {
@@ -361,7 +389,9 @@ LOAD_JS = function(scripts, options, capture, capture_options) {
             }, 1);
 
             // timed download
-            MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(src)]] : script_or_options(VAR_LOAD_TIMING), function() {
+            MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(src)], then] : (
+                (API) ? [script_or_options(VAR_LOAD_TIMING), then] : script_or_options(VAR_LOAD_TIMING)
+            ), function() {
 
                 // use insert target from options
                 if (insert_target) {
@@ -475,7 +505,9 @@ LOAD_JS = function(scripts, options, capture, capture_options) {
                                 }
 
                                 // timed exec
-                                MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_EXEC_TIMING), ['exec.timing', LOCAL_URL(src)]] : script_or_options(VAR_EXEC_TIMING), execScript);
+                                MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_EXEC_TIMING), ['exec.timing', LOCAL_URL(src)], then] : (
+                                    (API) ? [script_or_options(VAR_EXEC_TIMING), then] : script_or_options(VAR_EXEC_TIMING)
+                                ), execScript);
 
                             });
 
@@ -496,31 +528,7 @@ LOAD_JS = function(scripts, options, capture, capture_options) {
     // capture module
     MODULE(CAPTURE, [capture, capture_options]);
 
-    if (API && scripts) {
-
-        // .then method
-        return function(callback, off) {
-            if (callback) {
-
-                // not loading anything
-                if (!loading) {
-                    callback();
-                } else {
-
-                    // watch exec event
-                    off = ON(VAR_EXEC, function() {
-                        if (!loading) {
-                            callback();
-
-                            // unregister event
-                            off();
-                        }
-                    });
-                }
-            }
-            return $async_js;
-        }
-
+    if (API) {
+        return then;
     }
-
 };

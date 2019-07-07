@@ -1,1 +1,1 @@
-var Z,nc,oc=r(19),pc=A.currentScript||Aa("script["+oc+"]",za());if(pc){Z=pc.getAttribute(r(oc));try{Z=JSON.parse(Z)}catch(a){"string"===typeof Z&&(Z=Z.split(","))}Z&&!w(Z)&&(Z=[Z]);G&&Z&&4<Z.length&&(nc=Z.splice(4),1===nc[1]&&Z[1]&&(nc[1]=Z[1]))}F&&Z&&Q(F,Z);G&&nc&&Q(G,nc);
+var Z,oc,pc=r(19),qc=A.currentScript||Ba("script["+pc+"]",Aa());if(qc){Z=qc.getAttribute(r(pc));try{Z=JSON.parse(Z)}catch(a){"string"===typeof Z&&(Z=Z.split(","))}Z&&!w(Z)&&(Z=[Z]);F&&Z&&4<Z.length&&(oc=Z.splice(4),1===oc[1]&&Z[1]&&(oc[1]=Z[1]))}E&&Z&&P(E,Z);F&&oc&&P(F,oc);

@@ -1,1 +1,1 @@
-var Rb,Sb;Q=N("MutationObserver");Lb=function(a,b){Sb||(Sb=1,Q&&(Rb=new Q(function(a){a.forEach(function(a){for(var c=0;c<a.addedNodes.length;c++)b(a.addedNodes[c])})}),Rb.observe(A.documentElement,{attributes:!1,childList:!0,subtree:!0,characterData:!1})))};
+var Sb,Tb;R=O("MutationObserver");Mb=function(a,b){Tb||(Tb=1,R&&(Sb=new R(function(a){a.forEach(function(a){for(var c=0;c<a.addedNodes.length;c++)b(a.addedNodes[c])})}),Sb.observe(A.documentElement,{attributes:!1,childList:!0,subtree:!0,characterData:!1})))};

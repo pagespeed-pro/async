@@ -81,9 +81,13 @@ TIMING = function(args, callback) {
 
     if (DEBUG) {
         var config = OBJECT(args[0], VAR_TYPE),
-            debug_vars = args[1];
+            debug_vars = args[1],
+            then = args[2];
         var log_args = debug_vars.slice(0);
         log_args[0] += '.start';
+    } else if (API) {
+        var config = OBJECT(args[0], VAR_TYPE),
+            then = args[1];
     } else {
         var config = OBJECT(args, VAR_TYPE);
     }
@@ -94,8 +98,23 @@ TIMING = function(args, callback) {
 
     // custom trigger method
     if (type === VAR_METHOD) {
-        w[config[VAR_METHOD]] = callback;
-        return;
+
+        if (DEBUG) {
+            var debug_data = {};
+            debug_data.method = config[VAR_METHOD];
+            log_args.push(debug_data);
+            APPLY(CONSOLE_LOG, log_args);
+        }
+
+        w[config[VAR_METHOD]] = function() {
+            callback();
+
+            if (API && IS_FUNCTION(then)) {
+                $async.then = then;
+            }
+            return $async;
+        };
+        timer_set = 1;
     }
 
     // requestAnimationFrame
