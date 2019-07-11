@@ -82,12 +82,12 @@ TIMING = function(args, callback) {
     if (DEBUG) {
         var config = OBJECT(args[0], VAR_TYPE),
             debug_vars = args[1],
-            then = args[2];
+            src = args[2];
         var log_args = debug_vars.slice(0);
         log_args[0] += '.start';
     } else if (API) {
         var config = OBJECT(args[0], VAR_TYPE),
-            then = args[1];
+            src = args[1];
     } else {
         var config = OBJECT(args, VAR_TYPE);
     }
@@ -107,10 +107,30 @@ TIMING = function(args, callback) {
         }
 
         w[config[VAR_METHOD]] = function() {
-            callback();
+            _setTimeout(callback);
 
-            if (API && IS_FUNCTION(then)) {
-                $async.then = then;
+            if (API && src) {
+                ONCE(src, function() {
+                    src = false;
+                });
+                $async.then = function(callback) {
+                    if (callback) {
+
+                        // not loading anything
+                        if (!src) {
+                            callback();
+                        } else {
+
+                            // watch load event
+                            ONCE(src, function() {
+                                src = false;
+
+                                callback();
+                            });
+                        }
+                    }
+                    return $async;
+                };
             }
             return $async;
         };

@@ -59,7 +59,7 @@ INLINE_JS = function(args) {
                 // timed exec
                 MODULE(TIMING, (DEBUG) ? [inline[VAR_EXEC_TIMING],
                     ['exec.inline.timing', ref]
-                ] : inline[VAR_EXEC_TIMING], function() {
+                ] : ((API) ? [inline[VAR_EXEC_TIMING], ref + count] : inline[VAR_EXEC_TIMING]), function() {
 
                     // exec script
                     EXEC_SCRIPT(0, scriptText, inline[VAR_ATTRIBUTES], function(_inlineEl) {

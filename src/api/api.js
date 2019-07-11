@@ -19,8 +19,8 @@ var _methods = [
 
 if (TIMING) {
     _methods.push([VAR_TIME, function(config, callback, debug) {
-        config = COMPRESS_OPTIONS(OBJECT(config));
-        TIMING((DEBUG) ? [config, (debug || [])] : config, callback);
+        config = COMPRESS_OPTIONS(OBJECT(config, VAR_TYPE));
+        TIMING((DEBUG) ? [config, (debug || [])] : [config], callback);
         return $async;
     }]);
 }

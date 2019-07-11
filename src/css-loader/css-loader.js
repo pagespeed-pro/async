@@ -111,8 +111,8 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
             MODULE(RESPONSIVE, media, function() {
 
                 // timed download
-                MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(href)], then] : (
-                    (API) ? [sheet_or_options(VAR_LOAD_TIMING),then] : sheet_or_options(VAR_LOAD_TIMING)
+                MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(href)], href] : (
+                    (API) ? [sheet_or_options(VAR_LOAD_TIMING),href] : sheet_or_options(VAR_LOAD_TIMING)
                 ), function() {
 
                     // use insert target from options
@@ -213,8 +213,8 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                                     }
 
                                     // timed render
-                                    MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_RENDER_TIMING), ['render.timing', LOCAL_URL(href)], then] : (
-                                        (API) ? [sheet_or_options(VAR_RENDER_TIMING), then] : sheet_or_options(VAR_RENDER_TIMING)
+                                    MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_RENDER_TIMING), ['render.timing', LOCAL_URL(href)], href] : (
+                                        (API) ? [sheet_or_options(VAR_RENDER_TIMING), href] : sheet_or_options(VAR_RENDER_TIMING)
                                     ), renderStylesheet);
 
                                 });

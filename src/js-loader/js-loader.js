@@ -389,8 +389,8 @@ LOAD_JS = function(scripts, options, capture, capture_options) {
             }, 1);
 
             // timed download
-            MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(src)], then] : (
-                (API) ? [script_or_options(VAR_LOAD_TIMING), then] : script_or_options(VAR_LOAD_TIMING)
+            MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(src)], src] : (
+                (API) ? [script_or_options(VAR_LOAD_TIMING), src] : script_or_options(VAR_LOAD_TIMING)
             ), function() {
 
                 // use insert target from options
@@ -505,8 +505,8 @@ LOAD_JS = function(scripts, options, capture, capture_options) {
                                 }
 
                                 // timed exec
-                                MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_EXEC_TIMING), ['exec.timing', LOCAL_URL(src)], then] : (
-                                    (API) ? [script_or_options(VAR_EXEC_TIMING), then] : script_or_options(VAR_EXEC_TIMING)
+                                MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_EXEC_TIMING), ['exec.timing', LOCAL_URL(src)], src] : (
+                                    (API) ? [script_or_options(VAR_EXEC_TIMING), src] : script_or_options(VAR_EXEC_TIMING)
                                 ), execScript);
 
                             });
