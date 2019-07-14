@@ -135,7 +135,7 @@
             "data-c HTML attribute based config via <script> element."
         ]
     ],
-    "homepage": "https://style.tools/",
+    "homepage": "https://style.tools/", 
     "repository": {
         "type": "git",
         "url": "git+https://github.com/style-tools/async.git"
