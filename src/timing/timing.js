@@ -229,6 +229,20 @@ TIMING = function(args, callback) {
         timer_set = 1;
     }
 
+    // inview / element visibility
+    if (type === VAR_LAZY && LAZY) {
+
+        if (DEBUG) {
+            var debug_data = {};
+            debug_data.config = config[VAR_CONFIG];
+            log_args.push(debug_data);
+            APPLY(CONSOLE_LOG, log_args);
+        }
+
+        LAZY(config[VAR_CONFIG], config[VAR_REF], (DEBUG) ? TIMING_DEBUG_CALLBACK('lazy', callback, debug_vars, debug_data) : callback);
+        timer_set = 1;
+    }
+
     if (!timer_set) {
         callback();
     }

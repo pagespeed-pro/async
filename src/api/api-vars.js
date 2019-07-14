@@ -8,18 +8,18 @@
 
 // global key/value compression method
 /** @define {number} */
-var VAR_ON=76;
+var VAR_ON=77;
 
 /** @define {number} */
-var VAR_ONCE=77;
+var VAR_ONCE=78;
 
 /** @define {number} */
-var VAR_OFF=78;
+var VAR_OFF=79;
 
 /** @define {number} */
-var VAR_ERROR=79;
+var VAR_ERROR=80;
 
 /** @define {number} */
-var VAR_TIME=80;
+var VAR_TIME=81;
 
-LOAD_COMPRESSION_INDEX("on,once,off,error,time",76);
+LOAD_COMPRESSION_INDEX("on,once,off,error,time",77);

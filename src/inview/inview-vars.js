@@ -8,24 +8,24 @@
 
 // global key/value compression method
 /** @define {number} */
-var VAR_SELECTOR=81;
+var VAR_SELECTOR=82;
 
 /** @define {number} */
-var VAR_THRESHOLD=82;
+var VAR_THRESHOLD=83;
 
 /** @define {number} */
-var VAR_OFFSET=83;
+var VAR_OFFSET=84;
 
 /** @define {number} */
-var VAR_TOP=84;
+var VAR_TOP=85;
 
 /** @define {number} */
-var VAR_LEFT=85;
+var VAR_LEFT=86;
 
 /** @define {number} */
-var VAR_RIGHT=86;
+var VAR_RIGHT=87;
 
 /** @define {number} */
-var VAR_BOTTOM=87;
+var VAR_BOTTOM=88;
 
-LOAD_COMPRESSION_INDEX("selector,threshold,offset,top,left,right,bottom",81);
+LOAD_COMPRESSION_INDEX("selector,threshold,offset,top,left,right,bottom",82);

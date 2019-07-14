@@ -20,7 +20,7 @@ if (DEBUG) {
     }
 }
 
-if (LOAD_CSS) {
+if (LOAD_CSS || !LOAD_JS) {
     var LOADED_SHEETS = [];
 }
 if (LOAD_JS) {
@@ -72,11 +72,11 @@ DEPENDENCY = function(args, callback) {
         assetEl = asset[VAR_LINK],
         unmet = [],
         target,
-        loaded = (type === VAR_CSS) ? LOADED_SHEETS : LOADED_SCRIPTS;
+        loaded = (type === VAR_CSS || !LOAD_JS) ? LOADED_SHEETS : LOADED_SCRIPTS;
 
     // register loaded asset
     ONCE(src, function(_asset) {
-        if (type === VAR_CSS) {
+        if (type === VAR_CSS || !LOAD_JS) {
             PUSH(LOADED_SHEETS, _asset);
         } else {
             PUSH(LOADED_SCRIPTS, _asset);
@@ -121,7 +121,7 @@ DEPENDENCY = function(args, callback) {
         }
 
         // wait for unmet dependencies
-        ON((type === VAR_CSS) ? VAR_LOAD : VAR_EXEC, function(_asset) {
+        ON((type === VAR_CSS) ? VAR_LOAD : ((type === VAR_JS) ? VAR_EXEC : type), function(_asset) {
 
             if (LENGTH(unmet)) {
 

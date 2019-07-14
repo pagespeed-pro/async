@@ -103,6 +103,13 @@ module.exports = function(grunt) {
             ],
             "dep": ["async-core", "timing"]
         },
+        "lazy": {
+            "src": [
+                'src/lazy/lazy-vars.js',
+                'src/lazy/lazy.js'
+            ],
+            "dep": ["async-core", "timing", "dependency"]
+        },
         "responsive": {
             "src": [
                 'src/responsive/responsive.js'

@@ -49,4 +49,7 @@ var VAR_EXEC_TIMING=60;
 /** @define {number} */
 var VAR_METHOD=61;
 
-LOAD_COMPRESSION_INDEX("load_timing,render_timing,renderCallback,unrenderCallback,requestAnimationFrame,requestIdleCallback,domReady,inview,frame,timeout,setTimeout,DOMContentLoaded,exec_timing,method",48);
+/** @define {number} */
+var VAR_LAZY=62;
+
+LOAD_COMPRESSION_INDEX("load_timing,render_timing,renderCallback,unrenderCallback,requestAnimationFrame,requestIdleCallback,domReady,inview,frame,timeout,setTimeout,DOMContentLoaded,exec_timing,method,lazy",48);

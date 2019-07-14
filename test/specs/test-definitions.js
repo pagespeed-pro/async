@@ -1,7 +1,9 @@
 /** Async CSS Loader Tests */
 
 const SERVER_API = require('./server-api.js'),
-    assert = require('assert');
+    assert = require('assert'),
+    fs = require('fs'),
+    path = require('path');
 
 var TEST_DEFINITIONS = {};
 
@@ -568,13 +570,86 @@ TEST_DEFINITIONS.timing = function(iife_filename) {
                 }).then(function(return_value) {
 
                     driver.executeAsyncScript(function(callback) {
+
+                        if (document.styleSheets.length > 0) {
+                            return callback('stylesheets already loaded');
+                        }
+                        
                         window.scrollTo(0, document.body.scrollHeight);
                         setTimeout(function() {
                             callback(document.styleSheets.length);
                         }, 2000);
                     }).then(function(return_value) {
+                        if (typeof return_value === 'string') {
+                            return done(new Error(return_value));
+                        }
 
                         assert.equal(return_value, 3);
+
+                        done();
+                    }).catch(function(err) {
+                        done(err);
+                    });
+
+                }).catch(function(err) {
+                    done(err);
+                });
+            });
+
+
+        }],
+        ['download 3 stylesheets when #footer element scrolls into view within 100 pixels using $lazy module (Intersection Observer)', function(driver, done) {
+
+            $lazy = 'function load_lazy() {' + fs.readFileSync(path.resolve('node_modules/@style.tools/lazy/dist/', 'lazy.js'), 'utf8') + '} $async.js({"src":"", "inline":"load_lazy();", "ref": "lazy"});';
+
+            SERVER_API.reload(driver, iife_filename, false, $lazy).then(function() {
+
+                var start_time = +new Date();
+
+                var $async_config = ["base-p1.css", "base-p2.css", "base-p3.css"];
+
+                var $async_options = {
+                    "load_timing": {
+                        "type": "lazy",
+                        "config": "#footer"
+                    }
+                };
+
+                var validation = function(callback) {
+                    return document.readyState === "complete" && document.styleSheets && document.styleSheets.length === 0; // !!(window.scrolled && window.stylesheets_loaded_before_scroll === 0 && document.styleSheets.length === 3);
+                };
+
+                SERVER_API.$async(driver, $async_config, $async_options, validation, function(return_value) {
+                    if (typeof return_value === 'string') {
+                        return done(new Error(return_value));
+                    }
+                    return return_value === true;
+                }).then(function(return_value) {
+
+                    driver.executeAsyncScript(function(callback) {
+                      
+                        if (!document.styleSheets) {
+                            return callback('no stylesheets');
+                        }
+
+                        if (document.styleSheets.length > 0) {
+                            return callback('stylesheets already loaded: ' + document.styleSheets.length);
+                        }
+
+                        window.scrollTo(0, document.body.scrollHeight);
+                        setTimeout(function() {
+                            if (document.styleSheets.length === 3) {
+                                callback(true);
+                            } else {
+                                return callback('stylesheets not loaded: ' + document.styleSheets.length);
+                            }
+                        }, 2000);
+                    }).then(function(return_value) {
+                        if (typeof return_value === 'string') {
+                            return done(new Error(return_value));
+                        }
+
+                        assert.equal(return_value, true);
 
                         done();
                     }).catch(function(err) {

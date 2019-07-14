@@ -8,45 +8,45 @@
 
 // global key/value compression method
 /** @define {number} */
-var VAR_CACHE=62;
+var VAR_CACHE=63;
 
 /** @define {number} */
-var VAR_LOCALSTORAGE=63;
+var VAR_LOCALSTORAGE=64;
 
 /** @define {number} */
-var VAR_CACHE_API=64;
+var VAR_CACHE_API=65;
 
 /** @define {number} */
-var VAR_NAMESPACE=65;
+var VAR_NAMESPACE=66;
 
 /** @define {number} */
-var VAR_MAX_SIZE=66;
+var VAR_MAX_SIZE=67;
 
 /** @define {number} */
-var VAR_EXPIRE=67;
+var VAR_EXPIRE=68;
 
 /** @define {number} */
-var VAR_UPDATE=68;
+var VAR_UPDATE=69;
 
 /** @define {number} */
-var VAR_INTERVAL=69;
+var VAR_INTERVAL=70;
 
 /** @define {number} */
-var VAR_CORS=70;
+var VAR_CORS=71;
 
 /** @define {number} */
-var VAR_PROXY=71;
+var VAR_PROXY=72;
 
 /** @define {number} */
-var VAR_FALLBACK=72;
+var VAR_FALLBACK=73;
 
 /** @define {number} */
-var VAR_XHR=73;
+var VAR_XHR=74;
 
 /** @define {number} */
-var VAR_SOURCE=74;
+var VAR_SOURCE=75;
 
 /** @define {number} */
-var VAR_CSSTEXT=75;
+var VAR_CSSTEXT=76;
 
-LOAD_COMPRESSION_INDEX("cache,localstorage,cache-api,namespace,max_size,expire,update,interval,cors,proxy,fallback,xhr,source,cssText",62);
+LOAD_COMPRESSION_INDEX("cache,localstorage,cache-api,namespace,max_size,expire,update,interval,cors,proxy,fallback,xhr,source,cssText",63);

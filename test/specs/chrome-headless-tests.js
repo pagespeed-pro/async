@@ -2,12 +2,14 @@
 
 var TESTS = [{
     name: 'x',
-    modules: ['css-loader', 'dependency', 'rebase', 'localstorage', 'timing', 'inview', 'responsive'],
+    modules: ['css-loader', 'js-loader', 'inline-js', 'dependency', 'rebase', 'localstorage', 'timing', 'inview', 'responsive','lazy'],
     tests: [
         'basic', 'dependencies', 'rebase', 'localstorage',
         'timing'
     ]
 }];
+
+var TEST_COMBINATIONS = true;
 
 var COMBINATION_TESTS = [];
 
@@ -22,7 +24,7 @@ var module_combinations = combine([
     //'js-loader',
     'dependency', ['cache', 'localstorage', 'cache-api', 'xhr', 'cache-update'],
     ['capture', 'capture-observer', 'capture-insert'], //
-    ['timing', 'responsive', 'inview'],
+    ['timing', 'responsive', 'inview', 'lazy'],
     'api',
     'attr-config',
     //'fallback'
@@ -145,65 +147,69 @@ describe('Manual tests', function() {
 });
 
 
-describe('Test all module combinations', function() {
-    var driver;
+if (TEST_COMBINATIONS) {
 
-    // setup driver
-    before(function(done) {
+    describe('Test all module combinations', function() {
+        var driver;
 
-        // create driver
-        driver = buildDriver();
-        done();
-    });
+        // setup driver
+        before(function(done) {
 
-    // setup tests
-    COMBINATION_TESTS.forEach(function(test) {
-
-        const iife_filename = test.modules.join('+') + '.js';
-        const iife_file = path.resolve(__dirname, '../iife/' + iife_filename);
-
-        describe('Test: ' + test.name + ' (' + iife_filename + ')', function() {
-
-            this.timeout(0);
-
-            // generate IIFE
-            before(function(done) {
-                iife.generate(test.modules, {
-                    format: 'wrap',
-                    output: iife_file,
-                    cache: true,
-                    root_path: path.resolve(__dirname, '../../')
-                }).then(function() {
-
-                    if (iife_files.indexOf(iife_file) === -1) {
-                        iife_files.push(iife_file);
-                    }
-                    done();
-                });
-            });
-
-            // setup tests
-            test.tests.forEach(function(testname) {
-                TEST_DEFINITIONS[testname](iife_filename).forEach(function(definition) {
-                    it(definition[0], function(done) {
-                        definition[1](driver, done);
-                    });
-                })
-            });
-        });
-    });
-
-    after(function(done) {
-
-        iife_files.forEach(function(file) {
-            fs.unlinkSync(file);
-        });
-
-        // remove tmp directory
-        fs.rmdirSync(path.resolve(__dirname, '../iife/'));
-
-        driver.quit().then(function() {
+            // create driver
+            driver = buildDriver();
             done();
         });
-    })
-});
+
+        // setup tests
+        COMBINATION_TESTS.forEach(function(test) {
+
+            const iife_filename = test.modules.join('+') + '.js';
+            const iife_file = path.resolve(__dirname, '../iife/' + iife_filename);
+
+            describe('Test: ' + test.name + ' (' + iife_filename + ')', function() {
+
+                this.timeout(0);
+
+                // generate IIFE
+                before(function(done) {
+                    iife.generate(test.modules, {
+                        format: 'wrap',
+                        output: iife_file,
+                        cache: true,
+                        root_path: path.resolve(__dirname, '../../')
+                    }).then(function() {
+
+                        if (iife_files.indexOf(iife_file) === -1) {
+                            iife_files.push(iife_file);
+                        }
+                        done();
+                    });
+                });
+
+                // setup tests
+                test.tests.forEach(function(testname) {
+                    TEST_DEFINITIONS[testname](iife_filename).forEach(function(definition) {
+                        it(definition[0], function(done) {
+                            definition[1](driver, done);
+                        });
+                    })
+                });
+            });
+        });
+
+        after(function(done) {
+
+            iife_files.forEach(function(file) {
+                fs.unlinkSync(file);
+            });
+
+            // remove tmp directory
+            fs.rmdirSync(path.resolve(__dirname, '../iife/'));
+
+            driver.quit().then(function() {
+                done();
+            });
+        })
+    });
+
+}

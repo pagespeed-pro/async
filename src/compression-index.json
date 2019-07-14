@@ -73,7 +73,8 @@
         "setTimeout",
         "DOMContentLoaded",
         "exec_timing",
-        "method"
+        "method",
+        "lazy"
     ],
     "cache": [
         "cache",
@@ -106,6 +107,9 @@
         "left",
         "right",
         "bottom"
+    ],
+    "timing_lazy": [
+        "config"
     ],
     "regex": [
         "match",

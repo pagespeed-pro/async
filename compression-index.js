@@ -57,7 +57,10 @@ module.exports = function(grunt) {
     }
 
     // cache vars
-    ['global', 'cache/cache', 'api/api', 'inline-js/inline-js', 'rebase/rebase', 'css-loader/css-loader', 'js-loader/js-loader', 'regex/regex', 'timing/timing', 'inview/inview', 'dependency/dependency', 'capture/capture'].forEach(function(src) {
+    ['global', 'cache/cache', 'api/api', 'inline-js/inline-js', 'rebase/rebase', 
+    'css-loader/css-loader', 'js-loader/js-loader', 'regex/regex', 'timing/timing',
+     'inview/inview',
+      'lazy/lazy', 'dependency/dependency', 'capture/capture'].forEach(function(src) {
 
         // create cache vars from template
         var VARS = fs.readFileSync('src/' + src + '-vars.tpl.js', 'utf8');
