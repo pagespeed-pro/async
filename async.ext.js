@@ -72,7 +72,9 @@ var debug_data = {
     dependencies: '',
     'rewritten': 1,
     selector: '',
-    method: ''
+    method: '',
+    config: '',
+    ref: ''
 };
 document.createEvent = function() {
     return {

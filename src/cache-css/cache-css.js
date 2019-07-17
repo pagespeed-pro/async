@@ -63,11 +63,13 @@ CACHE_CSS = function(args, callback) {
     // optionally disable asset for render timing
     DISABLED(assetEl, disabled);
 
-    try {
-        assetEl.textContent = text;
-    } catch (e) {
-        assetEl.styleSheet.cssText = text;
-    }
+    attrs[VAR_CSSTEXT] = function(assetEl) {
+        try {
+            assetEl.textContent = text;
+        } catch (e) {
+            assetEl.styleSheet.cssText = text;
+        }
+    };
 
-    callback(assetEl);
+    callback(assetEl, attrs);
 }

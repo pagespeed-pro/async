@@ -29,7 +29,13 @@ function LOAD_COMPRESSION_INDEX(index_keys, startIndex) {
 
 // return variable by index
 function VAR(index) {
-    return STRING(IS_INT(index) ? (COMPRESSION_INDEX[index] || index) : index);
+    try {
+        return STRING(IS_INT(index) ? (COMPRESSION_INDEX[index] || index) : index);
+    } catch (e) {
+        if (DEBUG) {
+            CONSOLE_ERROR('VAR', index, e);
+        }
+    }
 }
 // return index by variable
 function VAR_INDEX(key) {

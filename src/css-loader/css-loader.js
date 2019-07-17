@@ -143,7 +143,7 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                                 // media query
                                 sheet_attrs[VAR_MEDIA] = media;
 
-                                if (!cached) {
+                                if (!CACHE || !cached) {
 
                                     // rel="preload"
                                     if (REL_PRELOAD_SUPPORT) {
@@ -155,9 +155,15 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                                 SET_ATTRS(sheetEl, custom_attrs, 1);
                                 SET_ATTRS(sheetEl, sheet_attrs);
 
-                                // enable cached <style>
-                                if (cached) {
-                                    DISABLED(sheetEl, 1);
+                                if (CACHE) {
+                                    if (cached) {
+
+                                        // enable cached <style>
+                                        DISABLED(sheetEl, 1);
+
+                                        // set cssText after DOM insert for old browsers
+                                        cached[1][VAR_CSSTEXT](sheetEl);
+                                    }
                                 }
 
                                 if (DEBUG) {

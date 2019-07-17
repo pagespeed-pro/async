@@ -256,8 +256,9 @@ CACHE = function(args, callback) {
                 // stylesheet
                 if (asset_type === VAR_CSS) {
 
-                    MODULE(CACHE_CSS, [asset, attrs, src, text], function(_assetEl) {
+                    MODULE(CACHE_CSS, [asset, attrs, src, text], function(_assetEl, _attrs) {
                         assetEl = _assetEl;
+                        attrs = _attrs;
                     }, 1);
 
                 } else { // script
