@@ -149,7 +149,7 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "@style.tools/async-iife": "https://modules.style.tools/async/1.0.5.tar.gz",
+        "@style.tools/async-iife": "1.0.5",
         "@style.tools/lazy": "1.0.5",
         "browserstack-local": "^1.3.7",
         "chromedriver": "^2.45.0",
