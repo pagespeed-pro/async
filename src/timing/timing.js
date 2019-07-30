@@ -46,7 +46,7 @@ var DOM_IS_READY;
 var DOMREADY_QUEUE = [];
 
 function DOMREADY_CHECK(e) {
-    if (e || DOM_IS_READY || doc.readyState === "complete") {
+    if (e || DOM_IS_READY || ["complete", "loaded", "interactive"].indexOf(doc.readyState) !== -1) {
         DOM_IS_READY = 1;
         var handler = DOMREADY_QUEUE.shift();
         while (handler) {
@@ -57,6 +57,7 @@ function DOMREADY_CHECK(e) {
 }
 
 function DOMREADY(handler) {
+    DOMREADY_CHECK();
     (DOM_IS_READY) ? handler(): DOMREADY_QUEUE.push(handler);
 };
 ADD_EVENT(VAR_DOMCONTENTLOADED, function() {

@@ -112,7 +112,7 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
 
                 // timed download
                 MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(href)], href] : (
-                    (API) ? [sheet_or_options(VAR_LOAD_TIMING),href] : sheet_or_options(VAR_LOAD_TIMING)
+                    (API) ? [sheet_or_options(VAR_LOAD_TIMING), href] : sheet_or_options(VAR_LOAD_TIMING)
                 ), function() {
 
                     // use insert target from options

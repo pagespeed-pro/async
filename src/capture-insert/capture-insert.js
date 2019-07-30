@@ -30,25 +30,30 @@ CAPTURE_INSERT = function(insert_options, _capture) {
             }
         }
 
-        FOREACH(root_nodes, function(nodeName, altName) {
+        FOREACH(root_nodes, function(nodeName, altName, proto) {
             altName = '_' + nodeName;
             w[altName] = w[altName] || {};
 
-            FOREACH(methods, function(methodName) {
+            if (w[nodeName]) {
+                proto = w[nodeName].prototype;
+                if (proto) {
+                    FOREACH(methods, function(methodName) {
 
-                if (methodName && !w[altName][methodName]) {
+                        if (methodName && !w[altName][methodName]) {
 
-                    // store original method
-                    w[altName][methodName] = w[nodeName].prototype[methodName];
+                            // store original method
+                            w[altName][methodName] = proto[methodName];
 
-                    // re-write method
-                    w[nodeName].prototype[methodName] = function(node) {
+                            // re-write method
+                            proto[methodName] = function(node) {
 
-                        arguments[0] = _capture(node);
-                        return w[altName][methodName].apply(this, arguments);
-                    };
+                                arguments[0] = _capture(node);
+                                return w[altName][methodName].apply(this, arguments);
+                            };
+                        }
+                    });
                 }
-            });
+            }
         });
 
         if (DEBUG) {
