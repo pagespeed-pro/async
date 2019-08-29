@@ -13,14 +13,11 @@ LAZY = function(config, ref, callback) {
 
     function setup_lazy() {
         var loaded;
-        $lazy(config, function(entries) {
+        $lazy(config, function(entry) {
             if (!loaded) {
-                for (var i = 0, l = entries.length; i < l; i++) {
-                    if (!("isIntersecting" in entries[i]) || entries[i].isIntersecting) {
-                        loaded = 1;
-                        callback();
-                        break;
-                    }
+                if (!("isIntersecting" in entry) || entry.isIntersecting) {
+                    loaded = 1;
+                    callback();
                 }
             }
         });

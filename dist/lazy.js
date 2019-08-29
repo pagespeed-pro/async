@@ -1,1 +1,1 @@
-n("config",89);ja=function(a,b,c){function d(){var b;$lazy(a,function(a){if(!b)for(var d=0,e=a.length;d<e;d++)if(!("isIntersecting"in a[d])||a[d].isIntersecting){b=1;c();break}})}b&&F?F([{},b,b,b],d):ob(d)};
+n("config",89);ja=function(a,b,c){function d(){var b;$lazy(a,function(a){b||"isIntersecting"in a&&!a.isIntersecting||(b=1,c())})}b&&F?F([{},b,b,b],d):ob(d)};
