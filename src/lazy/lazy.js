@@ -9,7 +9,26 @@
 
 // $lazy based inview module
 // @link https://github.com/style-tools/lazy
+var lazy_queue = [];
 LAZY = function(config, ref, callback) {
+
+    if (IS_UNDEFINED(w.$lazy)) {
+        w.$lazy = function() {
+            lazy_queue.push([].slice.call(arguments));
+        }
+        if (DEPENDENCY) {
+            DEPENDENCY([0,'$z',VAR_JS], function() {
+                var item;
+                while((item = lazy_queue.shift())) {
+                    $lazy.apply(null, item);
+                }
+            });
+        } else {
+            if (DEBUG) {
+                CONSOLE_ERROR('load.timing.lazy', '$lazy not ready and dependency module not loaded');
+            }
+        }
+    }
 
     function setup_lazy() {
         var loaded;

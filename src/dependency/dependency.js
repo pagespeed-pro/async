@@ -75,13 +75,15 @@ DEPENDENCY = function(args, callback) {
         loaded = (type === VAR_CSS || !LOAD_JS) ? LOADED_SHEETS : LOADED_SCRIPTS;
 
     // register loaded asset
-    ONCE(src, function(_asset) {
-        if (type === VAR_CSS || !LOAD_JS) {
-            PUSH(LOADED_SHEETS, _asset);
-        } else {
-            PUSH(LOADED_SCRIPTS, _asset);
-        }
-    });
+    if (src) {
+        ONCE(src, function(_asset) {
+            if (type === VAR_CSS || !LOAD_JS) {
+                PUSH(LOADED_SHEETS, _asset);
+            } else {
+                PUSH(LOADED_SCRIPTS, _asset);
+            }
+        });
+    }
 
     if (dependencies) {
         dependencies = ARRAY(dependencies);

@@ -271,7 +271,20 @@ module.exports = function(grunt) {
             dist_test_debug: {
                 src: 'dist/debug/*.js',
                 dest: '/home/optimization/dev/slideheroes.com/httpdocs/wp-content/plugins/style-tools-wordpress/vendor/styletools/cms-connector/vendor/styletools/async-css/'
-            }
+            },
+
+            iife: {
+                src: 'dist/*.js',
+                dest: '../httpdocs/iife/node_modules/@style.tools/async/'
+            },
+            iife_package: {
+                src: 'package.json',
+                dest: '../httpdocs/iife/node_modules/@style.tools/async/'
+            },
+            iife_debug: {
+                src: 'dist/debug/*.js',
+                dest: '../httpdocs/iife/node_modules/@style.tools/async/'
+            },
         }
     });
 
@@ -287,6 +300,12 @@ module.exports = function(grunt) {
     grunt.registerTask('debug', [
         'closure-compiler:css-loader-debug',
         'clean:dist'
+    ]);
+
+    grunt.registerTask('debug_iife', [
+        'copy:iife',
+        'copy:iife_package',
+        'copy:iife_debug'
     ]);
 
     grunt.registerTask('default', ['']);

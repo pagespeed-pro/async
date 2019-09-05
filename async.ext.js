@@ -9,6 +9,7 @@ window.$async.on = function() {};
 window.$async.once = function() {};
 window.$async.then = function() {};
 window.$async.time = function() {};
+window.$async.dependencies = function() {};
 window.perfMark = function() {};
 
 
@@ -16,11 +17,7 @@ var $lazy = window.$lazy = function(entries) {
     entries[0].isIntersecting = false;
 }
 
-window.$async.js;
-window.$async.js.load = function() {};
-window.$async.js.on = function() {};
-window.$async.js.once = function() {};
-window.$async.js.then = function() {};
+window.$async.js = window.$async;
 
 window.caches;
 window.matchMedia;

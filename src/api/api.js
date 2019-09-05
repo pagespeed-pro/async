@@ -25,6 +25,13 @@ if (TIMING) {
     }]);
 }
 
+if (DEPENDENCY) {
+    _methods.push([VAR_DEPENDENCIES, function(dep, callback) {
+        DEPENDENCY(dep, callback);
+        return $async;
+    }]);
+}
+
 // assign public methods
 FOREACH(_methods, function(method) {
     var _method = VAR(method[0]),
@@ -34,7 +41,13 @@ FOREACH(_methods, function(method) {
     // CSS loader
     if (LOAD_CSS) {
         $async[_method] = _load ? $async : function() {
-            APPLY(_fn, arguments);
+            var args = arguments;
+            if (DEPENDENCY) {
+                if (VAR_DEPENDENCIES === method[0]) {
+                    args = [[0,args[0],VAR_CSS],args[1]];
+                }
+            }
+            APPLY(_fn, args);
             return $async;
         };
     }
@@ -42,7 +55,13 @@ FOREACH(_methods, function(method) {
     // script loader
     if (LOAD_JS) {
         $async_js[_method] = _load ? $async_js : function() {
-            APPLY(_fn, arguments);
+            var args = arguments;
+            if (DEPENDENCY) {
+                if (VAR_DEPENDENCIES === method[0]) {
+                    args = [[0,args[0],VAR_JS],args[1]];
+                }
+            }
+            APPLY(_fn, args);
             return $async_js;
         };
     }
