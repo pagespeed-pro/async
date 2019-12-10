@@ -187,7 +187,9 @@ function CAPTURE_NODE(node) {
                         remove(node, nodeCapture);
 
                         // timing module
-                        MODULE(TIMING, (DEBUG) ? [timing, 'capture.timing', LOCAL_URL(src)] : timing, function() {
+                        MODULE(TIMING, (DEBUG) ? [timing, ['capture.timing', LOCAL_URL(src)], src] : (
+                            (API) ? [timing, src] : timing
+                        ), function() {
 
                             // replace node with timed node
                             REPLACE(cloned, node);

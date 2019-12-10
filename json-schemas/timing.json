@@ -117,6 +117,34 @@
                 "required": ["type", "selector"],
                 "additionalProperties": false
             }, {
+                "description": "Timing config object for method $lazy (element in view).",
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": ["lazy"]
+                    },
+                    "config": {
+                        "description": "$lazy config",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "ref": {
+                        "description": "$lazy dependency to wait for. ",
+                        "oneOf": [{
+                            "description": "Do not wait for dependency.",
+                            "type": "boolean",
+                            "enum": [false],
+                            "default": false
+                        }, {
+                            "type": "string",
+                            "default": "$lazy"
+                        }]
+                    }
+                },
+                "required": ["type", "config"],
+                "additionalProperties": false
+            }, {
                 "description": "Timing config object for method Media Query (responsive).",
                 "type": "object",
                 "properties": {

@@ -25,9 +25,21 @@
                         "default": "all"
                     },
                     "match": {
-                        "description": "A match pattern.",
-                        "type": "string",
-                        "minLength": 1
+                        "oneOf": [{
+                            "description": "A match pattern",
+                            "type": "string",
+                            "minLength": 1
+                        }, {
+                            "description": "Multiple match patterns",
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "description": "String or regular expression.",
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "uniqueItems": true
+                        }]
                     },
                     "regex": {
                         "description": "Regular expression match",
@@ -48,6 +60,11 @@
                                     "description": "Action type.",
                                     "type": "string",
                                     "enum": ["rewrite"]
+                                },
+                                "content": {
+                                    "description": "Content to rewrite.",
+                                    "type": "string",
+                                    "enum": ["url", "node", "inline"]
                                 },
                                 "search": {
                                     "description": "Search pattern. Omit to replace full URL.",
@@ -78,6 +95,10 @@
                                     "additionalProperties": {
                                         "type": "string"
                                     }
+                                },
+                                "timing": {
+                                    "description": "Timing of DOM inserted node.",
+                                    "$ref": "timing.json#/definitions/timing_config"
                                 }
                             },
                             "anyOf": [{
