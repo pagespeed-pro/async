@@ -87,8 +87,8 @@ $async(
 	{"14":{"data-app-sheet":"1"},"46":"/long/path/to/css/","49":52,"63":{"2":"localStorage","67":10000,"69":{"3":true,"70":86400},"71":{"72":"https://cors-anywhere.herokuapp.com/"},"73":65,"74":{"headers":{"x-special-header":"secret-key"}},"75":[76,74,71]}}
 );
 // saving: 27% size reduction
-// online compressor @see https://style.tools/iife/
-
+// online $async config compressor @see https://style.tools/iife/
+// compressor available in $async-iife (see repositories)
 
 // chainable
 $async
