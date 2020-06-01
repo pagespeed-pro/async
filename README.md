@@ -98,7 +98,7 @@ $async.js(
 	{/*options*/},			// object
 	[/*capture*/],			// string, object or an array of strings or objects 
 	{/*capture options*/}
-) // direct access to javascript loader
+); // direct access to javascript loader
 
 // CSS and script loader combined
 $async(
