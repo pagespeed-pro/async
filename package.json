@@ -1,7 +1,7 @@
 {
     "name": "@style.tools/async",
-    "version": "1.0.11",
-    "description": "A lightweight asynchronous CSS and script loader with dependency, responsive and timed loading, localStorage and async injected stylesheet/script capture.",
+    "version": "1.0.12",
+    "description": "A lightweight and high performance async CSS and script loader for frontend optimization.",
     "author": {
         "name": "info@style.tools",
         "email": "info@style.tools",
