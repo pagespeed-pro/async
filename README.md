@@ -17,7 +17,7 @@ $async(
       'sheet.css', 
       {
          href:'other-sheet.css',
-         dependencies: ['sheet.css'], // wait for sheet.css via dependencies and insert after DOM element
+         dependencies: ['sheet.css'], // wait for sheet.css via dependencies and insert after its <link> DOM element
          load_timing: {
             type: "lazy", // use $lazy for timing (Intersection Observer)
             config: ["img[data-src]", 0, "200px"], // visible within 200 pixels
