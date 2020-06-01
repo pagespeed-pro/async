@@ -23,7 +23,7 @@ $async.js([],{},[],{}) // direct access to javascript loader
 ### Features
 
 1. Dependency, responsive and timed download and/or render/exec.
-2. [in-view](https://github.com/camwiegert/in-view) (element in view) based loading.
+2. [in-view](https://github.com/camwiegert/in-view) and [$lazy](https://github.com/style-tools/lazy) (element in view) based loading.
 3. `requestAnimationFrame` and `requestIdleCallback` (smooth rendering/exec based on CPU)
 4. Chainable and events.
 5. `localStorage` or [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) based loading (much faster, see [css-art.com](https://css-art.com))
