@@ -7,6 +7,7 @@ A lightweight and high performance async CSS and script loader.
 ```javascript
 // simple
 $async('sheet.css').then(function() { /* ready */ });
+$async.js('script.js').then(function() { /* ready */ });
 
 // advanced
 $async(
