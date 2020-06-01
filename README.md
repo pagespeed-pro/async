@@ -38,6 +38,7 @@ $async(
    ],
    {  // global options applied to all stylesheets
       base: '/long/path/to/css/', // base directory for relative sheet URLs
+
       cache: {
          type: "localStorage",
          max_size: 10000, // cache only <10kb
@@ -46,20 +47,34 @@ $async(
             head: true, // use HTTP HEAD request to check for 304 - Not Modified
             interval: 86400 // update once per day
          },
+
+         // control the source methods
          source: ['cssText','xhr','cors'], // default
+
+         // CORS proxy for retrieving the source code from external stylesheet URLs
          cors: {
             proxy: 'https://cors-anywhere.herokuapp.com/', // more proxies on https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347
          },
+
+         // custom XHR config
          xhr: {
             headers: {
                "x-special-header": "secret-key" // request header to include in XHR requests
             }
          }
       },
+
+      // HTML attribute to add to stylesheet element
       attributes: { 
-         "data-app-sheet": "1" // HTML attribute to add to stylesheet element
+		"data-app-sheet": "1"
+
+		// SRI support, @see https://github.com/style-tools/async/issues/2
+		//"integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
+		//"crossorigin": "anonymous"
       },
-      render_timing: "requestAnimationFrame" // render all sheets via requestAnimationFrame
+
+      // render timing: paint sheet with requestAnimationFrame
+      render_timing: "requestAnimationFrame"
    } 
 ).then(function() { /* ready */ });
 
