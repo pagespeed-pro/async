@@ -18,17 +18,19 @@ $async(
          load_timing: {
             type: "lazy", // use $lazy for timing (Intersection Observer)
             config: ["img[data-src]", 0, "200px"], // visible within 200 pixels
-         }
+         },
+         "ref": "other
       }, 
       {
          href:'mobile-sheet.css',
+         dependencies: "other", // dependency by ref
          target: {
             after: 'meta[charset]' // control insert target
          },
          load_timing: {
             type: 'media', // download stylesheet based on a media query (works with viewport changes)
             media: 'screen and (max-width: 600px)'
-         }
+         }"
       }
    ],
    {  // global options applied to all stylesheets
