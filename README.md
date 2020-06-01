@@ -5,13 +5,15 @@
 A lightweight and high performance async CSS and script loader.
 
 ```javascript
-// simple
+// simple: stylesheet
 $async('sheet.css').then(function() { /* ready */ });
+
+// simple: sript
 $async.js('script.js').then(function() { /* ready */ });
 
-// advanced
+// advanced: load 3 stylesheets
 $async(
-   [  // load 3 stylesheets
+   [
       'sheet.css', 
       {
          href:'other-sheet.css',
