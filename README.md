@@ -2,7 +2,7 @@
 
 # Async CSS and Script Loader
 
-A lightweight asynchronous CSS and Javascript loader.
+A lightweight and high performance async CSS and script loader.
 
 ```javascript
 $async(
