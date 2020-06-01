@@ -22,7 +22,7 @@ $async(
             type: "lazy", // use $lazy for timing (Intersection Observer)
             config: ["img[data-src]", 0, "200px"], // visible within 200 pixels
          },
-         "ref": "other
+         "ref": "other"
       }, 
       {
          href:'mobile-sheet.css',
