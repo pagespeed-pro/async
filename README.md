@@ -14,10 +14,10 @@ $async.js('script.js').then(function() { /* ready */ });
 // advanced: load 3 stylesheets
 $async(
    [
-      'sheet.css', 
+      "sheet.css", 
       {
-         href:'other-sheet.css',
-         dependencies: ['sheet.css'], // wait for sheet.css via dependencies and insert after its <link> element
+         href:"other-sheet.css",
+         dependencies: ["sheet.css"], // wait for sheet.css via dependencies and insert after its <link> element
          load_timing: {
             type: "lazy", // use $lazy for timing (Intersection Observer)
             config: ["img[data-src]", 0, "200px"], // visible within 200 pixels
@@ -25,35 +25,35 @@ $async(
          "ref": "other"
       }, 
       {
-         href:'mobile-sheet.css',
+         href:"mobile-sheet.css",
          dependencies: "other", // dependency by ref
          target: {
-            after: 'meta[charset]' // control insert target
+            after: "meta[charset]" // control insert target
          },
          load_timing: {
-            type: 'media', // download stylesheet based on a media query (works with viewport changes, e.g. viewport rotate)
-            media: 'screen and (max-width: 600px)'
+            type: "media", // download stylesheet based on a media query (works with viewport changes, e.g. viewport rotate)
+            media: "screen and (max-width: 600px)"
          }"
       }
    ],
    {  // global options applied to all stylesheets
-      base: '/long/path/to/css/', // base directory for relative sheet URLs
+      base: "/long/path/to/css/", // base directory for relative sheet URLs
 
       cache: {
          type: "localStorage",
          max_size: 10000, // cache only <10kb
-         fallback: 'cache-api', // fallback to Cache-API for bigger sheets
+         fallback: "cache-api", // fallback to Cache-API for bigger sheets
          update: {
             head: true, // use HTTP HEAD request to check for 304 - Not Modified
             interval: 86400 // update once per day
          },
 
          // control the source methods
-         source: ['cssText','xhr','cors'], // default
+         source: ["cssText","xhr","cors"], // default
 
          // CORS proxy for retrieving the source code from external stylesheet URLs
          cors: {
-            proxy: 'https://cors-anywhere.herokuapp.com/', // more proxies on https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347
+            proxy: "https://cors-anywhere.herokuapp.com/", // more proxies on https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347
          },
 
          // custom XHR config
@@ -77,6 +77,18 @@ $async(
       render_timing: "requestAnimationFrame"
    } 
 ).then(function() { /* ready */ });
+
+// advanced (same as above) with JSON compression
+// saving: 27% size reduction
+// online compressor @see https://style.tools/iife/
+
+$async(
+	// config
+	["sheet.css",{"4":"other-sheet.css","15":["sheet.css"],"16":"other","48":{"2":62,"89":["img[data-src]",0,"200px"]}},{"4":"mobile-sheet.css","13":{"17":"meta[charset]"},"15":"other","48":{"2":9,"9":"screen and (max-width: 600px)"}}],
+
+	// global options
+	{"14":{"data-app-sheet":"1"},"46":"/long/path/to/css/","49":52,"63":{"2":"localStorage","67":10000,"69":{"3":true,"70":86400},"71":{"72":"https://cors-anywhere.herokuapp.com/"},"73":65,"74":{"headers":{"x-special-header":"secret-key"}},"75":[76,74,71]}}
+);
 
 // chainable
 $async
