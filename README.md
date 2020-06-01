@@ -40,7 +40,7 @@ $async(
       base: "/long/path/to/css/", // base directory for relative sheet URLs
 
       cache: {
-         type: "localStorage",
+         type: "localstorage",
          max_size: 10000, // cache only <10kb
          fallback: "cache-api", // fallback to Cache-API for bigger sheets
          update: {
@@ -85,9 +85,9 @@ $async(
    ["sheet.css",{"4":"other-sheet.css","15":["sheet.css"],"16":"other","48":{"2":62,"89":["img[data-src]",0,"200px"]}},{"4":"mobile-sheet.css","13":{"17":"meta[charset]"},"15":"other","48":{"2":9,"9":"screen and (max-width: 600px)"}}],
 
    // global options
-   {"14":{"data-app-sheet":"1"},"46":"/long/path/to/css/","49":52,"63":{"2":"localStorage","67":10000,"69":{"3":true,"70":86400},"71":{"72":"https://cors-anywhere.herokuapp.com/"},"73":65,"74":{"headers":{"x-special-header":"secret-key"}},"75":[76,74,71]}}
+   {"14":{"data-app-sheet":"1"},"46":"/long/path/to/css/","49":52,"63":{"2":64,"67":10000,"69":{"3":true,"70":86400},"71":{"72":"https://cors-anywhere.herokuapp.com/"},"73":65,"74":{"headers":{"x-special-header":"secret-key"}},"75":[76,74,71]}}
 );
-// saving: 27% size reduction
+// saving: 29% size reduction
 // online $async config compressor @see https://style.tools/iife/
 // compressor available in $async-iife (see repositories)
 
