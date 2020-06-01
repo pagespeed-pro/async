@@ -79,6 +79,7 @@ $async(
 ).then(function() { /* ready */ });
 
 // advanced (same as above) with JSON compression
+// uses numeric indexes
 $async(
    // config
    ["sheet.css",{"4":"other-sheet.css","15":["sheet.css"],"16":"other","48":{"2":62,"89":["img[data-src]",0,"200px"]}},{"4":"mobile-sheet.css","13":{"17":"meta[charset]"},"15":"other","48":{"2":9,"9":"screen and (max-width: 600px)"}}],
