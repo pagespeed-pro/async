@@ -33,7 +33,7 @@ $async(
          load_timing: {
             type: "media", // download stylesheet based on a media query (works with viewport changes, e.g. viewport rotate)
             media: "screen and (max-width: 600px)"
-         }"
+         }
       }
    ],
    {  // global options applied to all stylesheets
