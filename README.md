@@ -66,11 +66,11 @@ $async(
 
       // HTML attribute to add to stylesheet element
       attributes: { 
-		"data-app-sheet": "1"
+            "data-app-sheet": "1"
 
-		// SRI support, @see https://github.com/style-tools/async/issues/2
-		//"integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
-		//"crossorigin": "anonymous"
+            // SRI support, @see https://github.com/style-tools/async/issues/2
+            //"integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
+            //"crossorigin": "anonymous"
       },
 
       // render timing: paint sheet with requestAnimationFrame
