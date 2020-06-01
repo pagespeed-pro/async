@@ -5,17 +5,91 @@
 A lightweight and high performance async CSS and script loader.
 
 ```javascript
+// simple
+$async('sheet.css').then(function() { /* ready */ });
+
+// advanced
+$async(
+   [  // load 3 stylesheets
+      'sheet.css', 
+      {
+         href:'other-sheet.css',
+         dependencies: ['sheet.css'], // wait for sheet.css via dependencies and insert after DOM element
+         load_timing: {
+            type: "lazy", // use $lazy for timing (Intersection Observer)
+            config: ["img[data-src]", 0, "200px"], // visible within 200 pixels
+         }
+      }, 
+      {
+         href:'mobile-sheet.css',
+         target: {
+            after: 'meta[charset]' // control insert target
+         },
+         load_timing: {
+            type: 'media', // download stylesheet based on a media query (works with viewport changes)
+            media: 'screen and (max-width: 600px)'
+         }
+      }
+   ],
+   {  // global options applied to all stylesheets
+      base: '/long/path/to/css/', // base directory for relative sheet URLs
+      cache: {
+         type: "localStorage",
+         max_size: 10000, // cache only <10kb
+         fallback: 'cache-api', // fallback to Cache-API for bigger sheets
+         update: {
+            head: true, // use HTTP HEAD request to check for 304 - Not Modified
+            interval: 86400 // update once per day
+         },
+         source: ['cssText','xhr','cors'], // default
+         cors: {
+            proxy: 'https://cors-anywhere.herokuapp.com/', // more proxies on https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347
+         },
+         xhr: {
+            headers: {
+               "x-special-header": "secret-key" // request header to include in XHR requests
+            }
+         }
+      },
+      attributes: { 
+         "data-app-sheet": "1" // HTML attribute to add to stylesheet element
+      },
+      render_timing: "requestAnimationFrame" // render all sheets via requestAnimationFrame
+   } 
+).then(function() { /* ready */ });
+
+// chainable
+$async
+   .on('load',function(sheet, sheetEl){
+      //  sheet.css or other-sheet.css loaded
+   }) 
+   .on('sheet-ref',function() { }) // sheet with ref-name loaded
+   .on('sheet.css', function() {}); // sheet with href loaded
+   .load({
+      href: 'sheet.css', 
+      ref: 'sheet-ref'
+   })
+   .then(function() { }) // sheet.css loaded
+   .load('other-sheet.css');
+
+// script loader
+$async.js(
+	[/*scripts*/],	// string, object or an array of strings or objects
+	{/*options*/},			// object
+	[/*capture*/],			// string, object or an array of strings or objects 
+	{/*capture options*/}
+) // direct access to javascript loader
+
+// CSS and script loader combined
 $async(
    [/*stylesheets*/],	// string, object or an array of strings or objects
    {/*options*/},			// object
    [/*capture*/],			// string, object or an array of strings or objects 
    {/*capture options*/}		// object
 
-   /* 5 to 8th = javascript loader, same config as CSS loader */
+   /* 5 to 8th = javascript loader */
    [],{},[],{}
 ).then(function() { /* ready */ });	
-
-$async.js([],{},[],{}) // direct access to javascript loader
 ```
 
 #### Documentation is available on [docs.style.tools/async](https://docs.style.tools/async).
