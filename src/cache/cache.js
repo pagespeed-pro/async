@@ -166,7 +166,7 @@ CACHE = function(args, callback) {
                         }
 
                         if (API) {
-                            ERROR('cache', ['save', LOCAL_URL(src)]);
+                            ERROR('cache', ['save', src]);
                         }
                     }
                 }
