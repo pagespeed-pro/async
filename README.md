@@ -165,7 +165,7 @@ $async({
    }
 });
 ```
-- support for a strict Content-Security-Policy (CSP) and SRI security by using a HTML `data-c` attribute on the script element.
+- support for a strict Content-Security-Policy (CSP) and SRI security by using a HTML attribute on the script element.
 ```html
 <script src="js/async.js" async data-c='[
    [
