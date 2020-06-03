@@ -255,5 +255,5 @@ $async.capture(
 
 ## Demo
 
-$async is in use on www.e-scooter.co (demo website).
+$async is in use on www.e-scooter.co (demo website) and [css-art.com](https://css-art.com) (test environment).
 
