@@ -32,14 +32,16 @@ $async is designed as the ultimate CSS and script loader for modern frontend opt
 
 - 100% JSON controlled.
 - Google Closure Compiler (GCC) with _Advanced mode_ script compression (reliable and performant in all browsers).
-- modular and easy to use: select only the features that are needed to achieve the tiniest script size.
-   - simply stitch pre-optimized GCC modules together for a performant IIFE. You can wrap the modules in [dist/](./dist/) into an IIFE, e.g. `!function(){/* stitched modules */}();`. Follow the module order in [package.json](./package.json).
-   - [Online IIFE generator](https://style.tools/iife/) (adds an extra GCC _Advanced mode_ compression layer)
-   - [Node.js/CLI IIFE generator](https://github.com/style-tools/async-iife) (adds an extra GCC _Advanced mode_ compression layer)
-   - PHP IIFE generator (available on request: info@style.tools)
-- chainable and events.
+
+### Modular
+$async is modular and easy to use: select only the features that are needed to achieve the tiniest script size.
+- simply stitch pre-optimized GCC modules together for a performant IIFE. You can wrap the modules in [dist/](./dist/) into an IIFE, e.g. `!function(){/* stitched modules */}();`. Follow the module order in [package.json](./package.json).
+- [Online IIFE generator](https://style.tools/iife/) (adds an extra GCC _Advanced mode_ compression layer)
+- [Node.js/CLI IIFE generator](https://github.com/style-tools/async-iife) (adds an extra GCC _Advanced mode_ compression layer)
+- PHP IIFE generator (available on request: info@style.tools)
+
+### Chainable
 ```javascript
-// chainable
 $async
    .on('load',function(sheet, sheetEl){
       //  sheet.css or other-sheet.css loaded
@@ -53,12 +55,14 @@ $async
    .then(function() { }) // sheet.css loaded
    .load('other-sheet.css');
 ```
-- advanced loading and timing techniques.
-   - control the insert target.
-   - time the download and/or exec/render using methods such as `requestAnimationFrame`, `requestIdleCallback` and [$lazy](https://github.com/style-tools/lazy) (Intersection Observer).
-   - dependency based loading.
-   - responsive `Media Query` based loading with cross-browser support for viewport changes.
-   - `just-in-time` loading using a custom javascript method.
+
+### Advanced loading and exec/render optimization
+$async provides advanced loading and timing techniques.
+- control the insert target.
+- time the download and/or exec/render using methods such as `requestAnimationFrame`, `requestIdleCallback` and [$lazy](https://github.com/style-tools/lazy) (Intersection Observer).
+- dependency based loading.
+- responsive `Media Query` based loading with cross-browser support for viewport changes.
+- `just-in-time` loading using a custom javascript method.
 ```javascript
 $async(
    [
@@ -95,7 +99,7 @@ $async(
 )
 .then(function() { /* ready */ });
 ```
-- `just-in-time` loading using a custom javascript method.
+###  `just-in-time` loading
 ```javascript
 $async({
    href:"popup-css.css",
@@ -126,7 +130,8 @@ jQuery('button.popup').on('click', function() {
     });
 });
 ```
-- API's for access to the dependency resolver and timing methods.
+### API's 
+$async provides API's for access to the dependency resolver and timing methods.
 ```javascript
 // dependency resolver
 $async.dependencies(['name'], function() { /* dependency loaded */ });
@@ -135,7 +140,11 @@ $async.dependencies(['name'], function() { /* dependency loaded */ });
 $async.time("requestAnimationFrame", function() { /* callback */ });
 $async.time(48, function() {}); // the same using JSON compression
 ```
-- `localStorage` or [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) cache which is much faster than browser cache. For a demo, see [css-art.com](https://css-art.com).
+### `localStorage` cache
+$async enables to load stylesheets and script from `localStorage` or [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) cache which is much faster than browser cache. 
+
+For a demo, see [css-art.com](https://css-art.com).
+
 ```javascript
 $async({
    href: "sheet.css",
@@ -165,7 +174,8 @@ $async({
    }
 });
 ```
-- support for a strict Content-Security-Policy (CSP) and SRI security by using a HTML attribute on the script element.
+### Security
+$async supports a strict Content-Security-Policy (CSP) and SRI security by using a HTML attribute on the script element. The `data-c` attribute accepts JSON config.
 ```html
 <script src="js/async.js" async data-c='[
    [
@@ -180,7 +190,10 @@ $async({
    ]
 ]'></script>
 ```
-- JSON compression technique to minimize the size of configuration. [Online compressor](https://style.tools/iife/) | [Node.js/CLI](https://github.com/style-tools/async-iife)
+### JSON compression
+$async provides a JSON compression technique to minimize the size of configuration. 
+
+[Online compressor](https://style.tools/iife/) | [Node.js/CLI](https://github.com/style-tools/async-iife)
 ```javascript
 /* original config: 
 {
@@ -196,11 +209,12 @@ $async({
 // compressed
 $async({"4":"other-sheet.css","15":["sheet.css"],"16":"other","48":{"2":62,"89":[".selector-in-view",0,"200px"]}});
 ```
-- capture script-injected stylesheets and scripts.
-   - rewrite
-   - remove
-   - modify
-   - optimize (code optimization, timing, responsive, dependencies etc.)
+### Async script-injected stylesheet/script capture
+$async provides a innovation to capture and rewrite, remove or modify/optimize script-injected stylesheets and scripts.
+- rewrite
+- remove
+- modify
+- optimize (code optimization, apply timing, responsive loading, dependencies etc.)
 ```javascript
 // capture and remove async script-injected sheet
 $async.capture(
@@ -253,7 +267,8 @@ $async.capture(
    }
 );
 ```
-- debug mode with advanced [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance) timings which enables to analyse and optimize the CSS and script loading performance.
+### Performance API timings for load-performance optimization
+$async provides a debug mode with advanced [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance) timings that enables to analyse and optimize the CSS and script loading performance.
 
 ![$async demo](./async-debug-console.png)
 
