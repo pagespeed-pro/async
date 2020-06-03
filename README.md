@@ -56,7 +56,7 @@ $async
    .load('other-sheet.css');
 ```
 
-### Advanced loading and exec/render optimization
+### Advanced downloading and exec/render timing
 $async provides advanced loading and timing techniques.
 - control the insert target.
 - time the download and/or exec/render using methods such as `requestAnimationFrame`, `requestIdleCallback` and [$lazy](https://github.com/style-tools/lazy) (Intersection Observer).
