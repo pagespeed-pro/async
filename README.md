@@ -226,7 +226,9 @@ $async.capture(
          }
       },
       {
-         match: "bloated-script.js",
+         match: "/<script[^>]+bloated-script-id[^>]+>/",
+         regex: true,
+         match_type: "node",
          action: {
             "type": "remove"
          }
