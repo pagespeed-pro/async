@@ -105,13 +105,13 @@ $async({
    href:"popup-css.css",
    load_timing: {
       type: "method", // trigger download using custom javascript method
-      media: "load_popup_css"
+      method: "load_popup_css"
    }
 }).js({
    src:"popup-script.js",
    load_timing: {
       type: "method",
-      media: "load_popup_js"
+      method: "load_popup_js"
    }
 });
 
