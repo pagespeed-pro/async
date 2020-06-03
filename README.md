@@ -196,7 +196,11 @@ $async({
 // compressed
 $async({"4":"other-sheet.css","15":["sheet.css"],"16":"other","48":{"2":62,"89":[".selector-in-view",0,"200px"]}});
 ```
-- capture script injected stylesheets and scripts to rewrite, remove or modify/optimize them. 
+- capture script-injected stylesheets and scripts.
+   - rewrite
+   - remove
+   - modify
+   - optimize (code optimization, timing, responsive, dependencies etc.)
 ```javascript
 // capture and remove async script-injected sheet
 $async.capture(
