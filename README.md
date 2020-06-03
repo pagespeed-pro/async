@@ -210,7 +210,7 @@ $async provides a JSON compression technique to minimize the size of configurati
 $async({"4":"other-sheet.css","15":["sheet.css"],"16":"other","48":{"2":62,"89":[".selector-in-view",0,"200px"]}});
 ```
 ### Async script-injected stylesheet/script capture
-$async provides a innovation to capture and rewrite, remove or modify/optimize script-injected stylesheets and scripts.
+$async provides an innovation to capture and rewrite, remove or modify/optimize script-injected stylesheets and scripts.
 - rewrite
 - remove
 - modify
