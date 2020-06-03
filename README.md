@@ -269,7 +269,7 @@ $async.capture(
    }
 );
 ```
-### Performance API timings for load-performance optimization
+### Performance API timings for loading performance optimization
 $async provides a debug mode with advanced [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance) timings that enables to analyse and optimize the CSS and script loading performance.
 
 ![$async demo](./async-debug-console.png)
