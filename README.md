@@ -52,6 +52,9 @@ $async.js('script.js').then(function() { /* ready */ });
       }
    }
 ]'></script>
+
+<!-- the same with JSON config compression -->
+<script async src="js/async-iife.js" data-c='[["css/sheet1.css",{"4":"https://cdn.com/css/sheet2.css","14":{"integrity":"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC","crossorigin":"anonymous"}}],{"49":52},0,0,["js/script.js",{"4":"https://cdn.com/js/script2.js","14":{"integrity":"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC","crossorigin":"anonymous"},"16":"x","48":54},{"4":"js/script3.js","15":"x"}],{"60":{"2":53,"57":1000}}]'></script>
 ```
 
 Documentation is available on [docs.style.tools/async](https://docs.style.tools/async).
