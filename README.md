@@ -12,7 +12,27 @@ $async('sheet.css').then(function() { /* ready */ });
 $async.js('script.js').then(function() { /* ready */ });
 ```
 
+Usage via a async script element to support `Content-Serucity-Policy` with advanced CSS and script loading config.
+
+```html
+<script async src="js/async-iife.js" data-c='[
+   [
+      "css/sheet1.css",
+      {
+         "href": "https://cdn.com/css/sheet2.css",
+         "attributes": {
+            "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
+            "crossorigin": "anonymous"
+         }
+      }
+   ]
+]'></script>
+```
+
 Documentation is available on [docs.style.tools/async](https://docs.style.tools/async).
+
+- [Online IIFE generator](https://style.tools/iife/)
+- [JSON config editor and compressor](https://style.tools/async/)
 
 ### Install via npm
 
@@ -54,6 +74,23 @@ $async
    })
    .then(function() { }) // sheet.css loaded
    .load('other-sheet.css');
+```
+
+### Security
+$async supports a strict Content-Security-Policy (CSP) and SRI security by using a HTML attribute on the script element. The `data-c` attribute accepts JSON config.
+```html
+<script async src="js/async.js" data-c='[
+   [
+      "css/sheet1.css",
+      {
+         "href": "https://cdn.com/css/sheet2.css",
+         "attributes": {
+            "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
+            "crossorigin": "anonymous"
+         }
+      }
+   ]
+]'></script>
 ```
 
 ### Advanced download and exec/render timing
@@ -99,6 +136,7 @@ $async(
 )
 .then(function() { /* ready */ });
 ```
+
 ###  `just-in-time` loading
 ```javascript
 $async({
@@ -173,22 +211,6 @@ $async({
       }
    }
 });
-```
-### Security
-$async supports a strict Content-Security-Policy (CSP) and SRI security by using a HTML attribute on the script element. The `data-c` attribute accepts JSON config.
-```html
-<script src="js/async.js" async data-c='[
-   [
-      "css/sheet1.css",
-      {
-         "href": "https://cdn.com/css/sheet2.css",
-         "attributes": {
-            "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
-            "crossorigin": "anonymous"
-         }
-      }
-   ]
-]'></script>
 ```
 ### JSON compression
 $async provides a JSON compression technique to minimize the size of configuration. 
