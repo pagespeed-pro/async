@@ -24,7 +24,8 @@ $async.js('script.js').then(function() { /* ready */ });
             "crossorigin": "anonymous"
          }
       }
-   ],{
+   ],
+   {
       "render_timing": "requestAnimationFrame"
    },
    0,0,
