@@ -24,7 +24,31 @@ $async.js('script.js').then(function() { /* ready */ });
             "crossorigin": "anonymous"
          }
       }
-   ]
+   ],{
+      "render_timing": "requestAnimationFrame"
+   },
+   0,0,
+   [
+      "js/script.js",
+      {
+         "href": "https://cdn.com/js/script2.js",
+         "attributes": {
+            "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
+            "crossorigin": "anonymous"
+         },
+         "ref": "x"
+      },
+      {
+         "href": "js/script3.js",
+         "dependencies": "x"
+      }
+   ],
+   {
+      "exec_timing": {
+         "type": "requestIdleCallback",
+         "timeout": 1000
+      }
+   }
 ]'></script>
 ```
 
