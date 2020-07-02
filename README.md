@@ -13,7 +13,7 @@ $async.js('script.js').then(function() { /* ready */ });
 ```
 
 ```html
-<!-- simple: JSON config on script element to support advanced config and strict security -->
+<!-- JSON config on script element to support advanced config and strict security -->
 <script async src="js/async-iife.js" data-c='[
    [
       "css/sheet1.css",
