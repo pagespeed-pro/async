@@ -42,7 +42,7 @@ $async.js('script.js').then(function() { /* ready */ });
       },
       {
          "href": "js/script3.js",
-         "dependencies": "x",
+         "dependencies": "x"
       }
    ],
    {
