@@ -12,9 +12,8 @@ $async('sheet.css').then(function() { /* ready */ });
 $async.js('script.js').then(function() { /* ready */ });
 ```
 
-Usage via a async script element to support `Content-Serucity-Policy` with advanced CSS and script loading config.
-
 ```html
+<!-- simple: JSON config on script element to support advanced config and strict security -->
 <script async src="js/async-iife.js" data-c='[
    [
       "css/sheet1.css",
