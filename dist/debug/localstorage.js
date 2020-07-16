@@ -1,2 +1,2 @@
 var ac=A.localStorage;X=[function(a,b,c){a=Qb(a);try{c=ac.getItem(a)}catch(d){t("localStorage",a,d)}c&&(c=JSON.parse(c));c&&c[2]&&Rb(c[1],c[2])&&(c=X[2](a));b(c)},function(a,b,c,d,e){if(304===b)X[0](a,function(b){X[1](a,b[0],b[2],b[1],b[4])});else{a=Qb(a);b=[b,d||Pb(),c||0,Pb()];e&&b.push(1);try{ac.setItem(a,JSON.stringify(b))}catch(f){t("localStorage",a,f);K("localstorage_error",f,a);return}K("localstorage_save",64,a)}},function(a){a=Qb(a);try{ac.removeItem(a)}catch(b){t("localStorage",a,b)}}];
-try{ac.setItem(Qb(64),64)}catch(a){t("localStorage","no access",a),F&&J("localstorage",a),X=!1};
+try{ac.setItem(Qb(64),64)}catch(a){t("localStorage","no access",a),F&&I("localstorage",a),X=!1};

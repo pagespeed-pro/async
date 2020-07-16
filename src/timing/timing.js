@@ -69,7 +69,14 @@ DOMREADY_CHECK();
 function RAF(cb, frameTarget) {
     frameTarget = frameTarget || 1;
     _requestAnimationFrame(function() {
-        if (frameTarget > 1) {
+
+        // faster domReady
+        if (
+            (frameTarget === -1 || (IS_STRING(frameTarget) && VAR(frameTarget) === VAR_DOMREADY)) &&
+            !doc.body
+        ) {
+            RAF(cb, frameTarget);
+        } else if (frameTarget > 1) {
             RAF(cb, --frameTarget);
         } else {
             cb();
