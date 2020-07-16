@@ -430,6 +430,52 @@ TEST_DEFINITIONS.timing = function(iife_filename) {
                 });
             });
         }],
+        ['download 1 stylesheet with requestAnimationFrame as faster domReady callback', function(driver, done) {
+
+            SERVER_API.reload(driver, iife_filename).then(function() {
+
+                var start_time = +new Date();
+
+                var $async_config = [{
+                    "href": "base-p1.css",
+                    "load_timing": {
+                        "type": "requestAnimationFrame",
+                        "frame": -1 // domReady
+                    }
+                }];
+
+                var $async_options = null;
+
+                var validation = function() {
+
+                    var has_raf = !!(window.webkitRequestAnimationFrame ||
+                        window.mozRequestAnimationFrame ||
+                        window.oRequestAnimationFrame ||
+                        window.msRequestAnimationFrame);
+
+                    if (window.failed) {
+                        return false;
+                    }
+
+                    if (!document.body && document.styleSheets.length) {
+                        window.failed = true;
+                        return false;
+                    }
+
+                    return (!has_raf || (document.styleSheets.length === 1));
+                };
+
+                SERVER_API.$async(driver, $async_config, $async_options, validation, function(return_value) {
+                    return return_value === true;
+                }).then(function() {
+
+                    done();
+
+                }).catch(function(err) {
+                    done(err);
+                });
+            });
+        }],
         ['download 1 stylesheet responsive based on viewport change', function(driver, done) {
 
             SERVER_API.reload(driver, iife_filename).then(function() {
@@ -574,7 +620,7 @@ TEST_DEFINITIONS.timing = function(iife_filename) {
                         if (document.styleSheets.length > 0) {
                             return callback('stylesheets already loaded');
                         }
-                        
+
                         window.scrollTo(0, document.body.scrollHeight);
                         setTimeout(function() {
                             callback(document.styleSheets.length);
@@ -627,7 +673,7 @@ TEST_DEFINITIONS.timing = function(iife_filename) {
                 }).then(function(return_value) {
 
                     driver.executeAsyncScript(function(callback) {
-                      
+
                         if (!document.styleSheets) {
                             return callback('no stylesheets');
                         }
