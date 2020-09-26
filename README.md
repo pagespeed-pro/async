@@ -45,7 +45,8 @@ $async([
          "timeout": 1000
       }
    }
-]'></script>```
+]'></script>
+```
 
 The config can be compressed to save size in the HTML (see [compressor](https://style.tools/async/)).
 
