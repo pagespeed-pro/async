@@ -155,7 +155,7 @@ $async(
          }
       },
       {
-         inline: "inline_script_with_advanced_timing_and_dependency();",
+         inline: "inline_script_with_timing_and_dependency();",
          ref: "inline-code"
       },
       {
