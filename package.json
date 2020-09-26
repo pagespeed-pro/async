@@ -151,8 +151,8 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "@style.tools/async-iife": "https://modules.style.tools/async-iife/1.1.4.tar.gz",
-        "@style.tools/lazy": "https://modules.style.tools/lazy/1.2.1.tar.gz",
+        "@style.tools/async-iife": "https://modules.style.tools/async-iife/2.0.0.tar.gz",
+        "@style.tools/lazy": "1.2.1",
         "browserstack-local": "^1.4.5",
         "chromedriver": "latest",
         "express": "^4.16.4",
