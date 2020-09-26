@@ -2,7 +2,7 @@
 
 var TESTS = [{
     name: 'x',
-    modules: ['css-loader', 'js-loader', 'inline-js', 'dependency', 'rebase', 'localstorage', 'timing', 'inview', 'responsive','lazy'],
+    modules: ['css-loader', 'js-loader', 'inline-js', 'dependency', 'rebase', 'localstorage', 'timing', 'inview', 'responsive', 'lazy', 'api'],
     tests: [
         'basic', 'dependencies', 'rebase', 'localstorage',
         'timing'
@@ -21,7 +21,7 @@ const combine = require(path.resolve(__dirname, '../iife-module-combinations.js'
 
 var module_combinations = combine([
     'css-loader',
-    //'js-loader',
+    'js-loader',
     'dependency', ['cache', 'localstorage', 'cache-api', 'xhr', 'cache-update'],
     ['capture', 'capture-observer', 'capture-insert'], //
     ['timing', 'responsive', 'inview', 'lazy'],

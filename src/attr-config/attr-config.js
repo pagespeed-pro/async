@@ -30,24 +30,9 @@ if (STYLETOOLS_SCRIPT) {
     if (ASYNC_CONFIG && !IS_ARRAY(ASYNC_CONFIG)) {
         ASYNC_CONFIG = [ASYNC_CONFIG];
     }
-
-    // script loader
-    if (LOAD_JS && ASYNC_CONFIG && LENGTH(ASYNC_CONFIG) > 4) {
-        ASYNC_JS_CONFIG = ASYNC_CONFIG.splice(4);
-
-        // copy global options from CSS loader
-        if (ASYNC_JS_CONFIG[1] === 1 && ASYNC_CONFIG[1]) {
-            ASYNC_JS_CONFIG[1] = ASYNC_CONFIG[1];
-        }
-    }
 }
 
 // css loader
 if (LOAD_CSS && ASYNC_CONFIG) {
     APPLY(LOAD_CSS, ASYNC_CONFIG);
-}
-
-// script loader
-if (LOAD_JS && ASYNC_JS_CONFIG) {
-    APPLY(LOAD_JS, ASYNC_JS_CONFIG);
 }

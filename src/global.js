@@ -27,8 +27,10 @@ var INVIEW;
 var LAZY;
 var CAPTURE;
 var API;
+var ITEM_OR_OPTIONS;
 var LOAD_CSS, CAPTURE_CSS;
 var LOAD_JS, CAPTURE_JS;
+var JS_LOADER;
 var ERROR;
 var REBASE;
 var EMIT;
@@ -37,7 +39,7 @@ var INLINE_JS;
 var VENDORS;
 var VENDOR_FN;
 
-var $async, $async_js;
+var $async;
 
 // setTimeout
 var _setTimeout = setTimeout;

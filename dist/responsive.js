@@ -1,1 +1,1 @@
-var sb=P("matchMedia",0),tb={};fa=function(a){if(!sb||!a||a.toLowerCase()===q(7))return!0;a in tb||(tb[a]=sb(a));return tb[a]};ha=function(a,b){function c(a){!d&&a.matches&&(e.removeListener(c),d=!0,b())}var d,e=a?fa(a):!1;!0===e||e&&e.matches?b():e.addListener(c)};
+var ub=N("matchMedia",0),vb={};ha=function(a){if(!ub||!a||a.toLowerCase()===q(7))return!0;a in vb||(vb[a]=ub(a));return vb[a]};ia=function(a,b){function c(a){!d&&a.matches&&(e.removeListener(c),d=!0,b())}var d,e=a?ha(a):!1;!0===e||e&&e.matches?b():e.addListener(c)};

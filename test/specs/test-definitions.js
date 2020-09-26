@@ -239,6 +239,47 @@ TEST_DEFINITIONS.dependencies = function(iife_filename) {
                     done(err);
                 });
             });
+        }],
+        ['load 404 (error) script with dependencies, watch error event', function(driver, done) {
+            SERVER_API.reload(driver, iife_filename).then(function() {
+
+                return driver.executeAsyncScript(function() {
+                    var cb = arguments[arguments.length - 1];
+
+
+                    $async.on('y', function() {
+                        cb('y loaded');
+                    });
+
+                    $async.on('error', function() {
+                        cb(true);
+                    });
+
+                    $async([{
+                        src: '404.js',
+                        ref: 'x'
+                    }, {
+                        ref: 'y',
+                        src: 'script.js',
+                        dependencies: 'x' // ref based 
+                    }]);
+
+                    setTimeout(function() {
+                        cb('no error event')
+                    }, 3000);
+
+                }).then(function(return_value) {
+
+                    if (typeof return_value === 'string') {
+                        throw new Error(return_value);
+                    }
+
+                    assert.equal(return_value, true);
+                    done();
+                }).catch(done);
+
+
+            });
         }]
     ];
 };
@@ -646,7 +687,7 @@ TEST_DEFINITIONS.timing = function(iife_filename) {
         }],
         ['download 3 stylesheets when #footer element scrolls into view within 100 pixels using $lazy module (Intersection Observer)', function(driver, done) {
 
-            $lazy = 'function load_lazy() {' + fs.readFileSync(path.resolve('node_modules/@style.tools/lazy/dist/', 'lazy.js'), 'utf8') + '} $async.js({"src":"", "inline":"load_lazy();", "ref": "lazy"});';
+            $lazy = 'function load_lazy() {' + fs.readFileSync(path.resolve('node_modules/@style.tools/lazy/dist/', 'lazy.js'), 'utf8') + '} $async({"src":"", "inline":"load_lazy();", "ref": "lazy"});';
 
             SERVER_API.reload(driver, iife_filename, false, $lazy).then(function() {
 

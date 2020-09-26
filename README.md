@@ -5,32 +5,25 @@
 A lightweight and high performance async CSS and script loader. 
 
 ```javascript
-// simple: stylesheet
-$async('sheet.css').then(function() { /* ready */ });
-
-// simple: script
-$async.js('script.js').then(function() { /* ready */ });
+$async([
+   'sheet.css',
+   'script.js'
+]).then(function() { /* ready */ });
 ```
 
 ```html
-<!-- JSON config on script element to support advanced config and strict security -->
+<!-- config via an HTML attribute -->
 <script async src="js/async-iife.js" data-c='[
    [
       "css/sheet1.css",
+      "js/script.js",
       {
          "href": "https://cdn.com/css/sheet2.css",
          "attributes": {
             "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
             "crossorigin": "anonymous"
          }
-      }
-   ],
-   {
-      "render_timing": "requestAnimationFrame"
-   },
-   0,0,
-   [
-      "js/script.js",
+      },
       {
          "src": "https://cdn.com/js/script2.js",
          "attributes": {
@@ -46,15 +39,18 @@ $async.js('script.js').then(function() { /* ready */ });
       }
    ],
    {
+      "render_timing": "requestAnimationFrame",
       "exec_timing": {
          "type": "requestIdleCallback",
          "timeout": 1000
       }
    }
-]'></script>
+]'></script>```
 
-<!-- the same with JSON config compression -->
-<script async src="js/async-iife.js" data-c='[["css/sheet1.css",{"4":"https://cdn.com/css/sheet2.css","14":{"integrity":"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC","crossorigin":"anonymous"}}],{"49":52},0,0,["js/script.js",{"5":"https://cdn.com/js/script2.js","14":{"integrity":"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC","crossorigin":"anonymous"},"16":"x","48":54},{"5":"js/script3.js","15":"x"}],{"60":{"2":53,"57":1000}}]'></script>
+The config can be compressed to save size in the HTML (see [compressor](https://style.tools/async/)).
+
+```html
+<script async src="js/async-iife.js" data-c='[["css/sheet1.css","js/script.js",{"4":"https://cdn.com/css/sheet2.css","14":{"integrity":"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC","crossorigin":"anonymous"}},{"5":"https://cdn.com/js/script2.js","14":{"integrity":"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC","crossorigin":"anonymous"},"16":"x","48":54},{"5":"js/script3.js","15":"x"}],{"49":52,"60":{"2":53,"57":1000}}]'></script>
 ```
 
 Documentation is available on [docs.style.tools/async](https://docs.style.tools/async).
@@ -167,19 +163,21 @@ $async(
 
 ###  `just-in-time` loading
 ```javascript
-$async({
-   href:"popup-css.css",
-   load_timing: {
-      type: "method", // trigger download using custom javascript method
-      method: "load_popup_css"
+$async(
+   {
+      href:"popup-css.css",
+      load_timing: {
+         type: "method", // trigger download using custom javascript method
+         method: "load_popup_css"
+      }
+   },{
+      src:"popup-script.js",
+      load_timing: {
+         type: "method",
+         method: "load_popup_js"
+      }
    }
-}).js({
-   src:"popup-script.js",
-   load_timing: {
-      type: "method",
-      method: "load_popup_js"
-   }
-});
+);
 
 // just-in-time loading
 jQuery('button.popup').on('click', function() {

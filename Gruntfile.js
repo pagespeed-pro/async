@@ -302,7 +302,7 @@ module.exports = function(grunt) {
         'clean:dist'
     ]);
 
-    grunt.registerTask('debug_iife', [
+    grunt.registerTask('copy_iife', [
         'copy:iife',
         'copy:iife_package',
         'copy:iife_debug'

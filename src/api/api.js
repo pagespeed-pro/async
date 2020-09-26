@@ -44,25 +44,13 @@ FOREACH(_methods, function(method) {
             var args = arguments;
             if (DEPENDENCY) {
                 if (VAR_DEPENDENCIES === method[0]) {
-                    args = [[0,args[0],VAR_CSS],args[1]];
+                    args = [
+                        [0, args[0], VAR_CSS], args[1]
+                    ];
                 }
             }
             APPLY(_fn, args);
             return $async;
-        };
-    }
-
-    // script loader
-    if (LOAD_JS) {
-        $async_js[_method] = _load ? $async_js : function() {
-            var args = arguments;
-            if (DEPENDENCY) {
-                if (VAR_DEPENDENCIES === method[0]) {
-                    args = [[0,args[0],VAR_JS],args[1]];
-                }
-            }
-            APPLY(_fn, args);
-            return $async_js;
         };
     }
 });

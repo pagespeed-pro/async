@@ -18,9 +18,6 @@ var PUBLIC_CAPTURE = function(capture, options) {
 if (LOAD_CSS) {
     $async[capture_method] = PUBLIC_CAPTURE;
 }
-if (LOAD_JS) {
-    $async_js[capture_method] = PUBLIC_CAPTURE;
-}
 
 // replace DOM node
 function REPLACE(newNode, old) {
@@ -213,7 +210,7 @@ function CAPTURE_NODE(node) {
 
 // setup capture
 CAPTURE = function(args) {
-    
+
     // compress options
     var options = COMPRESS_OPTIONS(OBJECT(args[1]));
 
@@ -221,7 +218,7 @@ CAPTURE = function(args) {
 
         PUSH(CAPTURE_LIST, [COMPRESS_OPTIONS(ARRAY(args[0])), options]);
     }
-        
+
     // mutation observer
     MODULE(CAPTURE_OBSERVER, options[VAR_OBSERVER], CAPTURE_NODE);
 

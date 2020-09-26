@@ -25,6 +25,13 @@ if (REL_PRELOAD_SUPPORT) {
 }
 SET_ATTRS(LINK_ELEMENT, attrs);
 
+// item or options
+ITEM_OR_OPTIONS = function(sheet, options, key, alt, s, o) {
+    s = sheet[key];
+    o = options[key];
+    return (!IS_UNDEFINED(s)) ? s : ((!IS_UNDEFINED(o)) ? o : alt);
+};
+
 // load stylesheets
 LOAD_CSS = function(sheets, options, capture, capture_options) {
 
@@ -53,7 +60,7 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                     } else {
 
                         // watch load event
-                        off = ON(VAR_LOAD, function() {
+                        off = ON([VAR_LOAD, VAR_EXEC], function() {
                             if (!loading) {
                                 callback();
 
@@ -71,11 +78,20 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
         // load sheets
         FOREACH(sheets, function(sheet) {
 
-            // return sheet or options config
-            function sheet_or_options(key, alt, s, o) {
-                s = sheet[key];
-                o = options[key];
-                return (!IS_UNDEFINED(s)) ? s : ((!IS_UNDEFINED(o)) ? o : alt);
+            // try script loader
+            MODULE(JS_LOADER, [sheet, options], function(onready) {
+                if (onready) {
+                    script_loaded = true;
+                    if (API) {
+                        onready(function() {
+                            loading--;
+                        });
+                    }
+                }
+            });
+
+            if (script_loaded) {
+                return;
             }
 
             // compress sheet config
@@ -83,12 +99,13 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
 
             var sheetEl, // stylesheet element
                 loading_state,
+                script_loaded,
                 href = sheet[VAR_HREF],
-                media = sheet_or_options(VAR_MEDIA, VAR(VAR_ALL)),
+                media = ITEM_OR_OPTIONS(sheet, options, VAR_MEDIA, VAR(VAR_ALL)),
                 sheet_attrs = {},
                 custom_attrs = MERGE(OBJECT(options[VAR_ATTRIBUTES]), OBJECT(sheet[VAR_ATTRIBUTES])),
                 target,
-                insert_target = sheet_or_options(VAR_TARGET),
+                insert_target = ITEM_OR_OPTIONS(sheet, options, VAR_TARGET),
                 insert_target_after,
                 insert_after;
 
@@ -111,8 +128,8 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
             MODULE(RESPONSIVE, media, function() {
 
                 // timed download
-                MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(href)], href] : (
-                    (API) ? [sheet_or_options(VAR_LOAD_TIMING), href] : sheet_or_options(VAR_LOAD_TIMING)
+                MODULE(TIMING, (DEBUG) ? [ITEM_OR_OPTIONS(sheet, options, VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(href)], href] : (
+                    (API) ? [ITEM_OR_OPTIONS(sheet, options, VAR_LOAD_TIMING), href] : ITEM_OR_OPTIONS(sheet, options, VAR_LOAD_TIMING)
                 ), function() {
 
                     // use insert target from options
@@ -212,15 +229,15 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                                 loading_state = 1;
 
                                 // dependency module
-                                MODULE(DEPENDENCY, [sheet, sheet_or_options(VAR_DEPENDENCIES), VAR_CSS, href], function(target) {
+                                MODULE(DEPENDENCY, [sheet, ITEM_OR_OPTIONS(sheet, options, VAR_DEPENDENCIES), VAR_CSS, href], function(target) {
 
                                     if (DEBUG) {
                                         PERFORMANCE_MARK('render' + sheet[VAR_PERF]);
                                     }
 
                                     // timed render
-                                    MODULE(TIMING, (DEBUG) ? [sheet_or_options(VAR_RENDER_TIMING), ['render.timing', LOCAL_URL(href)], href] : (
-                                        (API) ? [sheet_or_options(VAR_RENDER_TIMING), href] : sheet_or_options(VAR_RENDER_TIMING)
+                                    MODULE(TIMING, (DEBUG) ? [ITEM_OR_OPTIONS(sheet, options, VAR_RENDER_TIMING), ['render.timing', LOCAL_URL(href)], href] : (
+                                        (API) ? [ITEM_OR_OPTIONS(sheet, options, VAR_RENDER_TIMING), href] : ITEM_OR_OPTIONS(sheet, options, VAR_RENDER_TIMING)
                                     ), renderStylesheet);
 
                                 });

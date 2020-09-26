@@ -1,1 +1,1 @@
-n("match,regex",90);var ab=/^\/(.*)\/([gimuy]+)?$/;function bb(a){if(a=a.match(ab)){try{var b=new RegExp(a[1],a[2])}catch(c){}return b||!1}};
+n("match,regex",90);var db=/^\/(.*)\/([gimuy]+)?$/;function eb(a){if(a=a.match(db)){try{var b=new RegExp(a[1],a[2])}catch(c){}return b||!1}};

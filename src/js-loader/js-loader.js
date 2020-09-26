@@ -6,10 +6,9 @@
  */
 
 if (DEBUG) {
-    var LOAD_JS_ID = 0;
     var VAR_JS_PERF = 500;
 }
-
+var LOAD_JS_ID = 0;
 var SCRIPT_DOM_INSERT_ID = 0;
 var SCRIPT_DOM_INSERT_PENDING = {};
 var LAST_SCRIPT_ELEMENT;
@@ -27,28 +26,9 @@ var LOADED_VAR = VAR(VAR_LOADED);
 var LOADING_VAR = VAR(VAR_LOADING);
 var COMPLETE_VAR = VAR(VAR_COMPLETE);
 var TEXT_VAR = VAR(VAR_TEXT);
+var SCRIPT_COUNT = 0;
 
-if (LOAD_CSS) {
-    
-    // public $async.js object
-    $async_js = function() {
-        var then = APPLY(LOAD_JS, arguments);
-        if (IS_FUNCTION(then)) {
-            $async_js.then = then;
-        }
-        return $async_js;
-    };
-
-    // window.$async.js
-    w.$async.js = $async_js;
-
-    // script loader only
-    if (DEBUG) {
-        $async_js.toString = function() {
-            return '$async_js.js';
-        }
-    }
-}
+var REGEX_JS = /\.js(\?.*)?$/;
 
 attrs = {};
 attrs[VAR_TYPE] = VAR_TEXT_JAVASCRIPT;
@@ -314,221 +294,218 @@ function EXEC_SCRIPT(src, text, attrs, dom_insert_callback, onload, defer) {
 };
 
 // load scripts
-LOAD_JS = function(scripts, options, capture, capture_options) {
+LOAD_JS = function(script, options, capture, capture_options) {
 
-    // .then method
-    var then;
+    // compress script config
+    script = COMPRESS_OPTIONS(OBJECT(script, VAR_SRC));
 
-    if (scripts) {
+    var scriptEl, // script element
+        loading = true,
+        loading_state,
+        onready,
+        src = script[VAR_SRC],
+        script_attrs = {},
+        custom_attrs = MERGE(OBJECT(options[VAR_ATTRIBUTES]), OBJECT(script[VAR_ATTRIBUTES])),
+        defer = ITEM_OR_OPTIONS(script, options, VAR_DEFER),
+        target,
+        insert_target = ITEM_OR_OPTIONS(script, options, VAR_TARGET),
+        insert_target_after,
+        insert_after,
+        script_id = ++LOAD_JS_ID;
 
-        // convert to array
-        scripts = ARRAY(scripts);
+    // onready method
+    if (API) {
+        var onready_callback;
+        onready = function(callback) {
+            onready_callback = callback;
+        };
+    }
 
-        // compress options
-        options = COMPRESS_OPTIONS(OBJECT(options));
+    if (DEBUG) {
+        script[VAR_JS_PERF] = LOAD_JS_ID;
+        PERFORMANCE_MARK('load' + script[VAR_JS_PERF]);
+    }
 
-        var loading = LENGTH(scripts);
+    // rebase module
+    MODULE(REBASE, [script, options, src], function(rebased) {
+        src = rebased;
+    }, 1);
 
-        // set .then method
-        if (API) {
-            then = function(callback, off) {
-                if (callback) {
+    // timed download
+    MODULE(TIMING, (DEBUG) ? [ITEM_OR_OPTIONS(script, options, VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(src)], src] : (
+        (API) ? [ITEM_OR_OPTIONS(script, options, VAR_LOAD_TIMING), src] : ITEM_OR_OPTIONS(script, options, VAR_LOAD_TIMING)
+    ), function() {
 
-                    // not loading anything
-                    if (!loading) {
-                        callback();
-                    } else {
-
-                        // watch exec event
-                        off = ON(VAR_EXEC, function() {
-                            if (!loading) {
-                                callback();
-
-                                // unregister event
-                                off();
-                            }
-                        });
-                    }
-                }
-                return $async_js;
+        // use insert target from options
+        if (insert_target) {
+            insert_target = OBJECT(insert_target, VAR_BEFORE);
+            insert_target_after = insert_target[VAR_AFTER];
+            insert_target = ELEMENTS_BY_QUERY(insert_target_after || insert_target[VAR_BEFORE]);
+            if (insert_target) {
+                target = insert_target;
+                insert_after = insert_target_after;
             }
         }
+        target = target || NEXT(LAST_SCRIPT_ELEMENT);
 
-        // load scripts
-        FOREACH(scripts, function(script) {
+        // cache module
+        MODULE(CACHE, [script, options, VAR_JS, script_attrs, src], function(cached) {
 
-            // return script or options config
-            function script_or_options(key, alt, s, o) {
-                s = script[key];
-                o = options[key];
-                return (!IS_UNDEFINED(s)) ? s : ((!IS_UNDEFINED(o)) ? o : alt);
+            // insert script element to DOM
+            function insertDom(el) {
+
+                scriptEl = el;
+
+                SET_ATTRS(scriptEl, custom_attrs, 1);
+
+                // move script element to target
+                if (target) { // insert element to document
+                    if (insert_after) {
+                        AFTER(target, scriptEl);
+                    } else {
+                        BEFORE(target, scriptEl);
+                    }
+                } else {
+                    APPEND_CHILD(DOCHEAD(), scriptEl);
+                }
+
+                LAST_SCRIPT_ELEMENT = scriptEl;
             }
 
-            // compress script config
-            script = COMPRESS_OPTIONS(OBJECT(script, VAR_SRC));
+            // exec
+            function execScript() {
 
-            var scriptEl, // script element
-                loading_state,
-                src = script[VAR_SRC],
-                script_attrs = {},
-                custom_attrs = MERGE(OBJECT(options[VAR_ATTRIBUTES]), OBJECT(script[VAR_ATTRIBUTES])),
-                defer = script_or_options(VAR_DEFER),
-                target,
-                insert_target = script_or_options(VAR_TARGET),
-                insert_target_after,
-                insert_after;
+                function execDone(error) {
 
-            if (DEBUG) {
-                script[VAR_JS_PERF] = ++LOAD_JS_ID;
-                PERFORMANCE_MARK('load' + script[VAR_JS_PERF]);
-            }
+                    if (DEBUG) {
 
-            // rebase module
-            MODULE(REBASE, [script, options, src], function(rebased) {
-                src = rebased;
-            }, 1);
+                        var perf = PERFORMANCE_MARK('_exec' + script[VAR_JS_PERF], 'exec' + script[VAR_JS_PERF], 'exec', 'exec');
+                        var name = 'exec' + (error) ? ':error' : '';
 
-            // timed download
-            MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_LOAD_TIMING), ['download.timing', LOCAL_URL(src)], src] : (
-                (API) ? [script_or_options(VAR_LOAD_TIMING), src] : script_or_options(VAR_LOAD_TIMING)
-            ), function() {
+                        var debug_data = perf;
+                        debug_data.el = scriptEl;
+                        if (error) {
+                            debug_data.error = error;
+                        }
 
-                // use insert target from options
-                if (insert_target) {
-                    insert_target = OBJECT(insert_target, VAR_BEFORE);
-                    insert_target_after = insert_target[VAR_AFTER];
-                    insert_target = ELEMENTS_BY_QUERY(insert_target_after || insert_target[VAR_BEFORE]);
-                    if (insert_target) {
-                        target = insert_target;
-                        insert_after = insert_target_after;
+                        CONSOLE_LOG(name, LOCAL_URL(src), debug_data);
+
+                        EMIT('perf:' + name, src, perf, cached, error);
+                    }
+
+                    if (API) {
+                        if (onready_callback) {
+                            onready_callback();
+                        }
+                    }
+
+                    if (EMIT) {
+                        loading = false;
+
+                        if (!error) {
+
+                            // onload callback
+                            EMIT([VAR_EXEC, src, script[VAR_REF]], script, scriptEl, script_id);
+                        }
+                    }
+
+                    if (!error) {
+                        // inline script module
+                        MODULE(INLINE_JS, [script, scriptEl, options]);
                     }
                 }
-                target = target || NEXT(LAST_SCRIPT_ELEMENT);
 
-                // cache module
-                MODULE(CACHE, [script, options, VAR_JS, script_attrs, src], function(cached) {
+                if (!src) {
 
-                    // insert script element to DOM
-                    function insertDom(el) {
+                    execDone();
 
-                        scriptEl = el;
+                } else if (loading_state === 1) {
 
-                        SET_ATTRS(scriptEl, custom_attrs, 1);
+                    // mark exec loading_state
+                    loading_state = 2;
 
-                        // move script element to target
-                        if (target) { // insert element to document
-                            if (insert_after) {
-                                AFTER(target, scriptEl);
-                            } else {
-                                BEFORE(target, scriptEl);
-                            }
-                        } else {
-                            APPEND_CHILD(DOCHEAD(), scriptEl);
+                    // cached inline script
+                    EXEC_SCRIPT((cached) ? 0 : src, (cached) ? cached[0] : 0, (cached) ? cached[1] : script_attrs, insertDom, execDone, defer);
+                }
+            }
+
+            // onload callback
+            function onload() {
+
+                if (!loading_state) {
+
+                    if (DEBUG) {
+
+                        var debug_data = {};
+                        var load_path = '';
+                        if (cached) {
+                            debug_data['cache'] = cached[2];
+                            load_path = '.cache';
                         }
 
-                        LAST_SCRIPT_ELEMENT = scriptEl;
+                        var perf = PERFORMANCE_MARK('_load' + script[VAR_JS_PERF], 'load' + script[VAR_JS_PERF], 'load', 'load');
+                        debug_data.startTime = perf.startTime;
+                        debug_data.duration = perf.duration;
+
+                        CONSOLE_LOG('load' + load_path, LOCAL_URL(src), debug_data);
+
+                        EMIT('perf:load', src, perf, cached);
                     }
 
-                    // exec
-                    function execScript() {
+                    // mark loading_state
+                    loading_state = 1;
 
-                        function execDone(err) {
+                    // dependency module
+                    MODULE(DEPENDENCY, [script, ITEM_OR_OPTIONS(script, options, VAR_DEPENDENCIES), VAR_JS, src], function(target) {
 
-                            if (DEBUG) {
-
-                                var perf = PERFORMANCE_MARK('_exec' + script[VAR_JS_PERF], 'exec' + script[VAR_JS_PERF], 'exec', 'exec');
-
-                                var debug_data = perf;
-                                debug_data.el = scriptEl;
-
-                                CONSOLE_LOG('exec', LOCAL_URL(src), debug_data);
-
-                                EMIT('perf:exec', src, perf, cached);
-                            }
-
-                            if (EMIT) {
-                                loading--;
-
-                                // onload callback
-                                EMIT([VAR_EXEC, src, script[VAR_REF]], script, scriptEl, !loading);
-                            }
-
-                            // inline script module
-                            MODULE(INLINE_JS, [script, scriptEl, options]);
+                        if (DEBUG) {
+                            PERFORMANCE_MARK('exec' + script[VAR_JS_PERF]);
                         }
 
-                        if (!src) {
+                        // timed exec
+                        MODULE(TIMING, (DEBUG) ? [ITEM_OR_OPTIONS(script, options, VAR_EXEC_TIMING), ['exec.timing', LOCAL_URL(src)], src] : (
+                            (API) ? [ITEM_OR_OPTIONS(script, options, VAR_EXEC_TIMING), src] : ITEM_OR_OPTIONS(script, options, VAR_EXEC_TIMING)
+                        ), execScript);
 
-                            execDone();
+                    });
 
-                        } else if (loading_state === 1) {
+                }
+            }
 
-                            // mark exec loading_state
-                            loading_state = 2;
-
-                            // cached inline script
-                            EXEC_SCRIPT((cached) ? 0 : src, (cached) ? cached[0] : 0, (cached) ? cached[1] : script_attrs, insertDom, execDone, defer);
-                        }
-                    }
-
-                    // onload callback
-                    function onload() {
-
-                        if (!loading_state) {
-
-                            if (DEBUG) {
-
-                                var debug_data = {};
-                                var load_path = '';
-                                if (cached) {
-                                    debug_data['cache'] = cached[2];
-                                    load_path = '.cache';
-                                }
-
-                                var perf = PERFORMANCE_MARK('_load' + script[VAR_JS_PERF], 'load' + script[VAR_JS_PERF], 'load', 'load');
-                                debug_data.startTime = perf.startTime;
-                                debug_data.duration = perf.duration;
-
-                                CONSOLE_LOG('load' + load_path, LOCAL_URL(src), debug_data);
-
-                                EMIT('perf:load', src, perf, cached);
-                            }
-
-                            // mark loading_state
-                            loading_state = 1;
-
-                            // dependency module
-                            MODULE(DEPENDENCY, [script, script_or_options(VAR_DEPENDENCIES), VAR_JS, src], function(target) {
-
-                                if (DEBUG) {
-                                    PERFORMANCE_MARK('exec' + script[VAR_JS_PERF]);
-                                }
-
-                                // timed exec
-                                MODULE(TIMING, (DEBUG) ? [script_or_options(VAR_EXEC_TIMING), ['exec.timing', LOCAL_URL(src)], src] : (
-                                    (API) ? [script_or_options(VAR_EXEC_TIMING), src] : script_or_options(VAR_EXEC_TIMING)
-                                ), execScript);
-
-                            });
-
-                        }
-                    }
-
-                    // cached inline <script>
-                    if (!src || cached) {
-                        onload();
-                    } else {
-                        PRELOAD_JS(src, onload);
-                    }
-                });
-            });
+            // cached inline <script>
+            if (!src || cached) {
+                onload();
+            } else {
+                PRELOAD_JS(src, onload);
+            }
         });
-    }
-
-    // capture module
-    MODULE(CAPTURE, [capture, capture_options]);
+    });
 
     if (API) {
-        return then;
+        return onready;
     }
+    return true;
 };
+
+JS_LOADER = function(args, callback) {
+    var item = args[0],
+        options = args[1],
+        match;
+
+    if (IS_STRING(item)) {
+        if (REGEX_JS.test(item)) {
+            item = {
+                src: item
+            };
+            match = true;
+        }
+    } else if (IS_OBJECT(item) && item[SRC_VAR]) {
+        match = true;
+    }
+
+    if (match) {
+        callback(LOAD_JS(item, options));
+    } else {
+        callback(); // stylesheet
+    }
+}
