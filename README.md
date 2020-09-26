@@ -4,6 +4,20 @@
 
 A lightweight and high performance async CSS and script loader. 
 
+### Install via npm
+
+```bash
+npm install @style.tools/async --save
+```
+
+### Install via PHP Composer
+
+```bash
+composer require styletools/async
+```
+
+## Examples
+
 ```javascript
 $async([
    'sheet.css',
@@ -54,22 +68,13 @@ The config can be compressed to save size in the HTML (see [compressor](https://
 <script async src="js/async-iife.js" data-c='[["css/sheet1.css","js/script.js",{"4":"https://cdn.com/css/sheet2.css","14":{"integrity":"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC","crossorigin":"anonymous"}},{"5":"https://cdn.com/js/script2.js","14":{"integrity":"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC","crossorigin":"anonymous"},"16":"x","48":54},{"5":"js/script3.js","15":"x"}],{"49":52,"60":{"2":53,"57":1000}}]'></script>
 ```
 
+## Documentation
+
 Documentation is available on [docs.style.tools/async](https://docs.style.tools/async).
 
 - [Online IIFE generator](https://style.tools/iife/)
 - [JSON config editor and compressor](https://style.tools/async/)
 
-### Install via npm
-
-```bash
-npm install @style.tools/async --save
-```
-
-### Install via PHP Composer
-
-```bash
-composer require styletools/async
-```
 
 ## Description
 
