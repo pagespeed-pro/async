@@ -167,7 +167,9 @@
         "selenium-webdriver": "^3.0.0-beta-3"
     },
     "scripts": {
+        "test-local": "forever -a --uid async-test-server start test/server.js && npm run chrome-headless && npm run stop-test",
         "test": "npm run chrome-headless",
+        "stop-test": "forever stop test/server.js",
         "chrome": "npm run chrome-headless",
         "cross-browser": "./node_modules/.bin/mocha test/specs/browserstack-tests.js",
         "chrome-headless": "./node_modules/.bin/mocha test/specs/chrome-headless-tests.js",

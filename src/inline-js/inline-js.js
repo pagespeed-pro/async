@@ -6,12 +6,13 @@
  */
 
 var INLINE_COUNT = 0;
+INLINE_VAR = VAR(VAR_INLINE);
 
 INLINE_JS = function(args) {
     var script = args[0],
         scriptEl = args[1],
         options = args[2],
-        inline = script[VAR_INLINE] || options[VAR_INLINE],
+        inline = args[3],
         scriptText, type, ref, count,
         inlineSrcEl, inlineEl;
 

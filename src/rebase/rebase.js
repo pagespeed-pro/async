@@ -15,7 +15,7 @@ REBASE = function(args, callback) {
         base = asset[VAR_BASE] || options[VAR_BASE]; // base from asset or global options
 
     // detect relative URL
-    if (base && !ABSOLUTE_REGEX.test(src)) {
+    if (src && base && !ABSOLUTE_REGEX.test(src)) {
         callback(base + src);
     }
 }

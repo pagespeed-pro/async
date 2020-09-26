@@ -687,7 +687,7 @@ TEST_DEFINITIONS.timing = function(iife_filename) {
         }],
         ['download 3 stylesheets when #footer element scrolls into view within 100 pixels using $lazy module (Intersection Observer)', function(driver, done) {
 
-            $lazy = 'function load_lazy() {' + fs.readFileSync(path.resolve('node_modules/@style.tools/lazy/dist/', 'lazy.js'), 'utf8') + '} $async({"src":"", "inline":"load_lazy();", "ref": "lazy"});';
+            $lazy = 'function load_lazy() {' + fs.readFileSync(path.resolve('node_modules/@style.tools/lazy/dist/', 'lazy.js'), 'utf8') + '} $async({"inline":"load_lazy();", "ref": "$z"});';
 
             SERVER_API.reload(driver, iife_filename, false, $lazy).then(function() {
 

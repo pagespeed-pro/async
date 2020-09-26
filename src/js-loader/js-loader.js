@@ -304,6 +304,7 @@ LOAD_JS = function(script, options, capture, capture_options) {
         loading_state,
         onready,
         src = script[VAR_SRC],
+        inline = ITEM_OR_OPTIONS(script, options, VAR_INLINE),
         script_attrs = {},
         custom_attrs = MERGE(OBJECT(options[VAR_ATTRIBUTES]), OBJECT(script[VAR_ATTRIBUTES])),
         defer = ITEM_OR_OPTIONS(script, options, VAR_DEFER),
@@ -411,7 +412,7 @@ LOAD_JS = function(script, options, capture, capture_options) {
 
                     if (!error) {
                         // inline script module
-                        MODULE(INLINE_JS, [script, scriptEl, options]);
+                        MODULE(INLINE_JS, [script, scriptEl, options, inline]);
                     }
                 }
 
@@ -499,7 +500,7 @@ JS_LOADER = function(args, callback) {
             };
             match = true;
         }
-    } else if (IS_OBJECT(item) && item[SRC_VAR]) {
+    } else if (IS_OBJECT(item) && (item[SRC_VAR] || item[INLINE_VAR])) {
         match = true;
     }
 
