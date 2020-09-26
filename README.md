@@ -153,6 +153,15 @@ $async(
             type: "media", // download stylesheet based on a media query (works with viewport changes, e.g. viewport rotate)
             media: "screen and (max-width: 600px)"
          }
+      },
+      {
+         inline: "inline_script_with_advanced_timing_and_dependency();",
+         ref: "inline-code"
+      },
+      {
+         src: "script.js",
+         exec_timing: "requestIdleCallback",
+         dependencies: "inline-code"
       }
    ],
    /* global options: applied to all stylesheets */
