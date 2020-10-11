@@ -25,6 +25,8 @@ $async([
 ]).then(function() { /* ready */ });
 ```
 
+`$async` can be controlled from a HTML attribute which enables strict security. A unique innovation is async critical CSS which can reduce the size of the HTML document considerably.
+
 ```html
 <!-- config via an HTML attribute -->
 <script async src="js/async-iife.js" data-x="/path/to/critical.css" data-c='[
