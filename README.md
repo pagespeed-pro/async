@@ -29,7 +29,7 @@ $async([
 
 ```html
 <!-- config via an HTML attribute -->
-<script async src="js/async-iife.js" data-x="/path/to/critical.css" data-c='[
+<script async src="js/async-iife.js" data-x="/critical.css" data-c='[
    [
       "css/sheet1.css",
       "js/script.js",
