@@ -27,7 +27,7 @@ $async([
 
 ```html
 <!-- config via an HTML attribute -->
-<script async src="js/async-iife.js" data-c='[
+<script async src="js/async-iife.js" data-x="/path/to/critical.css" data-c='[
    [
       "css/sheet1.css",
       "js/script.js",
@@ -59,7 +59,7 @@ $async([
          "timeout": 1000
       }
    }
-]' data-x="/path/to/critical.css"></script>
+]'></script>
 ```
 
 The config can be compressed to save size in the HTML (see [compressor](https://style.tools/async/)).
