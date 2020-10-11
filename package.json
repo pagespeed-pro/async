@@ -1,6 +1,6 @@
 {
     "name": "@style.tools/async",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "A lightweight and high performance async CSS and script loader for frontend optimization.",
     "author": {
         "name": "info@style.tools",
@@ -151,7 +151,7 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "@style.tools/async-iife": "2.0.0",
+        "@style.tools/async-iife": "2.0.1",
         "@style.tools/lazy": "1.2.1",
         "browserstack-local": "^1.4.5",
         "chromedriver": "latest",

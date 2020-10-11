@@ -500,7 +500,7 @@ JS_LOADER = function(args, callback) {
             };
             match = true;
         }
-    } else if (IS_OBJECT(item) && (item[SRC_VAR] || item[INLINE_VAR])) {
+    } else if (IS_OBJECT(item) && (item[VAR_SRC] || item[SRC_VAR] || item[VAR_INLINE] || item[INLINE_VAR])) {
         match = true;
     }
 

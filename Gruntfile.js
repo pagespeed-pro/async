@@ -285,6 +285,19 @@ module.exports = function(grunt) {
                 src: 'dist/debug/*.js',
                 dest: '../httpdocs/iife/node_modules/@style.tools/async/'
             },
+
+            cdn: {
+                src: 'dist/*.js',
+                dest: '../modules/cdn/node_modules/@style.tools/async/'
+            },
+            cdn_package: {
+                src: 'package.json',
+                dest: '../modules/cdn/node_modules/@style.tools/async/'
+            },
+            cdn_debug: {
+                src: 'dist/debug/*.js',
+                dest: '../modules/cdn/node_modules/@style.tools/async/'
+            }
         }
     });
 
@@ -307,6 +320,14 @@ module.exports = function(grunt) {
         'copy:iife_package',
         'copy:iife_debug'
     ]);
+
+
+    grunt.registerTask('copy_cdn', [
+        'copy:cdn',
+        'copy:cdn_package',
+        'copy:cdn_debug'
+    ]);
+
 
     grunt.registerTask('default', ['']);
 };

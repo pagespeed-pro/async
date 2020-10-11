@@ -223,7 +223,8 @@ CACHE = function(args, callback) {
         text,
         xhr_options = cache_or_options(VAR_XHR),
         cors_options = cache_or_options(VAR_CORS),
-        sources = ARRAY(cache_or_options(VAR_SOURCE, [VAR_CSSTEXT, VAR_XHR, VAR_CORS])),
+        // VAR_CSSTEXT, 
+        sources = ARRAY(cache_or_options(VAR_SOURCE, [VAR_XHR, VAR_CORS])),
         sources_cors, sources_xhr;
 
     // @todo (IE8 fix)

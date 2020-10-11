@@ -15,9 +15,9 @@ CACHE_UPDATE = function(args) {
         xhr_options = args[4],
         cors_options = args[5],
         force_cors = args[6] || cached[4],
-        update = cache[VAR_UPDATE];
+        update = OBJECT(cache[VAR_UPDATE], VAR_INTERVAL);
 
-    if (update && IS_EXPIRED(cached[3], update[VAR_INTERVAL])) {
+    if (IS_EXPIRED(cached[3], update[VAR_INTERVAL] || 3600)) {
 
         if (DEBUG) {
             if (!XHR) {

@@ -36,6 +36,7 @@ var REBASE;
 var EMIT;
 var INLINE_JS;
 var INLINE_VAR;
+var INSERT_TARGET;
 
 var VENDORS;
 var VENDOR_FN;

@@ -107,7 +107,17 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                 target,
                 insert_target = ITEM_OR_OPTIONS(sheet, options, VAR_TARGET),
                 insert_target_after,
+                insert_target_global = !sheet[VAR_TARGET],
                 insert_after;
+
+            // attr-config module based insert target
+            if (INSERT_TARGET) {
+                if (!insert_target && !LAST_SHEET_ELEMENT) {
+                    target = INSERT_TARGET;
+                    insert_target_global = true;
+                    insert_after = true;
+                }
+            }
 
             if (DEBUG) {
                 sheet[VAR_PERF] = ++LOAD_ID;
@@ -133,7 +143,7 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                 ), function() {
 
                     // use insert target from options
-                    if (insert_target) {
+                    if (insert_target && !insert_target_global) {
                         insert_target = OBJECT(insert_target, VAR_BEFORE);
                         insert_target_after = insert_target[VAR_AFTER];
                         insert_target = ELEMENTS_BY_QUERY(insert_target_after || insert_target[VAR_BEFORE]);
@@ -291,6 +301,11 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                         if (target) {
                             if (insert_after) {
                                 AFTER(target, sheetEl);
+
+                                // continue after last inserted sheet
+                                if (insert_after === 1) {
+                                    insert_after = false;
+                                }
                             } else {
                                 BEFORE(target, sheetEl);
                             }

@@ -2,7 +2,7 @@
 
 var TESTS = [{
     name: 'x',
-    modules: ['css-loader', 'js-loader', 'inline-js', 'dependency', 'rebase', 'localstorage', 'timing', 'inview', 'responsive', 'lazy', 'api'],
+    modules: ['css-loader', 'js-loader', 'inline-js', 'dependency', 'rebase', 'localstorage', 'timing', 'inview', 'responsive', 'lazy', 'api', 'xhr'],
     tests: [
         'basic', 'dependencies', 'rebase', 'localstorage',
         'timing'

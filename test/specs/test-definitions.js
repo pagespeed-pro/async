@@ -312,7 +312,7 @@ TEST_DEFINITIONS.localstorage = function(iife_filename) {
                     // load from cache
 
                     validation = function() {
-                        return !!((!("localStorage" in window) && document.querySelectorAll('link').length === 2) || document.querySelector('style[data-src]'));
+                        return !!(document.querySelector('style[data-src]'));
                     };
 
                     // wait for cache to be saved
