@@ -29,7 +29,7 @@ $async([
 
 ```html
 <!-- config via an HTML attribute -->
-<script async src="js/async-iife.js" data-x="/critical.css" data-c='[
+<script async src="js/async-iife.js" data-c='[
    [
       "css/sheet1.css",
       "js/script.js",
@@ -84,8 +84,6 @@ $async is designed as the ultimate CSS and script loader for modern frontend opt
 
 - 100% JSON control.
 - Google Closure Compiler (GCC) with _Advanced mode_ script compression (reliable and performant in all browsers).
-
-$async contains many unique innovations such as async `critical.css`, timed download, exec and render and much more.
 
 ### Modular
 $async is modular and easy to use: select only the features that are needed to achieve the tiniest script size.

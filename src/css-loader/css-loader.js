@@ -239,7 +239,7 @@ LOAD_CSS = function(sheets, options, capture, capture_options) {
                                 loading_state = 1;
 
                                 // dependency module
-                                MODULE(DEPENDENCY, [sheet, ITEM_OR_OPTIONS(sheet, options, VAR_DEPENDENCIES), VAR_CSS, href], function(target) {
+                                MODULE(DEPENDENCY, [sheet, ITEM_OR_OPTIONS(sheet, options, VAR_DEPENDENCIES), href], function(target) {
 
                                     if (DEBUG) {
                                         PERFORMANCE_MARK('render' + sheet[VAR_PERF]);

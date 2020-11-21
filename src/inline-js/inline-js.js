@@ -51,7 +51,7 @@ INLINE_JS = function(args) {
         if (scriptText) {
 
             // dependency module
-            MODULE(DEPENDENCY, [inline, inline[VAR_DEPENDENCIES], VAR_JS, ref], function(target) {
+            MODULE(DEPENDENCY, [inline, inline[VAR_DEPENDENCIES], ref], function(target) {
 
                 if (DEBUG) {
                     PERFORMANCE_MARK('exec' + inline[VAR_JS_PERF]);

@@ -38,21 +38,19 @@ FOREACH(_methods, function(method) {
         _fn = method[1],
         _load = method[0] === VAR_LOAD;
 
-    // CSS loader
-    if (LOAD_CSS) {
-        $async[_method] = _load ? $async : function() {
-            var args = arguments;
-            if (DEPENDENCY) {
-                if (VAR_DEPENDENCIES === method[0]) {
-                    args = [
-                        [0, args[0], VAR_CSS], args[1]
-                    ];
-                }
+    // async loader
+    $async[_method] = _load ? $async : function() {
+        var args = arguments;
+        if (DEPENDENCY) {
+            if (VAR_DEPENDENCIES === method[0]) {
+                args = [
+                    [0, args[0]], args[1]
+                ];
             }
-            APPLY(_fn, args);
-            return $async;
-        };
-    }
+        }
+        APPLY(_fn, args);
+        return $async;
+    };
 });
 
 ERROR = function(type, msg) {

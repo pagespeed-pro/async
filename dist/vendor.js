@@ -1,1 +1,1 @@
-var ib;O=function(a,b){ib=ib||["","Moz","WebKit","Ms","O"];var c,d,e;q(ib,function(k){e||(d=b&&k?a[0].toUpperCase()+a.slice(1):a,c=y[k+d]||y[k.toLowerCase()+d],"function"===typeof c&&(e=c))});return e};
+var ob;ta=function(a,b){ob=ob||["","Moz","WebKit","Ms","O"];var c,d,e;t(ob,function(g){e||(d=b&&g?a[0].toUpperCase()+a.slice(1):a,c=D[g+d]||D[g.toLowerCase()+d],"function"===typeof c&&(e=c))});return e};

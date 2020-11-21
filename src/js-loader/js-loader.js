@@ -457,7 +457,7 @@ LOAD_JS = function(script, options, capture, capture_options) {
                     loading_state = 1;
 
                     // dependency module
-                    MODULE(DEPENDENCY, [script, ITEM_OR_OPTIONS(script, options, VAR_DEPENDENCIES), VAR_JS, src], function(target) {
+                    MODULE(DEPENDENCY, [script, ITEM_OR_OPTIONS(script, options, VAR_DEPENDENCIES), src], function(target) {
 
                         if (DEBUG) {
                             PERFORMANCE_MARK('exec' + script[VAR_JS_PERF]);

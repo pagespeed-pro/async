@@ -20,13 +20,7 @@ if (DEBUG) {
     }
 }
 
-if (LOAD_CSS || !LOAD_JS) {
-    var LOADED_SHEETS = [];
-}
-if (LOAD_JS) {
-    var LOADED_SCRIPTS = [];
-}
-
+var DEPENDENCIES_LOADED = [];
 
 var COMPAREDOCUMENTPOSITION_VAR = VAR(VAR_COMPAREDOCUMENTPOSITION);
 
@@ -67,21 +61,16 @@ DEPENDENCY = function(args, callback) {
 
     var asset = args[0],
         dependencies = args[1],
-        type = args[2],
-        src = args[3],
+        src = args[2],
         assetEl = asset[VAR_LINK],
         unmet = [],
         target,
-        loaded = (type === VAR_CSS || !LOAD_JS) ? LOADED_SHEETS : LOADED_SCRIPTS;
+        loaded = DEPENDENCIES_LOADED;
 
     // register loaded asset
     if (src) {
         ONCE(src, function(_asset) {
-            if (type === VAR_CSS || !LOAD_JS) {
-                PUSH(LOADED_SHEETS, _asset);
-            } else {
-                PUSH(LOADED_SCRIPTS, _asset);
-            }
+            PUSH(DEPENDENCIES_LOADED, _asset);
         });
     }
 
@@ -123,7 +112,7 @@ DEPENDENCY = function(args, callback) {
         }
 
         // wait for unmet dependencies
-        ON((type === VAR_CSS) ? VAR_LOAD : ((type === VAR_JS) ? VAR_EXEC : type), function(_asset) {
+        ON([VAR_LOAD, VAR_EXEC], function(_asset) {
 
             if (LENGTH(unmet)) {
 

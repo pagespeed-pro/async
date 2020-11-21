@@ -17,7 +17,7 @@ LAZY = function(config, ref, callback) {
             lazy_queue.push([].slice.call(arguments));
         }
         if (DEPENDENCY) {
-            DEPENDENCY([0,'$z',VAR_JS], function() {
+            DEPENDENCY([0,'$z'], function() {
                 var item;
                 while((item = lazy_queue.shift())) {
                     $lazy.apply(null, item);
@@ -43,7 +43,7 @@ LAZY = function(config, ref, callback) {
     }
 
     if (ref && DEPENDENCY) {
-        DEPENDENCY([{}, ref, ref, ref], setup_lazy);
+        DEPENDENCY([{}, ref, ref], setup_lazy);
     } else {
         DOMREADY(setup_lazy);
     }

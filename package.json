@@ -1,6 +1,6 @@
 {
     "name": "@style.tools/async",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "A lightweight and high performance async CSS and script loader for frontend optimization.",
     "author": {
         "name": "info@style.tools",
