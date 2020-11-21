@@ -151,7 +151,7 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "@style.tools/async-iife": "2.0.1",
+        "@style.tools/async-iife": "2.0.2",
         "@style.tools/lazy": "1.2.1",
         "browserstack-local": "^1.4.5",
         "chromedriver": "latest",
