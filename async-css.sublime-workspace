@@ -1,0 +1,1402 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"script",
+				"script_attrs"
+			],
+			[
+				"setAtt",
+				"setAttrs"
+			],
+			[
+				"VAR_INSER",
+				"VAR_INSERTBEFORE"
+			],
+			[
+				"loading",
+				"loading_completed"
+			],
+			[
+				"com",
+				"combination"
+			],
+			[
+				"CACHE",
+				"CACHE_UPDATE"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"depen",
+				"dependency"
+			],
+			[
+				"IIFE_",
+				"IIFE_TASKS"
+			],
+			[
+				"cache-l",
+				"cache-localstorage"
+			],
+			[
+				"COM",
+				"COMPRESSION_REF"
+			],
+			[
+				"VAR_TM",
+				"VAR_TIMED_DOWNLOAD"
+			],
+			[
+				"STYL",
+				"STYLE_ELEMENT"
+			],
+			[
+				"has",
+				"hasOwnProperty\t( property: string ): boolean Object"
+			],
+			[
+				"_",
+				"_COMPRESSION_INDEX"
+			],
+			[
+				"string",
+				"stringify\t( value: any, replacer?: any, space?: any ): string JSON"
+			],
+			[
+				"CMS",
+				"CMSConnector"
+			],
+			[
+				"alt",
+				"alternate_urls"
+			],
+			[
+				"al",
+				"alternate_url"
+			],
+			[
+				"inval",
+				"invalidation_count"
+			],
+			[
+				"current",
+				"current_month"
+			],
+			[
+				"dis",
+				"distribution_by_domain"
+			],
+			[
+				"B",
+				"BASEURL"
+			],
+			[
+				"confi",
+				"configData"
+			],
+			[
+				"CONFI",
+				"CONFIGOBJECT"
+			],
+			[
+				"run",
+				"runStarted"
+			],
+			[
+				"prel",
+				"preloadUrls"
+			],
+			[
+				"websock",
+				"websockifyConfig"
+			],
+			[
+				"in",
+				"instanceof"
+			],
+			[
+				"scri",
+				"scriptEl"
+			],
+			[
+				"function",
+				"functionName"
+			],
+			[
+				"ne",
+				"newVal"
+			],
+			[
+				"functio",
+				"functionName"
+			],
+			[
+				"ac",
+				"activeScript"
+			],
+			[
+				"OBJ",
+				"SCRIPT_OBJECTS"
+			],
+			[
+				"rem",
+				"removeChild"
+			],
+			[
+				"hash",
+				"hashKey"
+			],
+			[
+				"c",
+				"currentScript"
+			],
+			[
+				"get",
+				"getAttribute"
+			],
+			[
+				"muta",
+				"mutation"
+			],
+			[
+				"jsSl",
+				"jsSlot"
+			],
+			[
+				"jsS",
+				"jsSlots"
+			],
+			[
+				"sc",
+				"scriptObj"
+			],
+			[
+				"slot",
+				"slotIndex"
+			],
+			[
+				"inl",
+				"inline_scripts"
+			],
+			[
+				"filter",
+				"filter_scripts"
+			],
+			[
+				"inf",
+				"inflateDataMethod"
+			],
+			[
+				"inflate",
+				"inflateData"
+			],
+			[
+				"HASH",
+				"HASH_PATH_BASE"
+			],
+			[
+				"fi",
+				"firebase_client_url"
+			],
+			[
+				"imp",
+				"importScripts"
+			],
+			[
+				"promise",
+				"promiseGroups"
+			],
+			[
+				"PRE",
+				"PRELOAD_WORKER"
+			],
+			[
+				"ha",
+				"hashKey"
+			],
+			[
+				"cache",
+				"cacheData"
+			],
+			[
+				"test",
+				"testDebugReset"
+			],
+			[
+				"merge",
+				"mergeObject"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"testD",
+				"testDebugQuery"
+			],
+			[
+				"tag",
+				"tagNames"
+			],
+			[
+				"http_build",
+				"http_build_url"
+			],
+			[
+				"url",
+				"urlHash"
+			],
+			[
+				"shard",
+				"shardResults"
+			],
+			[
+				"ur",
+				"urlHash"
+			],
+			[
+				"meta",
+				"metaCache"
+			],
+			[
+				"po",
+				"post_url"
+			],
+			[
+				"up",
+				"updateType"
+			],
+			[
+				"query",
+				"queryKeys"
+			],
+			[
+				"prom",
+				"promiseGroups"
+			],
+			[
+				"tags",
+				"tagsResult"
+			],
+			[
+				"invalidat",
+				"invalidation_keys"
+			],
+			[
+				"create",
+				"createElement"
+			],
+			[
+				"load",
+				"loadPromises"
+			],
+			[
+				"att",
+				"attachedLinksCount"
+			],
+			[
+				"atta",
+				"attachedLinks"
+			],
+			[
+				"to",
+				"toLowerCase"
+			],
+			[
+				"contai",
+				"containerHTML"
+			],
+			[
+				"skip",
+				"skipList"
+			],
+			[
+				"cont",
+				"containerHTML"
+			],
+			[
+				"parent",
+				"parentContainerList"
+			],
+			[
+				"sub",
+				"subcontainer"
+			],
+			[
+				"PHP",
+				"PHP_AUTH_USER"
+			],
+			[
+				"PHP_",
+				"PHP_AUTH_PASS"
+			],
+			[
+				"re",
+				"requiredShards"
+			],
+			[
+				"required",
+				"requiredShards"
+			],
+			[
+				"m",
+				"multi"
+			],
+			[
+				"parse",
+				"parsePromises"
+			],
+			[
+				"requi",
+				"requiredShards"
+			],
+			[
+				"ob",
+				"objectIndex"
+			],
+			[
+				"root",
+				"rootSubShards"
+			],
+			[
+				"store",
+				"storeRequestPromise"
+			],
+			[
+				"LOAD",
+				"LOAD_URL"
+			],
+			[
+				"keys",
+				"Keys"
+			],
+			[
+				"st",
+				"storeName"
+			],
+			[
+				"JQUERY",
+				"JQUERY_LOADED"
+			],
+			[
+				"rjs",
+				"rjsonWorker"
+			],
+			[
+				"si",
+				"sizeChange"
+			],
+			[
+				"persist",
+				"persistQue"
+			],
+			[
+				"PROCE",
+				"PROCESSOR_WEBWORKER"
+			],
+			[
+				"PERSIS",
+				"PERSIST_STORES"
+			],
+			[
+				"key",
+				"keyIndex"
+			],
+			[
+				"parser_",
+				"PARSER_FN"
+			],
+			[
+				"id",
+				"ids"
+			],
+			[
+				"iso",
+				"ISO-8859-2"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 18842,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/async-js/async-js.js",
+			"settings":
+			{
+				"buffer_size": 14864,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dist/debug/async-js.js",
+			"settings":
+			{
+				"buffer_size": 2147,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dist/debug/module-api.js",
+			"settings":
+			{
+				"buffer_size": 744,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/async-css/async-css.js",
+			"settings":
+			{
+				"buffer_size": 11017,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/global.js",
+			"settings":
+			{
+				"buffer_size": 4870,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/compression-index.json",
+			"settings":
+			{
+				"buffer_size": 1829,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n * 📐 Style.Tools\n * \n * Async CSS loader - github.com/style-tools/async-css\n * Released under the terms of MIT license\n *\n * Copyright (C) 2018 github.com/style-tools\n */\n\nAPI = 1;\n\nvar _methods = [\n        [VAR_LOAD, ],\n        [VAR_ON, ON],\n        [VAR_ONCE, ONCE],\n        [VAR_OFF, OFF]\n    ],\n    _method, _fn, _load;\n\n// capture module\nif (CAPTURE) {\n    _methods.push([VAR_CAPTURE, CAPTURE]);\n}\n\n// assign public methods\nFOREACH(_methods, function(method) {\n    _method = VAR(method[0]);\n    _fn = method[1];\n    _load = method[0] === VAR_LOAD;\n\n    // CSS loader\n    if (LOAD_CSS) {\n        asyncCSS[_method] = function() {\n            APPLY(_load ? asyncCSS : _fn, arguments);\n            return asyncCSS;\n        };\n    }\n\n    // script loader\n    if (LOAD_JS) {\n        asyncJS[_method] = function() {\n            console.log(_load ? asyncJS : _fn\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                );\n            APPLY(_load ? asyncJS : _fn, arguments);\n            return asyncJS;\n        };\n    }\n});",
+			"file": "src/api/api.js",
+			"file_size": 970,
+			"file_write_time": 131908482270000000,
+			"settings":
+			{
+				"buffer_size": 1021,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 132.0,
+		"last_filter": "grunt",
+		"selected_items":
+		[
+			[
+				"grunt",
+				"Grunt"
+			],
+			[
+				"",
+				"Grunt"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"gru",
+				"Grunt"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"grun",
+				"Grunt"
+			],
+			[
+				"gr",
+				"Grunt"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/laptop/dev/async-css",
+		"/home/laptop/dev/async-css/closure-compiler/reports",
+		"/home/laptop/dev/async-css/dist",
+		"/home/laptop/dev/async-css/dist/debug",
+		"/home/laptop/dev/async-css/dist/iife/debug",
+		"/home/laptop/dev/async-css/schemas",
+		"/home/laptop/dev/async-css/src",
+		"/home/laptop/dev/async-css/src/api",
+		"/home/laptop/dev/async-css/src/async-css",
+		"/home/laptop/dev/async-css/src/async-js",
+		"/home/laptop/dev/async-css/src/cache",
+		"/home/laptop/dev/async-css/src/capture"
+	],
+	"file_history":
+	[
+		"/home/laptop/dev/async-css/async-css.ext.js",
+		"/home/laptop/dev/async-css/README.md",
+		"/home/laptop/dev/async-css/src/async-css/async-css.js",
+		"/home/laptop/dev/async-css/src/global.js",
+		"/home/laptop/dev/async-css/src/dependency/dependency.js",
+		"/home/laptop/dev/async-css/src/compression-index.json",
+		"/home/laptop/dev/async-css/src/async-js/async-js-vars.tpl.js",
+		"/home/laptop/dev/async-css/compression-index.js",
+		"/home/laptop/dev/async-css/src/api/api.js",
+		"/home/laptop/dev/async-css/package.json",
+		"/home/laptop/dev/async-css/update.txt",
+		"/home/laptop/dev/async-css/src/global-dom.js",
+		"/home/laptop/dev/async-css/src/capture/capture.js",
+		"/home/laptop/dev/async-css/src/cache/cache.js",
+		"/home/laptop/dev/async-css/Gruntfile.js",
+		"/home/laptop/dev/async-css/src/debug.js",
+		"/home/laptop/dev/async-css/src/capture-insert/capture-insert.js",
+		"/home/laptop/dev/async-css/schemas/css-loader.json",
+		"/home/laptop/dev/async-css/src/vendor/vendor.js",
+		"/home/laptop/dev/async-css/src/timing-inview/inview.js",
+		"/home/laptop/dev/async-css/src/capture-observer/capture-observer.js",
+		"/home/laptop/dev/async-css/src/cache-localstorage/cache-localstorage.js",
+		"/home/laptop/dev/async-css/dist/iife/README.md",
+		"/home/laptop/dev/style.tools/httpdocs/json-schemas/css-loader.json",
+		"/home/laptop/dev/async-css/dist/iife/csp-hashes+sri-directives.json",
+		"/home/laptop/dev/async-css/iife-module-combinations.js",
+		"/home/laptop/dev/async-css/tmp/iife/async-core+async-css+dependency+cache+localstorage+cacheapi+cors+update+timing+timing-responsive+timing-inview+attr-config+fallback.js",
+		"/home/laptop/dev/async-css/tmp/test.js",
+		"/home/laptop/dev/async-css/src/attr-config/attr-config.js",
+		"/home/laptop/dev/async-css/src/regex/regex-vars.tpl.js",
+		"/home/laptop/dev/async-css/dist/debug/async-css.js",
+		"/home/laptop/dev/async-css/dist/debug/module-capture.js",
+		"/home/laptop/dev/async-css/dist/debug/module-api.js",
+		"/home/laptop/dev/async-css/src/event-emitter.js",
+		"/home/laptop/dev/async-css/src/css-loader.js",
+		"/home/laptop/dev/async-css/src/timing/timing.js",
+		"/home/laptop/dev/async-css/src/capture/capture-vars.tpl.js",
+		"/home/laptop/dev/async-css/src/capture/observer.js",
+		"/home/laptop/dev/async-css/src/regex/regex.js",
+		"/home/laptop/dev/async-css/composer.json",
+		"/home/laptop/dev/async-css/src/fallback/noscript-fallback.js",
+		"/home/laptop/dev/async-css/.gitignore",
+		"/home/laptop/dev/async-css/.npmignore",
+		"/home/laptop/dev/async-css/dist/module-timing.js",
+		"/home/laptop/dev/async-css/dist/async-css.js",
+		"/home/laptop/dev/async-css/src/constructor.js",
+		"/home/laptop/dev/async-css/dist/iife/async-css+dependency+attr-config.js",
+		"/home/laptop/dev/async-css/src/cache-cors/cache-cors.js",
+		"/home/laptop/dev/async-css/dist/iife/debug/async-css+all.js",
+		"/home/laptop/dev/async-css/dist/iife/debug/async-css+dependency+attr-config.js",
+		"/home/laptop/dev/async-css/src/timing/timing-vars.js",
+		"/home/laptop/dev/async-css/sftp-config.json",
+		"/home/laptop/dev/async-css/tmp/iife/async-css+cache+localstorage+cacheapi+cors+update+timing+timing-responsive+timing-inview.js",
+		"/home/laptop/dev/async-css/src/dependency/dependency-vars.tpl.js",
+		"/home/laptop/dev/async-css/src/cache/cache-vars.js",
+		"/home/laptop/dev/async-css/src/cache/cache-vars.tpl.js",
+		"/home/laptop/dev/async-css/src/cache/timing-vars.tpl.js",
+		"/home/laptop/dev/async-css/src/dependency/dependency-vars.js",
+		"/home/laptop/dev/async-css/src/global-vars.js",
+		"/home/laptop/dev/async-css/src/global-vars.tpl.js",
+		"/home/laptop/dev/async-css/src/timing-inview/timing-inview-vars.js",
+		"/home/laptop/dev/async-css/src/timing-inview/timing-inview-vars.tpl.js",
+		"/home/laptop/dev/async-css/src/timing-responsive/responsive.js",
+		"/home/laptop/dev/async-css/src/timing/timing-vars.tpl.js",
+		"/home/laptop/dev/async-css/src/cache-api/cache-api.js",
+		"/home/laptop/dev/async-css/src/cache-update/cache-update.js",
+		"/home/laptop/dev/async-css/tmp/iife/async-css.js",
+		"/home/laptop/dev/async-css/tmp/iife/async-css+all.debug.js",
+		"/home/laptop/dev/async-css/dist/debug/iife/async-css+all.js",
+		"/home/laptop/dev/async-css/tmp/iife/async-css+dependency+cache+localstorage+cacheapi+cors+update+timing+timing-responsive+timing-inview+attr-config+fallback.debug.js",
+		"/home/laptop/dev/async-css/tmp/iife/async-css+all.js",
+		"/home/laptop/dev/async-css/dist/iife/async-css+dependency+cache+localstorage+cacheapi+cors+update+timing+timing-responsive+timing-inview+attr-config+fallback.js",
+		"/home/laptop/dev/async-css/tmp/iife/async-css+dependency+cache+localstorage+cacheapi+cors+update+timing+timing-responsive+timing-inview+attr-config+fallback.js",
+		"/home/laptop/dev/async-css/src/fallback/noscript-fallback-try.js",
+		"/home/laptop/dev/async-css/dist/iife/async-css+all.js",
+		"/home/laptop/dev/async-css/src/init.js",
+		"/home/laptop/dev/async-css/src/fallback-placeholder.js",
+		"/home/laptop/dev/async-css/src/fallback/noscript-fallback-catch-end.js",
+		"/home/laptop/dev/async-css/test/test.html",
+		"/home/laptop/dev/async-css/test/css/x.css",
+		"/home/laptop/dev/async-css/closure-compiler.js",
+		"/home/laptop/dev/async-css/closure-compiler-modules.js",
+		"/home/laptop/dev/async-css/dist/iife/async-css+cache+localstorage+cacheapi+cors+update+attr-config.js",
+		"/home/laptop/dev/async-css/dist/iife/async-css+cache+localstorage+cacheapi+cors+attr-config.js",
+		"/home/laptop/dev/async-css/dist/iife/async-css+cache+localstorage+cors+attr-config.js",
+		"/home/laptop/dev/async-css/dist/iife/async-css+cache+localstorage+attr-config.js",
+		"/home/laptop/dev/async-css/src/timing/cache-cors.js",
+		"/home/laptop/dev/async-css/src/localstorage/localstorage.js",
+		"/home/laptop/dev/async-css/src/cache/dependency-vars.tpl.js",
+		"/home/laptop/dev/async-css/tmp/iife/async-css+dependency.js",
+		"/home/laptop/dev/async-css/dist/iife/async-css+cache-localstorage+cache-api.js",
+		"/home/laptop/dev/async-css/dist/iife/async-css.js",
+		"/home/laptop/dev/async-css/dist/cache-api.js",
+		"/home/laptop/dev/async-css/src/cors/css-loader-cors.js",
+		"/home/laptop/dev/async-css/dist/$weak$.js",
+		"/home/laptop/dev/async-css/src/responsive/responsive.js",
+		"/home/laptop/dev/async-css/src/localstorage.js",
+		"/home/laptop/dev/async-css/node_modules/grunt-closure-compiler/tasks/closure-compiler.js",
+		"/home/laptop/dev/async-css/dist/cache.js",
+		"/home/laptop/dev/async-css/src/cache/css-loader-cache.js",
+		"/home/laptop/dev/async-css/dist/localstorage.js",
+		"/home/laptop/dev/async-css/src/timing.js",
+		"/home/laptop/dev/async-css/tmp/test2.js",
+		"/home/laptop/dev/async-css/tmp/cc/test.js",
+		"/home/laptop/dev/async-css/src/error.js",
+		"/home/laptop/dev/async-css/src/responsive.js",
+		"/home/laptop/dev/async-css/src/api.js",
+		"/home/laptop/dev/async-css/src/browser-check.js",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/vendor/styletools/cms-connect-client/styletools-cms-connect.min.js",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/classes/seo.class.php",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/constructors/styletools-api.inc.php",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/vendor/styletools/cms-connector/src/CMSConnector.php",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/designs/NL/templates/header.tpl.html",
+		"/home/laptop/dev/afhaalgroothandel.nl/manifest.json",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/classes/afgh.class.php",
+		"/home/laptop/dev/afhaalgroothandel.nl/Gruntfile.js",
+		"/home/laptop/dev/afhaalgroothandel.nl/.htaccess",
+		"/home/laptop/dev/afhaalgroothandel.nl/package.json",
+		"/home/laptop/dev/afhaalgroothandel.nl/js/src/afgh-sw.js",
+		"/home/laptop/dev/afhaalgroothandel.nl/js/src/Gruntfile.js",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/core.php",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/classes/mini.class.php",
+		"/home/laptop/dev/afhaalgroothandel.nl/afgh-sw.js",
+		"/home/laptop/dev/afhaalgroothandel.nl/js/src/package.json",
+		"/home/laptop/dev/afhaalgroothandel.nl/js/src/afgh.ext.js",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/constructors/product.inc.php",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V.php",
+		"/home/laptop/dev/afhaalgroothandel.nl/$V/vendor/styletools/cms-connector/src/ConfigStore.php"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			"/home/laptop/dev/async-css/src/",
+			"/home/laptop/dev/async-css/tmp/iife/",
+			"/home/laptop/dev/async-css/src/",
+			"/home/laptop/dev/async-css/dist/",
+			"/home/laptop/dev/async-css/src/*js",
+			"/home/laptop/dev/async-css/src/*.js",
+			"/home/laptop/dev/async-css/src/",
+			"/home/laptop/dev/async-css/",
+			"/home/laptop/dev/async-css/src",
+			"/home/laptop/dev/async-css/schemas",
+			"/home/laptop/dev/async-css/src",
+			"/home/laptop/dev/afhaalgroothandel.nl/chat/",
+			"/home/laptop/dev/afhaalgroothandel.nl/$V/designs/",
+			"/home/laptop/dev/afhaalgroothandel.nl/$V/templates",
+			"/home/laptop/dev/afhaalgroothandel.nl/$V/design",
+			"/home/laptop/dev/afhaalgroothandel.nl/$V/",
+			"/home/laptop/dev/afhaalgroothandel.nl/",
+			"/home/laptop/dev/afhaalgroothandel.nl/$V/",
+			"/home/laptop/dev/afhaalgroothandel.nl/$V/templates",
+			"/home/laptop/dev/afhaalgroothandel.nl/$V",
+			"/home/laptop/dev/afhaalgroothandel.nl/chat/",
+			"/home/laptop/dev/afhaalgroothandel.nl/",
+			"/home/laptop/dev/afhaalgroothandel.nl/$V/",
+			"/home/laptop/dev/afhaalgroothandel.nl/$V/constructors",
+			"/home/laptop/dev/stockbusters.nl/includes,/home/laptop/dev/stockbusters.nl/",
+			"/home/laptop/dev/stockbusters.nl/includes,/home/laptop/dev/stockbusters.nl/templates",
+			"/home/laptop/dev/stockbusters.nl/includes,/home/laptop/dev/stockbusters.nl/includes",
+			"/home/laptop/dev/stockbusters.nl/includes,/home/laptop/dev/stockbusters.nl/templates",
+			"/home/laptop/dev/stockbusters.nl/includes",
+			"/home/laptop/dev/stockbusters.nl/templates/shop",
+			"/home/laptop/dev/stockbusters.nl/includes/classes",
+			"/home/laptop/dev/websockify.io/public_html",
+			"/home/laptop/dev/websockify.io/app/js",
+			"/home/laptop/dev/websockify.io/public_html/wp-content/plugins/woocommerce",
+			"/home/laptop/dev/websockify.io/public_html/",
+			"/home/laptop/dev/websockify.io/public_html/wp-content/plugins/websockify",
+			"/home/laptop/dev/websockify.io/public_html/wp-content/plugins/woocommerce/",
+			"/home/laptop/dev/websockify.io/public_html/wp-content/plugins/woocommerce/assets",
+			"/home/laptop/dev/websockify.io/public_html",
+			"/home/laptop/dev/websockify.io/app/js/",
+			"/home/laptop/dev/websockify.io/app/js/ws/",
+			"/home/laptop/dev/websockify.io/app/js/ws/ws-modules/",
+			"/home/laptop/dev/websockify.io/app/js/",
+			"/home/laptop/dev/websockify.io/app/js/,/home/laptop/dev/websockify.io/public_html/wp-content/plugins/websockify/includes,/home/laptop/dev/websockify.io/public_html/wp-content/themes/travelify/library",
+			"/home/laptop/dev/websockify.io/app/js/,/home/laptop/dev/websockify.io/public_html/wp-content/plugins/websockify/includes",
+			"/home/laptop/dev/websockify.io/app/js/",
+			"/home/laptop/dev/websockify.io/app/js/modules",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"REL_PRELOAD_SUPPORT",
+			"script",
+			"console.log",
+			"LOAD_JS",
+			"asyncCSS",
+			"\t",
+			"callback",
+			"depend",
+			"VAR_LINK",
+			"LOAD_CSS_COUNT",
+			"DEPENDENCY",
+			"LOADED_SHEETS",
+			"LOADED_S",
+			"LOADED_SCRIPTS",
+			"LOADED_SC",
+			"script",
+			"\"src\",",
+			"src\"",
+			"VAR_",
+			"VAR_PERF",
+			"LOAD_ID",
+			"STYLE_E",
+			"VAR_STY",
+			"isRead",
+			"LOADSCRIPT_COUNT",
+			"LOAD_ID",
+			"LOADSCRIPT_PENDING",
+			"err",
+			"capt",
+			"'on'",
+			"asyncCSS",
+			"script_attrs",
+			"script_att",
+			"ADD_EV",
+			"VAR_SR",
+			"script[VAR_LINK]",
+			"RENDER",
+			"render",
+			"renderStylescript",
+			"SHEET",
+			"HREF",
+			"href",
+			"stylescript",
+			"sheet",
+			"sheet_or_options",
+			"SCRIPT_ELEMENT",
+			"LINK_ELEMENT",
+			"ELEMENTS_BY_QUERY(",
+			"REPLACE(",
+			"TEXT(",
+			"\"pattern\"",
+			"\"inview\"",
+			"disa",
+			"regex_",
+			"regex",
+			"_mutationObserver",
+			"FALSE(",
+			"TRUE(",
+			"PUSH",
+			"PROMISE_ALL",
+			"LOWERCASE",
+			"UPPERCASE",
+			"IS_INT",
+			"FLOAT",
+			"THROTTLE",
+			"DISABLED",
+			"JSON.parse",
+			"JSON_PARSE",
+			"SON_STRINGIFY",
+			"UNIX_TIMESTAMP",
+			"TIMESTAMP",
+			"REMOVE_EVENT",
+			"ELEMENTS_BY_QUERY",
+			"SET_ATTRS",
+			"cssText",
+			"extContent",
+			"createDocumentFragment",
+			"FRAGMENT",
+			"APPEND_CHILD",
+			"TEXT_ELEMENT",
+			"createTextNode",
+			"dist/iif",
+			"For more ",
+			"sheet_at",
+			"attribute",
+			"sheetEl",
+			"vendor_",
+			"VAR_MATCH",
+			"Ha(",
+			"async-core+async-css+dependency+cache+localstorage+cacheapi+cors+update+timing+timing-responsive+timing-inview+attr-config+fallback.js",
+			"\"async-css\"",
+			"async-css",
+			"'async-css+",
+			"console",
+			".clone",
+			"capture_css",
+			"REMOVE_ATTR",
+			"DISABLED",
+			"disabled",
+			"VAR(",
+			"EMIT",
+			"ON",
+			"EMIT",
+			"regex",
+			"VENDOR_FN",
+			"INSERT_BEFORE",
+			"APPEND_CHILD",
+			"capture(",
+			"capture",
+			"cache_modules",
+			"REGEX",
+			"TIMING",
+			"sheet",
+			"sheet_attrs",
+			"REMOVE_ATTR",
+			"TEXT",
+			"timing",
+			"required",
+			"match",
+			"_console",
+			"console.",
+			"qa(",
+			"Q(",
+			"xa(",
+			"VENDOR_FN",
+			"pa(",
+			"console",
+			"window.con"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"asyncJS",
+			"   ",
+			"VAR_JS_PERF",
+			"LOAD_JS_ID",
+			"SCRIPT_DOM_INSERT_ID",
+			"SCRIPT_DOM_INSERT_PENDING",
+			"EXEC",
+			"exec",
+			"execScript",
+			"SCRIPT",
+			"SRC",
+			"src",
+			"script",
+			"script_or_options",
+			"\"async-core\"",
+			"'async-core+async-css+",
+			"INSERT_BEFORE_KEY",
+			"APPEND_CHILD_KEY",
+			"'window'",
+			"value",
+			"c",
+			"load_timing",
+			"",
+			"var",
+			"timer_set",
+			"dependency",
+			"dependencies_met",
+			"RENDER_TIMING",
+			"DOWNLOAD_TIMING",
+			"download_timing",
+			"render_timing",
+			"CONSOLE_",
+			"MODULE",
+			"render",
+			"LAST_SHEET_ELEMENT",
+			"w[",
+			"w;",
+			"w.",
+			"attrs",
+			"LS.",
+			"unrenderCallback",
+			"frameTarget",
+			"cacheconfig",
+			"src",
+			"SHEET_OPTIONS_KEYS",
+			"style.tools",
+			"afgh_sw:",
+			"$config['cms']",
+			"$totalprice",
+			"img.stockbusters.eu",
+			"static.stockbusters.eu",
+			"https:",
+			"PageSpeed.pro",
+			"http://pagespeed.pro",
+			"CSSObj",
+			"$this->CTRL->CONFIG_INDEX",
+			"ADD_ACTIVE_SCRIPT",
+			"ADD_ACTIVE",
+			"SCRIPT_OBJECTS[",
+			"ACTIVE",
+			"PARSE_ATTACHED_SCRIPT",
+			"PROCESS_OBJECT_DATA",
+			"LOAD_OBJECT_DATA",
+			"ACTIVE_SCRIPTS",
+			"ŵš",
+			"PROCESS_CACHED_OBJECTS",
+			"scriptSlot",
+			"PRELOAD",
+			"ws.head",
+			"HEAD_ELEMENT",
+			"ONREADY_RUN_QUEUE",
+			"/ws-",
+			"js/mo",
+			"ATTACHED_ELEMENTS",
+			"bodyAttr",
+			"shardindex",
+			"\"",
+			"ws-page-loader",
+			".ws-page-loader",
+			" ",
+			"$tagKeys",
+			"queryKeys",
+			"$tags",
+			"tags",
+			"MK(",
+			"'js'",
+			"shards[i][keyIndex][",
+			"JSON_",
+			"'__bool_index'",
+			"json/",
+			"JSON_CONFIG_INDEX",
+			"-config-index.json",
+			"['shards']",
+			"'r'",
+			"websockify",
+			"WP_WEBSOCKIFY_VERSION",
+			"websockify_",
+			"websockify",
+			"Websockify",
+			"websockify",
+			"ws.",
+			"CONFIG_QUEUE",
+			"this.connection",
+			"instr.",
+			"this.instructions",
+			"numInstr",
+			"curInstr",
+			"",
+			"'",
+			"",
+			"STORES_PERSIST",
+			"_this.cancelled",
+			"processQueue",
+			"CANCEL_HANDLERS",
+			"o",
+			"'rJSON'",
+			"'JSON'",
+			"$BODY",
+			"->rjson",
+			"'rjson'",
+			"rJSON ",
+			"rJSON",
+			"meta[]",
+			"rJSON",
+			"meta[2]",
+			"if (this.state.port) {",
+			"data-ws",
+			"keySuffix"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18842,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18842,
+								18842
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10386.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/async-js/async-js.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14864,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14252,
+								14252
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8421.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "dist/debug/async-js.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2147,
+								2147
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "dist/debug/module-api.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 744,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								723,
+								723
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/async-css/async-css.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11017,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1008,
+								1008
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 873.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/global.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4870,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								367,
+								367
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/compression-index.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1056,
+								1056
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/api/api.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1021,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								917,
+								917
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 668.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 46.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "",
+	"project": "async-css.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"public_html/test/data-transfer/parse.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/dev/optimalisatie.nl/websockify.io.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 701.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 942.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,1 @@
+M=1;var ub=[[10],[77,Oa],[78,Ma],[79,Na]];J&&ub.push([81,function(a,b){a=v(S(a,2));J([a],b);return R}]);L&&ub.push([15,function(a,b){L(a,b);return R}]);t(ub,function(a){var b=a[1];R[u(a[0])]=10===a[0]?R:function(){var c=arguments;L&&15===a[0]&&(c=[[0,c[0]],c[1]]);b.apply(null,c);return R}});pa=function(a,b){N(80,a,b)};

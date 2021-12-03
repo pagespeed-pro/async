@@ -1,0 +1,1 @@
+var jc=u(94),kc=u(95),lc;cc=function(a,b){if(!lc){lc=1;var c=[jc,kc],d=[u(97),u(98)];ba(a)&&(a[94]||(c[0]=0),a[95]||(c[1]=0),a[96]&&y(a[96])&&(d=a[96]));t(d,function(e,g,f){g="_"+e;D[g]=D[g]||{};D[e]&&(f=D[e].prototype)&&t(c,function(k){k&&!D[g][k]&&(D[g][k]=f[k],f[k]=function(h){arguments[0]=b(h);return D[g][k].apply(this,arguments)})})})}};

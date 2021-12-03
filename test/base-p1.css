@@ -1,0 +1,201 @@
+body {
+  background: linear-gradient(180deg, #DEF2F3 9%,  #669cab 100%);
+  background-repeat: no-repeat;
+}
+
+:root {
+  --white: #ffffff;
+  --lightyellow: #ffffad;
+  --neonyellow: #f2ff00;
+  --yellow: #ffde00;
+  --warmyellow: #ffb800;
+  --orangeyellow: #ff9100;
+  --orange: #ff6300;
+  --orangered: #ff4500;
+  --red: #e00000;
+  --darkred: #ac0000;
+  --lightpink: #ff71c2;
+  --pink: #fb3995;
+  --hotpink: #e2006c;
+  --darkpink: #b9006f;
+  --redpurple: #a60086;
+  --burgundy: #871865;
+  --lightpurple: #b669ee;
+  --neonpurple: #a935cb;
+  --darkpurple: #5f01a1;
+  --darkblue: #002585;
+  --neonblue: #061ef9;
+  --blue: #3470e6;
+  --lightblue: #6ec6f7;
+  --blueaqua: #1eb9db;
+  --darkaqua: #009498;
+  --darkgreen: #007850;
+  --green: #00a12d;
+  --mossgreen: #9bc200;
+  --brown: rgb(180, 76, 0);
+  --grey: #b0b0b0;
+  --black: #000000;
+  --placement: 0.965vw;
+  --topplacement: 2.894vw;
+}
+
+#wrapper {
+  position: relative;
+  margin: 1vw auto;
+  width: 89.8vw;
+  height: 65vw;
+  overflow: hidden;
+  background: linear-gradient(180deg, #DEF2F3 9%, #d6d6d3 10%, #545454 100%);
+}
+
+#pencil-body {
+  position: absolute;
+  top: 5.7vw;
+  left: 0;
+  height: 60vw;
+  width: 0.93vw;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background: var(--white);
+  box-shadow: var(--placement) 0 0 0 var(--white),
+              calc(var(--placement) * 2) 0 0 0 var(--white),
+
+              calc(var(--placement) * 3) 0 0 0 var(--lightyellow),
+              calc(var(--placement) * 4) 0 0 0 var(--lightyellow),
+              calc(var(--placement) * 5) 0 0 0 var(--lightyellow),
+
+              calc(var(--placement) * 6) 0 0 0 var(--neonyellow),
+              calc(var(--placement) * 7) 0 0 0 var(--neonyellow),
+              calc(var(--placement) * 8) 0 0 0 var(--neonyellow),
+
+              calc(var(--placement) * 9) 0 0 0 var(--yellow),
+              calc(var(--placement) * 10) 0 0 0 var(--yellow),
+              calc(var(--placement) * 11) 0 0 0 var(--yellow),
+
+              calc(var(--placement) * 12) 0 0 0 var(--warmyellow),
+              calc(var(--placement) * 13) 0 0 0 var(--warmyellow),
+              calc(var(--placement) * 14) 0 0 0 var(--warmyellow),
+
+              calc(var(--placement) * 15) 0 0 0 var(--orangeyellow),
+              calc(var(--placement) * 16) 0 0 0 var(--orangeyellow),
+              calc(var(--placement) * 17) 0 0 0 var(--orangeyellow),
+
+              calc(var(--placement) * 18) 0 0 0 var(--orange),
+              calc(var(--placement) * 19) 0 0 0 var(--orange),
+              calc(var(--placement) * 20) 0 0 0 var(--orange),
+
+              calc(var(--placement) * 21) 0 0 0 var(--orangered),
+              calc(var(--placement) * 22) 0 0 0 var(--orangered),
+              calc(var(--placement) * 23) 0 0 0 var(--orangered),
+
+              calc(var(--placement) * 24) 0 0 0 var(--red),
+              calc(var(--placement) * 25) 0 0 0 var(--red),
+              calc(var(--placement) * 26) 0 0 0 var(--red),
+
+              calc(var(--placement) * 27) 0 0 0 var(--darkred),
+              calc(var(--placement) * 28) 0 0 0 var(--darkred),
+              calc(var(--placement) * 29) 0 0 0 var(--darkred),
+
+              calc(var(--placement) * 30) 0 0 0 var(--lightpink),
+              calc(var(--placement) * 31) 0 0 0 var(--lightpink),
+              calc(var(--placement) * 32) 0 0 0 var(--lightpink),
+
+              calc(var(--placement) * 33) 0 0 0 var(--pink),
+              calc(var(--placement) * 34) 0 0 0 var(--pink),
+              calc(var(--placement) * 35) 0 0 0 var(--pink),
+
+              calc(var(--placement) * 36) 0 0 0 var(--hotpink),
+              calc(var(--placement) * 37) 0 0 0 var(--hotpink),
+              calc(var(--placement) * 38) 0 0 0 var(--hotpink),
+
+              calc(var(--placement) * 39) 0 0 0 var(--darkpink),
+              calc(var(--placement) * 40) 0 0 0 var(--darkpink),
+              calc(var(--placement) * 41) 0 0 0 var(--darkpink),
+
+              calc(var(--placement) * 42) 0 0 0 var(--redpurple),
+              calc(var(--placement) * 43) 0 0 0 var(--redpurple),
+              calc(var(--placement) * 44) 0 0 0 var(--redpurple),
+
+              calc(var(--placement) * 45) 0 0 0 var(--burgundy),
+              calc(var(--placement) * 46) 0 0 0 var(--burgundy),
+              calc(var(--placement) * 47) 0 0 0 var(--burgundy),
+
+              calc(var(--placement) * 48) 0 0 0 var(--lightpurple),
+              calc(var(--placement) * 49) 0 0 0 var(--lightpurple),
+              calc(var(--placement) * 50) 0 0 0 var(--lightpurple),
+
+              calc(var(--placement) * 51) 0 0 0 var(--neonpurple),
+              calc(var(--placement) * 52) 0 0 0 var(--neonpurple),
+              calc(var(--placement) * 53) 0 0 0 var(--neonpurple),
+
+              calc(var(--placement) * 54) 0 0 0 var(--darkpurple),
+              calc(var(--placement) * 55) 0 0 0 var(--darkpurple),
+              calc(var(--placement) * 56) 0 0 0 var(--darkpurple),
+
+              calc(var(--placement) * 57) 0 0 0 var(--darkblue),
+              calc(var(--placement) * 58) 0 0 0 var(--darkblue),
+              calc(var(--placement) * 59) 0 0 0 var(--darkblue),
+
+              calc(var(--placement) * 60) 0 0 0 var(--neonblue),
+              calc(var(--placement) * 61) 0 0 0 var(--neonblue),
+              calc(var(--placement) * 62) 0 0 0 var(--neonblue),
+
+              calc(var(--placement) * 63) 0 0 0 var(--blue),
+              calc(var(--placement) * 64) 0 0 0 var(--blue),
+              calc(var(--placement) * 65) 0 0 0 var(--blue),
+
+              calc(var(--placement) * 66) 0 0 0 var(--lightblue),
+              calc(var(--placement) * 67) 0 0 0 var(--lightblue),
+              calc(var(--placement) * 68) 0 0 0 var(--lightblue),
+
+              calc(var(--placement) * 69) 0 0 0 var(--blueaqua),
+              calc(var(--placement) * 70) 0 0 0 var(--blueaqua),
+              calc(var(--placement) * 71) 0 0 0 var(--blueaqua),
+
+              calc(var(--placement) * 72) 0 0 0 var(--darkaqua),
+              calc(var(--placement) * 73) 0 0 0 var(--darkaqua),
+              calc(var(--placement) * 74) 0 0 0 var(--darkaqua),
+
+              calc(var(--placement) * 75) 0 0 0 var(--darkgreen),
+              calc(var(--placement) * 76) 0 0 0 var(--darkgreen),
+              calc(var(--placement) * 77) 0 0 0 var(--darkgreen),
+
+              calc(var(--placement) * 78) 0 0 0 var(--green),
+              calc(var(--placement) * 79) 0 0 0 var(--green),
+              calc(var(--placement) * 80) 0 0 0 var(--green),
+
+              calc(var(--placement) * 81) 0 0 0 var(--mossgreen),
+              calc(var(--placement) * 82) 0 0 0 var(--mossgreen),
+              calc(var(--placement) * 83) 0 0 0 var(--mossgreen),
+
+              calc(var(--placement) * 84) 0 0 0 var(--brown),
+              calc(var(--placement) * 85) 0 0 0 var(--brown),
+              calc(var(--placement) * 86) 0 0 0 var(--brown),
+
+              calc(var(--placement) * 87) 0 0 0 var(--grey),
+              calc(var(--placement) * 88) 0 0 0 var(--grey),
+              calc(var(--placement) * 89) 0 0 0 var(--grey),
+
+              calc(var(--placement) * 90) 0 0 0 var(--black),
+              calc(var(--placement) * 91) 0 0 0 var(--black),
+              calc(var(--placement) * 92) 0 0 0 var(--black)
+              ;
+}
+
+#pencil-top1 {
+  position: absolute;
+  top: 0;
+  left: 0vw;
+  width: 2.9vw;
+  height: 6vw;
+  background: linear-gradient(90deg, #e6cd84 0%, #e6cd84 30%, #f5e7bf 50%, #e6cd84 70%, #e6cd84 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#pencil-top1:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--white) 0%, var(--white) 30%, transparent 30%, transparent 100%);
+}

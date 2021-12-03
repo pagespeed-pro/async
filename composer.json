@@ -1,0 +1,18 @@
+{
+    "name": "styletools/async",
+    "version": "2.0.4",
+    "description": "A lightweight and high performance async CSS and script loader for frontend optimization.",
+    "keywords": ["async-css", "async-js", "script-loader", "css-loader", "css", "optimization", "asynchronous", "localStorage", "cache-api"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Style.Tools",
+        "email": "info@style.tools"
+    }],
+    "type": "project",
+    "require": {},
+    "require-dev": {},
+    "autoload": {},
+    "archive": {
+        "exclude": ["node_modules/"]
+    }
+}

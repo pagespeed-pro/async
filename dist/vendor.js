@@ -1,0 +1,1 @@
+var tb;ta=function(a,b){tb=tb||["","Moz","WebKit","Ms","O"];var c,d,e;t(tb,function(g){e||(d=b&&g?a[0].toUpperCase()+a.slice(1):a,c=D[g+d]||D[g.toLowerCase()+d],"function"===typeof c&&(e=c))});return e};

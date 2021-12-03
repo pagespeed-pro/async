@@ -1,0 +1,1 @@
+var hc,ic;wa=ta("MutationObserver");bc=function(a,b){ic||(ic=1,wa&&(hc=new wa(function(c){c.forEach(function(d){for(var e=0;e<d.addedNodes.length;e++)b(d.addedNodes[e])})}),hc.observe(E.documentElement,{attributes:!1,childList:!0,subtree:!0,characterData:!1})))};

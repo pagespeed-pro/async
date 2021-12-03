@@ -1,0 +1,1 @@
+var Wb=Aa("matchMedia",0),Xb={};la=function(a){if(!Wb||!a||a.toLowerCase()===u(7))return!0;a in Xb||(Xb[a]=Wb(a));return Xb[a]};ma=function(a,b){function c(f){!d&&f.matches&&(e.removeListener(c),d=!0,b())}var d,e=a?la(a):!1;!0===e||e&&e.matches?b():e.addListener(c)};

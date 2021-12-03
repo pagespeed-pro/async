@@ -1,0 +1,1 @@
+var Gb=[];ka=function(a,b,c){function d(){var e;$lazy(a,function(g){e||"isIntersecting"in g&&!g.isIntersecting||(e=1,c())})}za(D.$lazy)&&(D.$lazy=function(){Gb.push([].slice.call(arguments))},L&&L([0,"$z"],function(){for(var e;e=Gb.shift();)$lazy.apply(null,e)}));b&&L?L([{},b,b],d):Cb(d)};
